@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Hello! I am a second-year Ph.D. student in the School of Data Science at [The Chinese University of Hong Kong, Shenzhen (CUHKSZ)](https://sds.cuhk.edu.cn/en), supervised by Prof. [Tongxin Li](https://tongxin.me/). Prior to that, I completed a Master's at [New York University (Courant Institute)](https://cs.nyu.edu/home/index.html) in the USA and a 2+2 double Bachelor's program at [Queen’s University](https://smithengineering.queensu.ca/ece/index) in Canada and [Jilin University](https://csw.jlu.edu.cn/) in China.
+Hello! I am a second-year Ph.D. student in the School of Data Science at [The Chinese University of Hong Kong, Shenzhen (CUHKSZ)](https://sds.cuhk.edu.cn/en), supervised by Professor [Tongxin Li](https://tongxin.me/). Prior to that, I completed a Master's at [New York University (Courant Institute)](https://cs.nyu.edu/home/index.html) in the USA and a 2+2 double Bachelor's program at [Queen’s University](https://smithengineering.queensu.ca/ece/index) in Canada and [Jilin University](https://csw.jlu.edu.cn/) in China.
 
 My research interests include: 
 - In-Context Decision Making 
@@ -17,47 +17,45 @@ My research interests include:
 Education 🎓
 ======
 
-- Ph.D. in Data Science (2023 – Present)
+- **The Chinese University of Hong Kong, Shenzhen (CUHKSZ), China**
 
-  The Chinese University of Hong Kong, Shenzhen (CUHKSZ), China
+  Ph.D. in Data Science (2023 – Present)
 
-  Research focus: In-Context Reinforcement Learning
+- **New York University (Courant Institute), USA**
 
-- Master of Science in Computer Science (2019 – 2021)  
+  Master of Science in Computer Science (2019 – 2021)  
 
-  New York University (Courant Institute), USA
+- **Queen’s University, Canada** 
 
-- Bachelor of Applied Science in Computer Engineering (2017 – 2019)  
+  Bachelor of Applied Science in Computer Engineering (2017 – 2019) 
 
-  Queen’s University, Canada 
+- **Jilin University, China**  
 
-- Bachelor of Engineering in Software Engineering (2015 – 2019)  
-
-  Jilin University, China 
+  Bachelor of Engineering in Software Engineering (2015 – 2019)
 
 
 Experience 📚
 ======
 
-- Research Assistant (2022 - 2023)
+- **McGill University, Intelligent Automation Lab, Canada**
 
-  McGill University, Intelligent Automation Lab, Canada
+  Research Assistant (2022 - 2023)
 
-- NLP Algorithm Engineer (2021 - 2022)
+- **Tsinghua University, NLP Lab, China**
 
-  Tsinghua University, NLP Lab, China
+  NLP Algorithm Engineer (2021 - 2022)
 
--  Course Tutor (2020 - 2021)
+- **New York University (Courant Institute), USA**
 
-  New York University (Courant Institute), USA 
+  Course Tutor (2020 - 2021)
 
-- Full-Stack Software Engineer Intern (2020 Summer) 
+- **Amazon Web Services (AWS)，Identity and Access Management, USA** 
 
-  Amazon Web Services (AWS)，Identity and Access Management, USA 
+  Full-Stack Software Engineer Intern (2020 Summer) 
 
-- Research Program in Big Data & Cybersecurity (2018 Summer) 
+- **Ben-Gurion University of the Negev, Israel**
 
-  Ben-Gurion University of the Negev, Israel
+  Research Program in Big Data & Cybersecurity (2018 Summer) 
 
 
 Publications 📖
