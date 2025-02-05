@@ -10,6 +10,7 @@ redirect_from:
 Hello! I am a second-year Ph.D. student in the School of Data Science at [The Chinese University of Hong Kong, Shenzhen (CUHKSZ)](https://sds.cuhk.edu.cn/en), supervised by Professor [Tongxin Li](https://tongxin.me/). Prior to that, I completed a Master's at [New York University (Courant Institute)](https://cs.nyu.edu/home/index.html) in the USA and a 2+2 double Bachelor's program at [Queen’s University](https://smithengineering.queensu.ca/ece/index) in Canada and [Jilin University](https://csw.jlu.edu.cn/) in China.
 
 My research interests include: 
+&nbsp;    
 - In-Context Decision Making 
 - Robust LLM Applications
 - Reinforcement Learning 
@@ -18,15 +19,14 @@ Education 🎓
 ======
 
 - **The Chinese University of Hong Kong, Shenzhen (CUHKSZ), China**
-
+  &nbsp;   
   Ph.D. in Data Science (2023 – Present)
 
 - **New York University (Courant Institute), USA**
-
+  &nbsp;   
   Master of Science in Computer Science (2019 – 2021)  
 
 - **Queen’s University, Canada** 
-
   Bachelor of Applied Science in Computer Engineering (2017 – 2019) 
 
 - **Jilin University, China**  
