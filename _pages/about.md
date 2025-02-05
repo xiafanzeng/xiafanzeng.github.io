@@ -7,13 +7,10 @@ redirect_from:
   - /about.html
 ---
 
-Hello! I am a second-year Ph.D. student in the School of Data Science at [The Chinese University of Hong Kong, Shenzhen (CUHKSZ)](https://sds.cuhk.edu.cn/en), supervised by Professor [Tongxin Li](https://tongxin.me/). Prior to that, I completed a Master's at [New York University (Courant Institute)](https://cs.nyu.edu/home/index.html) in the USA and a 2+2 double Bachelor's program at [Queen’s University](https://smithengineering.queensu.ca/ece/index) in Canada and [Jilin University](https://csw.jlu.edu.cn/) in China.
+Hello! I am a second-year Ph.D. student in the School of Data Science at [The Chinese University of Hong Kong, Shenzhen (CUHKSZ)](https://sds.cuhk.edu.cn/en), supervised by Professor [Tongxin Li](https://tongxin.me/). My research interests focus on In-Context Reinforcement Learning and Robust LLM Applications.
 
-My research interests include: 
-&nbsp;    
-- In-Context Decision Making 
-- Robust LLM Applications
-- Reinforcement Learning 
+Prior to that, I completed a Master's at [New York University (Courant Institute)](https://cs.nyu.edu/home/index.html) in the USA and a 2+2 double Bachelor's program at [Queen’s University](https://smithengineering.queensu.ca/ece/index) in Canada and [Jilin University](https://csw.jlu.edu.cn/) in China. 
+
 
 Education 🎓
 ======
@@ -26,11 +23,12 @@ Education 🎓
   &nbsp;   
   Master of Science in Computer Science (2019 – 2021)  
 
-- **Queen’s University, Canada** 
+- **Queen’s University, Canada**
+  &nbsp;   
   Bachelor of Applied Science in Computer Engineering (2017 – 2019) 
 
-- **Jilin University, China**  
-
+- **Jilin University, China** 
+  &nbsp;   
   Bachelor of Engineering in Software Engineering (2015 – 2019)
 
 
@@ -38,23 +36,23 @@ Experience 📚
 ======
 
 - **McGill University, Intelligent Automation Lab, Canada**
-
+  &nbsp;   
   Research Assistant (2022 - 2023)
 
 - **Tsinghua University, NLP Lab, China**
-
+  &nbsp;   
   NLP Algorithm Engineer (2021 - 2022)
 
 - **New York University (Courant Institute), USA**
-
+  &nbsp;   
   Course Tutor (2020 - 2021)
 
 - **Amazon Web Services (AWS)，Identity and Access Management, USA** 
-
+  &nbsp;   
   Full-Stack Software Engineer Intern (2020 Summer) 
 
 - **Ben-Gurion University of the Negev, Israel**
-
+  &nbsp;   
   Research Program in Big Data & Cybersecurity (2018 Summer) 
 
 
