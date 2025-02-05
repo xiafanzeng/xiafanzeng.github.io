@@ -59,9 +59,9 @@ Experience 📚
 Publications 📖
 ======
 
-- Fanzeng Xia, Alfonsus Rodriques Rendy, Nicholas Oh, Zoe Emmanuel Halim, Aaron Sasmita, Tinko Sebastian Bartels, Shaolei Ren, Tongxin Li. "Position: Towards Unified In-Context Reinforcement Learners." [arXiv]
+- **Fanzeng Xia**, Alfonsus Rodriques Rendy, Nicholas Oh, Zoe Emmanuel Halim, Aaron Sasmita, Tinko Sebastian Bartels, Shaolei Ren, Tongxin Li. "Position: Towards Unified In-Context Reinforcement Learners." [arXiv]
 
-- Fanzeng Xia, Hao Liu, Yisong Yue, and Tongxin Li. "Beyond numeric awards: In-context dueling bandits with llm agents." arXiv:2407.01887. [[arXiv]](https://arxiv.org/pdf/2407.01887)
+- **Fanzeng Xia**, Hao Liu, Yisong Yue, and Tongxin Li. "Beyond numeric awards: In-context dueling bandits with llm agents." arXiv:2407.01887. [[arXiv]](https://arxiv.org/pdf/2407.01887)
 
 
 
