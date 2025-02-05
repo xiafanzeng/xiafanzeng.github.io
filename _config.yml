@@ -26,13 +26,13 @@ author:
   name             : ""
   pronouns         : # example: "she/her"  
   bio              : "Short biography for the left-hand sidebar"
-  location         : "Shenzhen"
+  location         : "Shenzhen,,,"
   employer         : "The Chinese University of Hong Kong, Shenzhen"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "fanzengxia@link.cuhk.edu.cn" 
 
   # Academic websites
-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+  googlescholar    : "https://scholar.google.com/citations?user=Qsg_UVAAAAAJ&hl=en"
 
   # Repositories and software development
   bitbucket        : # Username - Update with your username on the site
@@ -249,32 +249,7 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _publications
-  - scope:
-      path: ""
-      type: publications
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-  # _portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
-  # _talks
-  - scope:
-      path: ""
-      type: talks
-    values:
-      layout: talk
-      author_profile: true
-      share: true
+
 
 
 # Sass/SCSS
