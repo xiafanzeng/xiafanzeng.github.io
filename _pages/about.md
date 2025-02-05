@@ -47,7 +47,7 @@ Experience 📚
   &nbsp;   
   Course Tutor (2020 - 2021)
 
-- **Amazon Web Services (AWS)，Identity and Access Management, USA** 
+- **Amazon Web Services (AWS), Identity and Access Management, USA** 
   &nbsp;   
   Full-Stack Software Engineer Intern (2020 Summer) 
 
