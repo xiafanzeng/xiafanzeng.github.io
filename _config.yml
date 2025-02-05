@@ -9,10 +9,10 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Fanzeng's Homepage"
+title                    : "Fanzeng Xia"
 title_separator          : "-"
-name                     : &name "Fanzeng Xia"
-description              : &description "a second year PhD student from CUHK-Shenzhen"
+name                     : &name "Fanzeng Xia, 夏钒曾"
+description              : &description "Ph.D. Candidate @ School of Data Science, CUHKSZ"
 url                      : https://xiafanzeng.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "xiafanzeng/xiafanzeng.github.io"
@@ -25,9 +25,9 @@ author:
   avatar           : "image.png"
   name             : ""
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Shenzhen,,,"
-  employer         : "The Chinese University of Hong Kong, Shenzhen"
+  bio              : "Ph.D. Candidate @ School of Data Science, CUHKSZ"
+  location         : "Shenzhen, China"
+  employer         : #"The Chinese University of Hong Kong"
   uri              : # URL
   email            : "fanzengxia@link.cuhk.edu.cn" 
 
