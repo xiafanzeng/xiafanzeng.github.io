@@ -1,64 +1,50 @@
 ---
 permalink: /
-title: "About me"
+title: "About me 🧑‍💻"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-Hello! I am Fanzeng Xia (夏钒曾), a Ph.D. candidate in Data Science at The Chinese University of Hong Kong, Shenzhen (CUHKSZ). My research focuses on Large Language Model (LLM) Applications and Robust Intelligent Agents.
+Hello! I am Fanzeng Xia (夏钒曾), a Ph.D. candidate in the School of Data Science at The Chinese University of Hong Kong, Shenzhen (CUHKSZ), supervised by Professor [Tongxin Li](https://tongxin.me/). Prior to that, I hold a Master of Science in Computer Science from New York University (Courant Institute) and a Bachelor of Applied Science in Computer Engineering from Queen’s University, as well as a Bachelor of Engineering in Software Engineering from Jilin University.  
 
+My research interests include: 
+- 🧠 In-Context Decision Making 
+- 🤖 Robust LLM Applications
+- 🔄 Reinforcement Learning 
 
-I hold a **Master of Science in Computer Science** from **New York University Courant Institute** and a **Bachelor of Applied Science in Computer Engineering** from **Queen’s University**, as well as a **Bachelor of Engineering in Software Engineering** from **Jilin University**. I have also participated in an exchange research program at **Ben-Gurion University of the Negev, Israel**, focusing on **Big Data and Cybersecurity**.  
-
-My research interests include:  
-- 🤖 **Large Language Models (LLMs) & AI Applications**  
-- 🧠 **Deep Learning & Machine Learning**  
-- 🔄 **Reinforcement Learning (RL) & Continual Learning**  
-- 📊 **Online Learning & Bandit Algorithms**  
-- 🏛 **Natural Language Processing (NLP) & Knowledge Graphs**  
-
-I have experience as a **Research Assistant at McGill University**, where I worked on **Reinforcement Learning and Continual Learning**, and as an **NLP Algorithm Engineer at Tsinghua University**, contributing to **national-level AI & NLP projects**. Additionally, I interned as a **Full-Stack Software Engineer at Amazon Web Services (AWS)**, focusing on **authentication data visualization APIs**.  
-
-I have published multiple **peer-reviewed papers** in top conferences and journals, including IEEE and arXiv, and have worked on various **AI & NLP projects** in collaboration with esteemed professors from **CUHKSZ, NYU, McGill, and Imperial College London**.  
-
-Feel free to explore my projects, research, and publications. You can also connect with me through my academic profiles and social platforms! 🚀
-
-
-Education
+Education 🎓
 ======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the markdown files! Finally, you can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+- Ph.D. in Data Science, [The Chinese University of Hong Kong, Shenzhen (CUHKSZ)](https://sds.cuhk.edu.cn/en), China (2023 – Present)  
+  Research focus: In-Context Reinforcement Learning
 
-Getting started
+- Master of Science in Computer Science, [New York University (Courant Institute)](https://cs.nyu.edu/home/index.html), USA (2019 – 2021)  
+
+- Bachelor of Applied Science in Computer Engineering, [Queen’s University](https://smithengineering.queensu.ca/ece/index), Canada (2017 – 2019)  
+
+- Bachelor of Engineering in Software Engineering, [Jilin University](https://csw.jlu.edu.cn/), China (2015 – 2019)  
+
+Experience 📖
 ======
-### **About Me | 关于我**  
 
-Hello! I am Fanzeng Xia (夏钒曾), a Ph.D. candidate in the School of Data Science at The Chinese University of Hong Kong, Shenzhen (CUHKSZ). My research focuses on robust Large Language Model (LLM) Applications and Agents.  
+- Research Assistant, [McGill University](https://mcgillialab.com/), Intelligent Automation Lab, Canada (2022 - 2023)
+
+- NLP Algorithm Engineer, [Tsinghua University](https://nlp.csai.tsinghua.edu.cn/), NLP Lab, China (2021 - 2022)
+
+- Tutor, [New York University (Courant Institute)](https://cs.nyu.edu/home/index.html), USA (2020 - 2021)
+
+- Full-Stack Software Engineer Intern, [Amazon Web Services (AWS) Identity and Access Management](https://aws.amazon.com/iam/?gclid=EAIaIQobChMI0se4_8msiwMVPoBQBh1_-i87EAAYAyAAEgLLLvD_BwE&trk=35b38fd8-ca20-4fe2-b46d-16f845a47e34&sc_channel=ps&ef_id=EAIaIQobChMI0se4_8msiwMVPoBQBh1_-i87EAAYAyAAEgLLLvD_BwE:G:s&s_kwcid=AL!4422!3!651612449969!e!!g!!amazon%20iam!19836376240!155574317508), USA (2020 Summer) 
+
+- Summer Research Program in Big Data & Cybersecurity, [Ben-Gurion University of the Negev](https://www.bgu.ac.il/en/), Israel (2018 Summer) 
+
+# Chicago 格式
+Publications 📖
+======
+
+- Fanzeng Xia, Hao Liu, Yisong Yue, and Tongxin Li. "Beyond numeric awards: In-context dueling bandits with llm agents." arXiv:2407.01887. [[arXiv]](https://arxiv.org/pdf/2407.01887)
+
+- Fanzeng Xia, Alfonsus Rodriques Rendy, Nicholas Oh, Zoe Emmanuel Halim, Aaron Sasmita, Tinko Sebastian Bartels, Shaolei Ren, Tongxin Li. "Position: Towards Unified In-Context Reinforcement Learners." [[arXiv]]
 
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
-
-Create content & metadata
-------
-For site content, there is one markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
-
-**Markdown generator**
-
-The repository includes [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual markdown files that will be properly formatted for the Academic Pages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the markdown files, then commit and push them to the GitHub repository.
-
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
-
-Example: editing a markdown file for a talk
-![Editing a markdown file for a talk](/images/editing-talk.png)
-
-For more info
-------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
