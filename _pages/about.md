@@ -10,9 +10,9 @@ redirect_from:
 Hello! I am Fanzeng Xia (夏钒曾), a Ph.D. candidate in the School of Data Science at The Chinese University of Hong Kong, Shenzhen (CUHKSZ), supervised by Professor [Tongxin Li](https://tongxin.me/). Prior to that, I hold a Master of Science in Computer Science from New York University (Courant Institute) and a Bachelor of Applied Science in Computer Engineering from Queen’s University, as well as a Bachelor of Engineering in Software Engineering from Jilin University.  
 
 My research interests include: 
-- 🧠 In-Context Decision Making 
-- 🤖 Robust LLM Applications
-- 🔄 Reinforcement Learning 
+- In-Context Decision Making 
+- Robust LLM Applications
+- Reinforcement Learning 
 
 Education 🎓
 ======
@@ -39,12 +39,11 @@ Experience 📖
 
 - Summer Research Program in Big Data & Cybersecurity, [Ben-Gurion University of the Negev](https://www.bgu.ac.il/en/), Israel (2018 Summer) 
 
-# Chicago 格式
-Publications 📖
+Publications 📄
 ======
 
 - Fanzeng Xia, Hao Liu, Yisong Yue, and Tongxin Li. "Beyond numeric awards: In-context dueling bandits with llm agents." arXiv:2407.01887. [[arXiv]](https://arxiv.org/pdf/2407.01887)
 
-- Fanzeng Xia, Alfonsus Rodriques Rendy, Nicholas Oh, Zoe Emmanuel Halim, Aaron Sasmita, Tinko Sebastian Bartels, Shaolei Ren, Tongxin Li. "Position: Towards Unified In-Context Reinforcement Learners." [[arXiv]]
+- Fanzeng Xia, Alfonsus Rodriques Rendy, Nicholas Oh, Zoe Emmanuel Halim, Aaron Sasmita, Tinko Sebastian Bartels, Shaolei Ren, Tongxin Li. "Position: Towards Unified In-Context Reinforcement Learners." [[arXiv]
 
 
