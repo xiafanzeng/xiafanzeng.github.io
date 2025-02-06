@@ -19,15 +19,15 @@ Education 🎓
   &nbsp;   
   Ph.D. in Data Science (2023 – Present)
 
-- **New York University (Courant Institute), USA**
+- <a href="https://cs.nyu.edu/home/index.html" style="color: black; text-decoration: underline; font-weight: bold;">New York University (Courant Institute), USA</a>
   &nbsp;   
   Master of Science in Computer Science (2019 – 2021)  
 
-- **Queen’s University, Canada**
+- <a href="https://smithengineering.queensu.ca/ece/index" style="color: black; text-decoration: underline; font-weight: bold;">Queen’s University, Canada</a>
   &nbsp;   
   Bachelor of Applied Science in Computer Engineering (2017 – 2019) 
 
-- **Jilin University, China** 
+- <a href="https://csw.jlu.edu.cn/" style="color: black; text-decoration: underline; font-weight: bold;">Jilin University, China</a>
   &nbsp;   
   Bachelor of Engineering in Software Engineering (2015 – 2019)
 
@@ -35,26 +35,25 @@ Education 🎓
 Experience 📚
 ======
 
-- **McGill University, Intelligent Automation Lab, Canada**
+- <a href="http://mcgillialab.com/" style="color: black; text-decoration: underline; font-weight: bold;">McGill University, Intelligent Automation Lab, Canada</a>
   &nbsp;   
   Research Assistant (2022 - 2023)
 
-- **Tsinghua University, NLP Lab, China**
+- <a href="https://nlp.csai.tsinghua.edu.cn/" style="color: black; text-decoration: underline; font-weight: bold;">Tsinghua University, THUNLP Lab, China</a>
   &nbsp;   
   NLP Algorithm Engineer (2021 - 2022)
 
-- **New York University (Courant Institute), USA**
+- <a href="https://cs.nyu.edu/home/index.html" style="color: black; text-decoration: underline; font-weight: bold;">New York University (Courant Institute), USA</a>
   &nbsp;   
-  Course Tutor (2020 - 2021)
+  CSCI-GA.1180 Course Tutor (2020 - 2021)
 
-- **Amazon Web Services (AWS), Identity and Access Management, USA** 
+- <a href="https://aws.amazon.com/iam/" style="color: black; text-decoration: underline; font-weight: bold;">Amazon Web Services (AWS), Identity and Access Management, USA</a>
   &nbsp;   
   Full-Stack Software Engineer Intern (2020 Summer) 
 
-- **Ben-Gurion University of the Negev, Israel**
+- <a href="https://www.bgu.ac.il/en/" style="color: black; text-decoration: underline; font-weight: bold;">Ben-Gurion University of the Negev, Israel</a>   
   &nbsp;   
   Research Program in Big Data & Cybersecurity (2018 Summer) 
-
 
 Publications 📖
 ======
