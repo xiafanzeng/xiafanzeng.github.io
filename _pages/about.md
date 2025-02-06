@@ -15,7 +15,7 @@ Prior to that, I completed a Master's at [New York University (Courant Institute
 Education 🎓
 ======
 
-- **The Chinese University of Hong Kong, Shenzhen (CUHKSZ), China**
+- [**The Chinese University of Hong Kong, Shenzhen (CUHKSZ), China**](https://sds.cuhk.edu.cn/en)
   &nbsp;   
   Ph.D. in Data Science (2023 – Present)
 
