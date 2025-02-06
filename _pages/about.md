@@ -9,7 +9,7 @@ redirect_from:
 
 Hello! I am a second-year Ph.D. student in the School of Data Science at <a href="https://sds.cuhk.edu.cn/en" style="color: #00A1FF !important; text-decoration: underline;">The Chinese University of Hong Kong, Shenzhen (CUHKSZ)</a>, supervised by Professor <a href="https://tongxin.me/" style="color: #00A1FF !important; text-decoration: underline;">Tongxin Li</a>. My research interests focus on In-Context Reinforcement Learning and Robust LLM Applications.
 
-Prior to that, I completed a Master's at <a href="https://cs.nyu.edu/home/index.html" style="color: #00A1FF !important; text-decoration: underline;">New York University (Courant Institute)</a> in the USA and a 2+2 double Bachelor's program at <a href="https://smithengineering.queensu.ca/ece/index" style="color: #00A1FF !important; text-decoration: underline;">Queen’s University</a> in Canada and <a href="https://csw.jlu.edu.cn/" style="color: 00A1FF; text-decoration: underline;">Jilin University</a> in China. 
+Prior to that, I completed a Master's at <a href="https://cs.nyu.edu/home/index.html" style="color: #00A1FF !important; text-decoration: underline;">New York University (Courant Institute)</a> in the USA and a 2+2 double Bachelor's program at <a href="https://smithengineering.queensu.ca/ece/index" style="color: #00A1FF !important; text-decoration: underline;">Queen’s University</a> in Canada and <a href="https://csw.jlu.edu.cn/" style="color: #00A1FF !important; text-decoration: underline;">Jilin University</a> in China. 
 
 
 Education 🎓
