@@ -15,11 +15,9 @@ Prior to that, I completed a Master's at [New York University (Courant Institute
 Education 🎓
 ======
 
-- [**The Chinese University of Hong Kong, Shenzhen, China**](https://sds.cuhk.edu.cn/en)
+- <a href="https://sds.cuhk.edu.cn/en" style="color: black; text-decoration: underline; font-weight: bold;">The Chinese University of Hong Kong, Shenzhen, China</a>
   &nbsp;   
   Ph.D. in Data Science (2023 – Present)
-
-<a href="https://sds.cuhk.edu.cn/en" style="color: black; text-decoration: underline;">The Chinese University of Hong Kong, Shenzhen (CUHKSZ), China</a>
 
 - **New York University (Courant Institute), USA**
   &nbsp;   
