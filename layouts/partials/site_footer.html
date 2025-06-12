@@ -1,5 +1,7 @@
+<div style="background: yellow; color: black; text-align: center; padding: 20px; font-size: 24px; font-weight: bold;">
+  HELLO, CAN YOU SEE THIS FOOTER?
+</div>
 <style type="text/css">
-  /* The modal container, hidden by default */
   #wechat-modal {
     display: flex !important;
     justify-content: center !important;
@@ -7,54 +9,36 @@
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
-    width: 100vw !important; /* Use viewport units */
+    width: 100vw !important;
     height: 100vh !important;
     background: rgba(0, 0, 0, 0.7) !important;
-
-    /* The highest possible z-index */
     z-index: 2147483647 !important;
-
-    /* Hide it by default */
     opacity: 0;
     visibility: hidden;
-
-    /* Smooth transition */
     transition: opacity 0.3s ease, visibility 0.3s ease;
   }
-
-  /* The class added by JavaScript to show the modal */
   #wechat-modal.show-modal {
     opacity: 1;
     visibility: visible;
   }
-
-  /* The modal's actual content box */
   #wechat-modal .qr-modal-content {
     background: #fff;
     padding: 25px;
     padding-bottom: 30px;
     border-radius: 10px;
     text-align: center;
-    position: relative; /* For the close button's positioning */
-    
-    /* The pop-in animation effect */
+    position: relative;
     transform: scale(0.9);
     transition: transform 0.3s ease;
   }
-
-  /* When shown, scale the content box to normal size */
   #wechat-modal.show-modal .qr-modal-content {
     transform: scale(1);
   }
-
-  /* The QR code image */
   #wechat-modal .qr-modal-content img {
     max-width: 250px;
     height: auto;
     display: block;
   }
-
-  /* The close button */
   #wechat-modal .qr-modal-close {
     position: absolute;
     top: -15px;
@@ -85,12 +69,6 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
   const modal = document.getElementById('wechat-modal');
-  
-  // This line is no longer strictly necessary since the element is already at the end, but it doesn't hurt.
-  if (modal) {
-    document.body.appendChild(modal);
-  }
-
   const wechatLink = document.querySelector('a[href="#wechat-qr"]');
   const closeModalButton = document.querySelector('.qr-modal-close');
 
