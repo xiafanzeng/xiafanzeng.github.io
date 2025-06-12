@@ -1,7 +1,8 @@
-<div style="background: yellow; color: black; text-align: center; padding: 20px; font-size: 24px; font-weight: bold;">
-  HELLO, CAN YOU SEE THIS FOOTER?
-</div>
 <style type="text/css">
+  /*
+    The CSS is now simplified. It only defines the basic layout.
+    The show/hide logic is moved entirely to JavaScript.
+  */
   #wechat-modal {
     display: flex !important;
     justify-content: center !important;
@@ -13,48 +14,22 @@
     height: 100vh !important;
     background: rgba(0, 0, 0, 0.7) !important;
     z-index: 2147483647 !important;
+
+    /* Default state set here, will be overridden by JS */
     opacity: 0;
     visibility: hidden;
+    
+    /* The transition effect */
     transition: opacity 0.3s ease, visibility 0.3s ease;
   }
-  #wechat-modal.show-modal {
-    opacity: 1;
-    visibility: visible;
-  }
   #wechat-modal .qr-modal-content {
-    background: #fff;
-    padding: 25px;
-    padding-bottom: 30px;
-    border-radius: 10px;
-    text-align: center;
-    position: relative;
-    transform: scale(0.9);
-    transition: transform 0.3s ease;
+    background: #fff; padding: 25px; border-radius: 10px; text-align: center; position: relative;
   }
-  #wechat-modal.show-modal .qr-modal-content {
-    transform: scale(1);
-  }
-  #wechat-modal .qr-modal-content img {
-    max-width: 250px;
-    height: auto;
-    display: block;
-  }
+  #wechat-modal .qr-modal-content img { max-width: 250px; height: auto; }
   #wechat-modal .qr-modal-close {
-    position: absolute;
-    top: -15px;
-    right: -15px;
-    background: #fff;
-    border-radius: 50%;
-    border: 1px solid #eee;
-    width: 32px;
-    height: 32px;
-    font-size: 20px;
-    color: #555;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: absolute; top: -15px; right: -15px; background: #fff; border-radius: 50%;
+    border: 1px solid #eee; width: 32px; height: 32px; font-size: 20px; color: #555;
+    cursor: pointer; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
 </style>
 
@@ -72,17 +47,27 @@ document.addEventListener('DOMContentLoaded', function() {
   const wechatLink = document.querySelector('a[href="#wechat-qr"]');
   const closeModalButton = document.querySelector('.qr-modal-close');
 
-  if (wechatLink && modal) {
-    wechatLink.addEventListener('click', function(event) {
-      event.preventDefault();
-      modal.classList.add('show-modal');
-    });
+  // Function to SHOW the modal by directly setting styles
+  function openModal() {
+    if (modal) {
+      modal.style.opacity = '1';
+      modal.style.visibility = 'visible';
+    }
   }
 
+  // Function to HIDE the modal by directly setting styles
   function closeModal() {
     if (modal) {
-      modal.classList.remove('show-modal');
+      modal.style.opacity = '0';
+      modal.style.visibility = 'hidden';
     }
+  }
+
+  if (wechatLink) {
+    wechatLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      openModal(); // Call the direct function
+    });
   }
 
   if (closeModalButton) {
@@ -91,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (modal) {
     modal.addEventListener('click', function(event) {
+      // Close only if the dark overlay background is clicked
       if (event.target === modal) {
         closeModal();
       }
@@ -98,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape' && modal && modal.classList.contains('show-modal')) {
+    if (event.key === 'Escape') {
       closeModal();
     }
   });
