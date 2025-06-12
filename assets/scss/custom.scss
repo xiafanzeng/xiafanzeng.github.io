@@ -1,95 +1,68 @@
-// Override this file to add your own SCSS styling.
+/* assets/scss/custom.scss */
+/* FINAL VERSION WITH !important */
 
-.experience-icon-image {
-  width: 80px;
-  max-height: 80px;
-  max-width: unset;
-}
-
-.home-prj-img-icon-wrap {
-  /*display: grid;
-  place-items: center;*/
-
-  .home-project-icon-image {
-    /*max-width: 150px !important;*/
-    margin-top: 0.5rem;
-
-  }
-}
-
-
-
-.home-pubs-section {
-  .pub-title {
-    font-weight: bold;
-  }
-}
-
-
-
-@media (max-width: 640px) {
-
-}
-
-
-// assets/scss/custom.scss
-
-/* QR Code Modal Styles */
 .qr-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  z-index: 9999;
+  /* Layout and Position */
+  display: flex !important; /* 强制显示 */
+  justify-content: center !important;
+  align-items: center !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+
+  /* Stacking and Visibility */
+  z-index: 9999 !important; /* 强制置顶 */
+  background: rgba(0, 0, 0, 0.7) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+
+  /* Animation */
+  transition: opacity 0.3s ease, visibility 0.3s ease !important;
 }
 
+/* 当弹窗被激活时，强制其可见 */
 .qr-modal-overlay.show-modal {
-  opacity: 1;
-  visibility: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .qr-modal-content {
-  position: relative;
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  transform: scale(0.9);
-  transition: transform 0.3s ease;
+  position: relative !important;
+  background: #fff !important;
+  padding: 20px !important;
+  border-radius: 10px !important;
+  text-align: center !important;
+  transform: scale(0.9) !important;
+  transition: transform 0.3s ease !important;
 }
 
 .qr-modal-overlay.show-modal .qr-modal-content {
-  transform: scale(1);
+  transform: scale(1) !important;
 }
 
 .qr-modal-content img {
-  max-width: 250px; /* 二维码图片的最大宽度 */
-  height: auto;
-  display: block;
+  max-width: 250px !important;
+  height: auto !important;
+  display: block !important;
 }
 
 .qr-modal-close {
-  position: absolute;
-  top: -15px;
-  right: -15px;
-  background: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute !important;
+  top: -15px !important;
+  right: -15px !important;
+  background: #fff !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 30px !important;
+  height: 30px !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  z-index: 10000 !important; /* 确保关闭按钮在弹窗内容之上 */
 }

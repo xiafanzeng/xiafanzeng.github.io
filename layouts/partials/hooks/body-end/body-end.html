@@ -1,7 +1,7 @@
 <div id="wechat-modal" class="qr-modal-overlay">
   <div class="qr-modal-content">
     <button class="qr-modal-close" aria-label="Close">&times;</button>
-    <p style="margin-bottom: 10px;">请用微信扫码</p>
+    <p style="margin-bottom: 10px;">Please Scan via WeChat</p>
     <img src="/media/wechat_qr.png" alt="WeChat QR Code">
   </div>
 </div>
@@ -10,21 +10,14 @@
 document.addEventListener('DOMContentLoaded', function() {
   const modal = document.getElementById('wechat-modal');
 
-  // ===================================================================
-  // ===           ↓↓↓ 这是解决问题的关键新增代码 ↓↓↓           ===
-  // ===================================================================
-  // 将弹窗元素移动到 <body> 的末尾，以脱离任何有问题的“堆叠上下文”
+  // Move the modal to the end of the body to escape stacking context issues.
   if (modal) {
     document.body.appendChild(modal);
   }
-  // ===================================================================
-  // ===           ↑↑↑ 这是解决问题的关键新增代码 ↑↑↑           ===
-  // ===================================================================
 
   const wechatLink = document.querySelector('a[href="#wechat-qr"]');
   const closeModalButton = document.querySelector('.qr-modal-close');
 
-  // 为确保脚本健壮，后续操作也加上 if (modal) 判断
   if (wechatLink && modal) {
     wechatLink.addEventListener('click', function(event) {
       event.preventDefault();
