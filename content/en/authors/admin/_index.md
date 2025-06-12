@@ -56,23 +56,16 @@ social:
   icon_pack: fas
   link: https://scholar.google.com/citations?user=Qsg_UVAAAAAJ&hl=en
   
-#- icon: github
-#  icon_pack: fab
-#  link: https://github.com/eteitelbaum
-  
-#- icon: instagram
-#  icon_pack: fab
-#  link:  https://www.instagram.com/chentipeng/
-  
-#- icon: linkedin
-#  icon_pack: fab
-#  link: https://www.linkedin.com/in/tipeng-chen-73b589107/
+# - icon: comment
+#   icon_pack: fas
+#   link: 
+#   title: "WeChat: xiafanzeng"
   
 - icon: comment
   icon_pack: fas
-  link: 
+  link: '#wechat-qr'  # <--- 修改这里！这会成为一个触发器。
   title: "WeChat: xiafanzeng"
-  
+
 superuser: true
 
 title: 

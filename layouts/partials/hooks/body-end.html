@@ -1,0 +1,42 @@
+<div id="wechat-modal" class="qr-modal-overlay">
+    <div class="qr-modal-content">
+      <button class="qr-modal-close" aria-label="Close">&times;</button>
+      <p style="margin-bottom: 10px;">Please Scan via WeChat</p>
+      <img src="/media/wechat_qr.png" alt="WeChat QR Code">
+    </div>
+  </div>
+  
+  <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('wechat-modal');
+    const wechatLink = document.querySelector('a[href="#wechat-qr"]');
+    const closeModalButton = document.querySelector('.qr-modal-close');
+  
+    if (wechatLink) {
+      wechatLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        modal.classList.add('show-modal');
+      });
+    }
+  
+    function closeModal() {
+      modal.classList.remove('show-modal');
+    }
+  
+    if (closeModalButton) {
+      closeModalButton.addEventListener('click', closeModal);
+    }
+  
+    modal.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+  
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
+  });
+  </script>
