@@ -1,36 +1,69 @@
-/* assets/scss/custom.scss */
-/* ULTIMATE DEBUGGING VERSION */
+/* FINAL PRODUCTION VERSION */
 
-#wechat-modal {
-  /* 使用最暴力的值来强制显示 */
-  display: block !important;
+.qr-modal-overlay {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
   position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+
+  z-index: 2147483647 !important; /* 使用最高z-index */
+  background: rgba(0, 0, 0, 0.7) !important;
   
-  /* 故意不贴边，防止被边缘裁剪 */
-  top: 100px !important; 
-  left: 100px !important;
-  
-  /* 给一个固定的尺寸 */
-  width: 300px !important;
-  height: 400px !important;
-  
-  /* 使用最显眼的颜色 */
-  background: limegreen !important; 
-  border: 10px solid red !important;
-  
-  /* 使用32位整数能表示的最高z-index值 */
-  z-index: 2147483647 !important; 
-  
-  /* 确保它完全不透明 */
-  opacity: 1 !important;
-  visibility: visible !important;
-  
-  /* 移除所有可能导致问题的transform和filter */
+  /* 默认隐藏 */
+  opacity: 0 !important;
+  visibility: hidden !important;
+
+  transition: opacity 0.3s ease, visibility 0.3s ease !important;
   transform: none !important;
   filter: none !important;
 }
 
-/* 暂时忽略所有子元素，只关注这个容器本身 */
+/* 当被JS激活时，显示它 */
+.qr-modal-overlay.show-modal {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 .qr-modal-content {
-  display: none !important;
+  position: relative !important;
+  background: #fff !important;
+  padding: 20px !important;
+  border-radius: 10px !important;
+  text-align: center !important;
+  transform: scale(0.9) !important;
+  transition: transform 0.3s ease !important;
+  z-index: 2147483647 !important;
+}
+
+.qr-modal-overlay.show-modal .qr-modal-content {
+  transform: scale(1) !important;
+}
+
+.qr-modal-content img {
+  max-width: 250px !important;
+  height: auto !important;
+  display: block !important;
+}
+
+.qr-modal-close {
+  position: absolute !important;
+  top: -15px !important;
+  right: -15px !important;
+  background: #fff !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 30px !important;
+  height: 30px !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  z-index: 2147483647 !important;
 }
