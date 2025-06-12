@@ -1,6 +1,7 @@
-/* FINAL PRODUCTION VERSION */
+/* FINAL, SIMPLIFIED & CORRECTED VERSION */
 
-.qr-modal-overlay {
+/* 弹窗遮罩层，默认隐藏 */
+#wechat-modal {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
@@ -9,61 +10,66 @@
   left: 0 !important;
   width: 100% !important;
   height: 100% !important;
-
-  z-index: 2147483647 !important; /* 使用最高z-index */
   background: rgba(0, 0, 0, 0.7) !important;
   
-  /* 默认隐藏 */
-  opacity: 0 !important;
-  visibility: hidden !important;
-
-  transition: opacity 0.3s ease, visibility 0.3s ease !important;
-  transform: none !important;
-  filter: none !important;
-}
-
-/* 当被JS激活时，显示它 */
-.qr-modal-overlay.show-modal {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-.qr-modal-content {
-  position: relative !important;
-  background: #fff !important;
-  padding: 20px !important;
-  border-radius: 10px !important;
-  text-align: center !important;
-  transform: scale(0.9) !important;
-  transition: transform 0.3s ease !important;
+  /* 使用已知能工作的最高 z-index */
   z-index: 2147483647 !important;
+
+  /* 默认状态：透明且不可见 */
+  opacity: 0;
+  visibility: hidden;
+
+  /* 平滑过渡效果 */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.qr-modal-overlay.show-modal .qr-modal-content {
-  transform: scale(1) !important;
+/* 当JS添加 .show-modal 类时，使其显示 */
+#wechat-modal.show-modal {
+  opacity: 1;
+  visibility: visible;
 }
 
-.qr-modal-content img {
-  max-width: 250px !important;
-  height: auto !important;
-  display: block !important;
+/* 弹窗的实际内容盒子 */
+#wechat-modal .qr-modal-content {
+  background: #fff;
+  padding: 25px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative; /* 为了关闭按钮的定位 */
+  
+  /* 弹出动画效果 */
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
 }
 
-.qr-modal-close {
-  position: absolute !important;
-  top: -15px !important;
-  right: -15px !important;
-  background: #fff !important;
-  border: none !important;
-  border-radius: 50% !important;
-  width: 30px !important;
-  height: 30px !important;
-  font-size: 20px !important;
-  font-weight: bold !important;
-  cursor: pointer !important;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  z-index: 2147483647 !important;
+/* 激活时，内容盒子放大到正常尺寸 */
+#wechat-modal.show-modal .qr-modal-content {
+  transform: scale(1);
+}
+
+/* 二维码图片 */
+#wechat-modal .qr-modal-content img {
+  max-width: 250px;
+  height: auto;
+  display: block;
+}
+
+/* 关闭按钮 */
+#wechat-modal .qr-modal-close {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  color: #555;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
