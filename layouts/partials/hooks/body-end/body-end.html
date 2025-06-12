@@ -1,3 +1,79 @@
+<style type="text/css">
+  /* The modal container, hidden by default */
+  #wechat-modal {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important; /* Use viewport units */
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+
+    /* The highest possible z-index */
+    z-index: 2147483647 !important;
+
+    /* Hide it by default */
+    opacity: 0;
+    visibility: hidden;
+
+    /* Smooth transition */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  /* The class added by JavaScript to show the modal */
+  #wechat-modal.show-modal {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* The modal's actual content box */
+  #wechat-modal .qr-modal-content {
+    background: #fff;
+    padding: 25px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative; /* For the close button's positioning */
+    
+    /* The pop-in animation effect */
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+  }
+
+  /* When shown, scale the content box to normal size */
+  #wechat-modal.show-modal .qr-modal-content {
+    transform: scale(1);
+  }
+
+  /* The QR code image */
+  #wechat-modal .qr-modal-content img {
+    max-width: 250px;
+    height: auto;
+    display: block;
+  }
+
+  /* The close button */
+  #wechat-modal .qr-modal-close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: #fff;
+    border-radius: 50%;
+    border: 1px solid #eee;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    color: #555;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+</style>
+
 <div id="wechat-modal" class="qr-modal-overlay">
   <div class="qr-modal-content">
     <button class="qr-modal-close" aria-label="Close">&times;</button>
@@ -5,28 +81,36 @@
     <img src="/media/wechat_qr.png" alt="WeChat QR Code">
   </div>
 </div>
+
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
   const modal = document.getElementById('wechat-modal');
+  
+  // This line is no longer strictly necessary since the element is already at the end, but it doesn't hurt.
   if (modal) {
     document.body.appendChild(modal);
   }
+
   const wechatLink = document.querySelector('a[href="#wechat-qr"]');
   const closeModalButton = document.querySelector('.qr-modal-close');
+
   if (wechatLink && modal) {
     wechatLink.addEventListener('click', function(event) {
       event.preventDefault();
       modal.classList.add('show-modal');
     });
   }
+
   function closeModal() {
     if (modal) {
       modal.classList.remove('show-modal');
     }
   }
+
   if (closeModalButton) {
     closeModalButton.addEventListener('click', closeModal);
   }
+
   if (modal) {
     modal.addEventListener('click', function(event) {
       if (event.target === modal) {
@@ -34,6 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
+
   document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape' && modal && modal.classList.contains('show-modal')) {
       closeModal();
