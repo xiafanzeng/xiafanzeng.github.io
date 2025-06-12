@@ -1,41 +1,64 @@
 <style type="text/css">
-  /*
-    The CSS is now simplified. It only defines the basic layout.
-    The show/hide logic is moved entirely to JavaScript.
-  */
-  #wechat-modal {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    background: rgba(0, 0, 0, 0.7) !important;
-    z-index: 2147483647 !important;
-
-    /* Default state set here, will be overridden by JS */
+  /* Using a unique prefix "fanzeng-popup-" to avoid any theme conflicts */
+  .fanzeng-popup-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2147483647;
     opacity: 0;
     visibility: hidden;
-    
-    /* The transition effect */
     transition: opacity 0.3s ease, visibility 0.3s ease;
   }
-  #wechat-modal .qr-modal-content {
-    background: #fff; padding: 25px; border-radius: 10px; text-align: center; position: relative;
+  .fanzeng-popup-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
   }
-  #wechat-modal .qr-modal-content img { max-width: 250px; height: auto; }
-  #wechat-modal .qr-modal-close {
-    position: absolute; top: -15px; right: -15px; background: #fff; border-radius: 50%;
-    border: 1px solid #eee; width: 32px; height: 32px; font-size: 20px; color: #555;
-    cursor: pointer; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  .fanzeng-popup-content {
+    background: #fff;
+    padding: 25px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+  }
+  .fanzeng-popup-overlay.is-visible .fanzeng-popup-content {
+    transform: scale(1);
+  }
+  .fanzeng-popup-content img {
+    max-width: 250px;
+    height: auto;
+    display: block;
+  }
+  .fanzeng-popup-close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: #fff;
+    border-radius: 50%;
+    border: 1px solid #eee;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    color: #555;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
 </style>
 
-<div id="wechat-modal" class="qr-modal-overlay">
-  <div class="qr-modal-content">
-    <button class="qr-modal-close" aria-label="Close">&times;</button>
+<div id="wechat-popup" class="fanzeng-popup-overlay">
+  <div class="fanzeng-popup-content">
+    <button class="fanzeng-popup-close" aria-label="Close">&times;</button>
     <p style="margin-bottom: 10px;">请用微信扫码</p>
     <img src="/media/wechat_qr.png" alt="WeChat QR Code">
   </div>
@@ -43,30 +66,26 @@
 
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
-  const modal = document.getElementById('wechat-modal');
+  const modal = document.getElementById('wechat-popup');
   const wechatLink = document.querySelector('a[href="#wechat-qr"]');
-  const closeModalButton = document.querySelector('.qr-modal-close');
+  const closeModalButton = document.querySelector('.fanzeng-popup-close');
 
-  // Function to SHOW the modal by directly setting styles
   function openModal() {
     if (modal) {
-      modal.style.opacity = '1';
-      modal.style.visibility = 'visible';
+      modal.classList.add('is-visible');
     }
   }
 
-  // Function to HIDE the modal by directly setting styles
   function closeModal() {
     if (modal) {
-      modal.style.opacity = '0';
-      modal.style.visibility = 'hidden';
+      modal.classList.remove('is-visible');
     }
   }
 
   if (wechatLink) {
     wechatLink.addEventListener('click', function(event) {
       event.preventDefault();
-      openModal(); // Call the direct function
+      openModal();
     });
   }
 
@@ -76,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (modal) {
     modal.addEventListener('click', function(event) {
-      // Close only if the dark overlay background is clicked
       if (event.target === modal) {
         closeModal();
       }
@@ -84,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
+    if (event.key === 'Escape' && modal && modal.classList.contains('is-visible')) {
       closeModal();
     }
   });
