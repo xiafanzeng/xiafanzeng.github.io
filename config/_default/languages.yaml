@@ -12,11 +12,32 @@ en:
 zh:
   languageCode: zh-Hans
   contentDir: content/zh
-  title: Chinese website title...
+  title:  Fanzeng Xia个人主页
   params:
-    description: Site description in Chinese...
+    description:  Fanzeng Xia 个人主页
   menu:
     main:
-      - name: 传
+      - name: 首页
         url: '#about'
-        weight: 1
+        weight: 10
+
+      - name: 新闻
+        url: '#news'
+        weight: 20
+
+      - name: 经验
+        url: '#experience'
+        weight: 30
+
+      - name: 项目
+        url: '#project'
+        weight: 40
+
+      - name: 论文
+        url: '#publications'
+        weight: 50
+
+
+      - name: 服务
+        url: '#service'
+        weight: 60

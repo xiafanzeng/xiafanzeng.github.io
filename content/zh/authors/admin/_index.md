@@ -74,7 +74,7 @@ social:
   
 - icon: comment
   icon_pack: fas
-  link: "/media/wechat_qr.png"   
+  link: "../media/wechat_qr.png"   
   title: "扫码加微信"
   new_tab: false  
 
