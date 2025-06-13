@@ -29,6 +29,11 @@
       text-align: center;
       object-fit: contain; /* 关键！确保logo按比例缩放并完整显示在容器内 */
     }
+      /* --- 在下面追加这段新代码 --- */
+    .ul-edu li:first-child .edu-img {
+      /* 将第一个列表项中的图标放大一点 */
+      transform: scale(1.2); /* 在原有尺寸上放大20% */
+    }
   </style>
   <div class="col-12 col-lg-4">
     <div id="profile">
