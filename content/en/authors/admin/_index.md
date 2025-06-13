@@ -3,25 +3,30 @@ bio:
 
 education:
   courses:
-  - course: Research Assistant 
+  - course: Ph.D. in Data Science
+    institution:  "[The Chinese University of Hong Kong, Shenzhen (CUHKSZ)](https://sds.cuhk.edu.cn/en)"
+    year: 2023 - Present
+    img: /img/cuhksz.png
+
+  - course: Ph.D. of Electrical and Computer Engineering (Withdrew due to study permit complications)
     institution:  "[McGill University, Intelligent Automation Lab, Canada](http://mcgillialab.com/)"
     year: 2022 - 2023
-    img: /img/ut2.png
+    img: /img/mcgill.png
     
   - course: Master of Science in Computer Science
     institution: "[New York University (Courant Institute), USA](https://cs.nyu.edu/home/index.html)"
     year: 2019 - 2021
-    img: /img/ut2.png
+    img: /img/nyu.png
     
   - course: Bachelor of Applied Science in Computer Engineering
     institution: "[Queen’s University, Canada](https://smithengineering.queensu.ca/ece/index)"
     year: 2017 - 2019
-    img: /img/ut2.png
+    img: /img/queens.png
     
   - course: Bachelor of Engineering in Software Engineering
     institution: "[Jilin University, China](https://csw.jlu.edu.cn/)"
     year: 2015 - 2019
-    img: /img/ut2.png
+    img: /img/jlu.png
     
 email: "fanzengxia@link.cuhk.edu.cn"
 
@@ -43,7 +48,6 @@ interests2: |
 
 organizations:
 - name: School of Data Science, CUHKSZ
-#  url: https://www.gwu.edu/
   
 role: Ph.D. Student 
 
@@ -75,7 +79,7 @@ social:
 - icon: comment
   icon_pack: fas
   link: "/media/wechat_qr.png"   
-  title: "扫码加微信"
+  title: "Scan via WeChat"
   new_tab: false  
 
 
@@ -85,8 +89,6 @@ title:
 
 ---
 
-Hello! I am a second-year Ph.D. student in the School of Data Science at [The Chinese University of Hong Kong, Shenzhen (CUHKSZ)](https://sds.cuhk.edu.cn/en), supervised by Professor [Tongxin Li](https://tongxin.me/). My research interests focus on In-Context Reinforcement Learning and Robust LLM Applications.
+Hello! I am a second-year Ph.D. student in the School of Data Science at [The Chinese University of Hong Kong, Shenzhen (CUHKSZ)](https://sds.cuhk.edu.cn/en), supervised by Professor [Tongxin Li](https://tongxin.me/). My research interests focus on in-context decision making and robust LLM applications.
 
-Prior to that, I completed a Master’s at [New York University (Courant Institute)](https://cs.nyu.edu/home/index.html) in the USA and a 2+2 double Bachelor’s program at [Queen’s University](https://smithengineering.queensu.ca/ece/index) in Canada and [Jilin University](https://csw.jlu.edu.cn/) in China.
-
- 
+Prior to that, I completed a Master’s degree at [New York University (Courant Institute)](https://cs.nyu.edu/home/index.html) in the USA and a 2+2 double Bachelor’s program at [Queen’s University](https://smithengineering.queensu.ca/ece/index) in Canada and [Jilin University](https://csw.jlu.edu.cn/) in China.
