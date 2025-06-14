@@ -28,8 +28,8 @@ experience:
     company_url: ''
     company_logo: media/icons/experience/mcgill.png
     location: Canada
-    date_start: '2022-05-18'
-    date_end: ''
+    date_start: '2022-07-01'
+    date_end: '2023-04-01'
     description: |2-
         
 
@@ -38,18 +38,18 @@ experience:
     company_url: ''
     company_logo: media/icons/experience/qhnlp.png
     location: China
-    date_start: '2021-05-18'
-    date_end: '2022-05-16'
+    date_start: '2021-09-01'
+    date_end: '2022-06-01'
     description: |2-
   
 
-  - title: CSCI-GA.1180 Course Tutor
-    company: New York University (Courant Institute)
+  - title: Course Tutor
+    company: New York University (Courant Institute), CSCI-GA.1180 Mathematical Techniques for Cs Applications
     company_url: ''
-    company_logo: media/icons/experience/torch.png
+    company_logo: media/icons/experience/courant.png
     location: USA
-    date_start: '2020-08-02'
-    date_end: '2021-09-30'
+    date_start: '2021-01-01'
+    date_end: '2021-06-01'
     description: |2-
 
 
@@ -58,18 +58,18 @@ experience:
     company_url: ''
     company_logo: media/icons/experience/aws.png
     location: USA
-    date_start: '2020-04-10'
-    date_end: '2020-08-09'
+    date_start: '2020-06-01'
+    date_end: '2020-09-01'
     description: |2-
 
 
   - title: Research Program in Big Data & Cybersecurity
-    company: Ben-Gurion University of the Negev, 
+    company: Ben-Gurion University of the Negev
     company_url: ''
     company_logo: media/icons/experience/ben-gurion.png
     location: Israel
-    date_start: '2018-02-10'
-    date_end: '2018-05-09'
+    date_start: '2018-07-01'
+    date_end: '2018-08-01'
     description: |2-
 
  
