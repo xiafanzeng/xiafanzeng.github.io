@@ -31,7 +31,7 @@ experience:
     date_start: '2022-07-01'
     date_end: '2023-04-01'
     description: |2-
-        
+
 
   - title: NLP Algorithm Engineer
     company: Tsinghua University, THUNLP Lab 
