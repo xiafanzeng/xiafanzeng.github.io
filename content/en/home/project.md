@@ -45,7 +45,7 @@ project_list:
 
   - title: Hand Gesture Recognition (ASL)
     desc: |
-      Designed and implemented a convolutional neural network (CNN) for American Sign Language recognition, using PyTorch and transfer learning from AlexNet to maximize model performance. The project achieved a 92.17% accuracy rate, demonstrating potential applications in assistive technologies for enhanced ASL communication through reliable gesture classification.
+      Designed and implemented a convolutional neural network (CNN) for American Sign Language recognition, using Py and transfer learning from AlexNet to maximize model performance. The project achieved a 92.17% accuracy rate, demonstrating potential applications in assistive technologies for enhanced ASL communication through reliable gesture classification.
     image: /img/projects/hand.jpg
     time: Jan 2024 – Feb 2024
     github_link: https://github.com/xlin-marcia/GestureRecognizor_CNN

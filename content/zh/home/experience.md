@@ -46,7 +46,7 @@ experience:
   - title: CSCI-GA.1180 Course Tutor
     company: New York University (Courant Institute)
     company_url: ''
-    company_logo: media/icons/experience/torch.png
+    company_logo: media/icons/experience/courant.png
     location: USA
     date_start: '2020-08-02'
     date_end: '2021-09-30'
