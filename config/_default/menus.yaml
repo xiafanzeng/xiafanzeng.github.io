@@ -16,14 +16,13 @@ main:
     url: '#experience'
     weight: 30
 
-  - name: Projects
-    url: '#project'
-    weight: 40
+  # - name: Projects
+  #   url: '#project'
+  #   weight: 40
 
   - name: Publications
     url: '#publications'
     weight: 50
-
 
   - name: Service
     url: '#service'
