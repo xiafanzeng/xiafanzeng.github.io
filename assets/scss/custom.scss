@@ -17,14 +17,25 @@
   }
 }
 
-
-
 .home-pubs-section {
   .pub-title {
     font-weight: bold;
   }
 }
 
+/* --- 以下是新增的代码：用于修复“经验”部分的布局问题 --- */
+
+/* 1. 垂直居中“经验”条目中的logo和文字 */
+.wg-experience .media {
+  align-items: center;
+}
+
+/* 2. 确保“经验”卡片在网格布局中高度一致 */
+.wg-experience .card {
+  height: 100%;
+}
+
+/* --- 新增代码结束 --- */
 
 
 @media (max-width: 640px) {
