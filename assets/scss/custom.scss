@@ -13,7 +13,6 @@
   .home-project-icon-image {
     /*max-width: 150px !important;*/
     margin-top: 0.5rem;
-
   }
 }
 
@@ -23,16 +22,26 @@
   }
 }
 
-/* --- 以下是新增的代码：用于修复“经验”部分的布局问题 --- */
 
-/* 1. 垂直居中“经验”条目中的logo和文字 */
+/* --- 修复“经验”部分布局问题 (V2) --- */
+
+/* 1. 强制垂直居中logo和文字 */
+/* 这次我们明确指定 display: flex 来确保 align-items 生效 */
 .wg-experience .media {
+  display: flex;
   align-items: center;
 }
 
-/* 2. 确保“经验”卡片在网格布局中高度一致 */
+/* 2. 让卡片内容更智能地填充高度 */
+/* 这会让卡片在视觉上更统一，而不会强制拉伸所有卡片 */
 .wg-experience .card {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* 内容从顶部开始对齐 */
+}
+
+.wg-experience .card .card-body {
+  flex-grow: 1; /* 让卡片的主体内容区域“成长”以填满多余的垂直空间 */
 }
 
 /* --- 新增代码结束 --- */
