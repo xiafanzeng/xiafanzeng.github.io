@@ -1,52 +1,47 @@
 // Override this file to add your own SCSS styling.
 
-.experience-icon-image {
-  width: 80px;
-  max-height: 80px;
-  max-width: unset;
-}
-
-.home-prj-img-icon-wrap {
-  /*display: grid;
-  place-items: center;*/
-
-  .home-project-icon-image {
-    /*max-width: 150px !important;*/
-    margin-top: 0.5rem;
-  }
-}
-
-.home-pubs-section {
-  .pub-title {
-    font-weight: bold;
-  }
-}
-
-
-/* --- 修复“经验”部分布局问题 (V2) --- */
+/* --- 修复“经验”部分的布局问题 (V3 - 最高优先级) --- */
 
 /* 1. 强制垂直居中logo和文字 */
-/* 这次我们明确指定 display: flex 来确保 align-items 生效 */
+/* 添加 !important 来确保此规则不被主题覆盖 */
 .wg-experience .media {
-  display: flex;
-  align-items: center;
+  display: flex !important;
+  align-items: center !important;
 }
 
-/* 2. 让卡片内容更智能地填充高度 */
-/* 这会让卡片在视觉上更统一，而不会强制拉伸所有卡片 */
-.wg-experience .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* 内容从顶部开始对齐 */
+/* 2. 强制重置第一个卡片的高度 */
+/* :first-child 选择器只针对列表中的第一个元素 */
+.wg-experience .card:first-child {
+  height: auto !important;       /* 高度由内容自动决定 */
+  min-height: unset !important; /* 取消主题可能设置的最小高度 */
 }
 
-.wg-experience .card .card-body {
-  flex-grow: 1; /* 让卡片的主体内容区域“成长”以填满多余的垂直空间 */
-}
+/* --- 您原有的其他自定义代码可以放在这里 --- */
+/* 为了确保上面的修复生效，暂时将它们注释掉，成功后再恢复 */
 
-/* --- 新增代码结束 --- */
-
-
-@media (max-width: 640px) {
-
-}
+//.experience-icon-image {
+//  width: 80px;
+//  max-height: 80px;
+//  max-width: unset;
+//}
+//
+//.home-prj-img-icon-wrap {
+//  /*display: grid;
+//  place-items: center;*/
+//
+//  .home-project-icon-image {
+//    /*max-width: 150px !important;*/
+//    margin-top: 0.5rem;
+//
+//  }
+//}
+//
+//.home-pubs-section {
+//  .pub-title {
+//    font-weight: bold;
+//  }
+//}
+//
+//@media (max-width: 640px) {
+//
+//}
