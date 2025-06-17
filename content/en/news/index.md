@@ -7,9 +7,9 @@ share: false
 
 * **\[September 2023]** Began Ph.D. studies in Data Science at [The Chinese University of Hong Kong, Shenzhen (CUHKSZ)](https://sds.cuhk.edu.cn/en).
 
-* **\[July 2022]** Admitted to the Ph.D. program at [McGill University’s Intelligent Automation Lab](https://www.mcgill.ca/intelligent-automation-lab) (withdrew due to study permit complications).
+* **\[July 2022]** Admitted to the Ph.D. program at [McGill University’s Intelligent Automation Lab](http://mcgillialab.com/) (withdrew due to study permit complications).
 
-* **\[September 2021]** Joined as a Natural Language Processing Engineer at [Tsinghua University’s NLP Lab](https://nlp.cs.tsinghua.edu.cn).
+* **\[September 2021]** Joined as a Natural Language Processing Engineer at [Tsinghua University’s NLP Lab](https://nlp.csai.tsinghua.edu.cn/).
 
 * **\[June 2021]** Graduated with a Master of Science in Computer Science from [New York University (Courant Institute)](https://cs.nyu.edu/home/index.html).
 
