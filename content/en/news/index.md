@@ -5,23 +5,18 @@ title: News
 share: false
 ---
 
+**[2023.9]** Began Ph.D. studies in Data Science at The Chinese University of Hong Kong, Shenzhen.
 
+**[2022.7]** Admitted to McGill University's Intelligent Automation Lab as a Ph.D. student (withdrew due to study permit complications).
 
-**[Nov 2024]** 🎉 Proudly graduated from the University of Toronto with a Master of Engineering in Machine Learning and Data Analytics, achieving top grades
+**[2021.9]** Started as a Natural Language Processing Engineer at Tsinghua University's NLP Lab.
 
-**[Sep 2024]** 🙌 Excited to join MVAIT Lab as Research Assistant
+**[2021.6]** Graduated from New York University with a Master of Science in Computer Science.
 
-**[Jul 2024]** 🔎 Actively Seeking PhD opportunities starting in 2025 Fall
+**[2020.6]** Interned as a Software Engineer at Amazon Web Services (AWS).
 
-**[Sep 2023]** 🏫 Started Master studies at UofT
+**[2019.9]** Started Master's studies in Computer Science at New York University's Courant Institute.
 
-**[May 2023]** 🌟 First month working as a Funding coordinator at Honda Financial Inc
+**[2019.6]** Awarded a Bachelor of Applied Science in Computer Engineering (First Class Honour) from Queen’s University.
 
-**[Apr 2023]** 🎊  Have been admitted into Master’s Program at Boston University, HKUST, Northeastern University
-
-**[Mar 2023]** Started working with STEM STREAM on outreaching networks and analyzing  program drop rate data
-
-**[Mar 2023]** 🎊 Have been admitted into Master’s Program at Schulich Business School
-
-**[Dec 2022]** 🕰️ Started working with Prof.Guojun on backtesting algorithm trading research paper
-
+**[2019.6]** Completed a Bachelor of Engineering in Software Engineering from Jilin University.

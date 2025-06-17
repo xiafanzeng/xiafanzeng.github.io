@@ -21,10 +21,10 @@ design:
   columns: '2'
 ---
 
-**[Nov 2024]** 🎉 Proudly graduated from the University of Toronto with a Master of Engineering in Machine Learning and Data Analytics, achieving top grades
+**[2023.9]** Began Ph.D. studies in Data Science at The Chinese University of Hong Kong, Shenzhen.
 
-**[Sep 2024]** 🙌 Excited to join MVAIT Lab as Research Assistant
+**[2022.7]** Admitted to McGill University's Intelligent Automation Lab as a Ph.D. student (withdrew due to study permit complications).
 
-**[Jul 2024]** 🔎 Actively Seeking PhD opportunities starting in 2025 Fall
+**[2021.9]** Started as a Natural Language Processing Engineer at Tsinghua University's NLP Lab.
 
-**[Sep 2023]** 🏫 Started Master studies at UofT
+**[2021.6]** Graduated from New York University with a Master of Science in Computer Science.

@@ -22,24 +22,16 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
-  - title: Workshop Support (Data Analytics)
-    company: STEM Streams | Society for Canadian Women in Science and Technology
+      
+  - title: Workshop Leader
+    company: A.I. For Anyone
     company_url: ''
-    company_logo: media/icons/service/SCWIST.png
-    location: Toronto, Canada
-    date_start: '2022-03-01'
-    date_end: '2023-03-28'
+    company_logo: media/icons/service/aiforanyone.png
+    location: USA
+    date_start: '2019-09-01'
+    date_end: '2021-06-01'
     description: |2-
       
-  - title: Peer Mentor
-    company: Hart House Mentorship Program
-    company_url: ''
-    company_logo: media/icons/service/hart-house.png
-    location: Toronto, Canada
-    date_start: '2022-10-05'
-    date_end: '2023-03-20'
-    description: |2-
-        
 
 design:
   columns: '2'

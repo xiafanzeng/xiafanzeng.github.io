@@ -34,7 +34,7 @@ experience:
   - title: Peer Mentor
     company: Hart House Mentorship Program
     company_url: ''
-    company_logo: media/icons/service/hart-house.png
+    company_logo: media/icons/service/aiforanyone.png
     location: Toronto, Canada
     date_start: '2022-10-05'
     date_end: '2023-03-20'
