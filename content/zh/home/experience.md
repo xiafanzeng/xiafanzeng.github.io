@@ -18,7 +18,7 @@ date_format: Jan 2006
 
 # Experiences.
 experience:
-- title: 研究助理 (Research Assistant)
+  - title: 研究助理 (Research Assistant)
     company: 麦吉尔大学, 智能自动化实验室
     company_url: ''
     company_logo: media/icons/experience/mcgill.png
@@ -26,7 +26,6 @@ experience:
     date_start: '2022-07-01'
     date_end: '2023-04-01'  # 修正：填入结束日期，消除红点
     description: |2-
-
 
   - title: NLP算法工程师
     company: 清华大学, 自然语言处理与社会人文计算实验室 (THUNLP)
@@ -37,7 +36,6 @@ experience:
     date_end: '2022-06-01'
     description: |2-
   
-
   - title: 课程辅导 (Course Tutor)
     company: 纽约大学 (柯朗研究所), CSCI-GA.1180 Mathematical Techniques for CS Applications
     company_url: ''
@@ -46,7 +44,6 @@ experience:
     date_start: '2021-01-01'
     date_end: '2021-06-01'
     description: |2-
-
 
   - title: 全栈软件工程师实习生
     company: 亚马逊云服务 (AWS), Identity and Access Management
@@ -57,7 +54,6 @@ experience:
     date_end: '2020-09-01'
     description: |2-
 
-
   - title: 大数据与网络安全暑期科研
     company: 本-古里安大学
     company_url: ''
@@ -67,7 +63,6 @@ experience:
     date_end: '2018-08-01'
     description: |2-
 
- 
 design:
   columns: '2'
 ---
