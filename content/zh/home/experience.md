@@ -18,13 +18,13 @@ date_format: Jan 2006
 
 # Experiences.
 experience:
-  - title: 研究助理 (Research Assistant)
+- title: 研究助理 (Research Assistant)
     company: 麦吉尔大学, 智能自动化实验室
     company_url: ''
     company_logo: media/icons/experience/mcgill.png
     location: 加拿大
     date_start: '2022-07-01'
-    date_end: '2023-04-01'
+    date_end: '2023-04-01'  # 修正：填入结束日期，消除红点
     description: |2-
 
 

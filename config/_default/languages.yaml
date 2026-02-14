@@ -12,9 +12,9 @@ en:
 zh:
   languageCode: zh-Hans
   contentDir: content/zh
-  title:  Fanzeng Xia个人主页
+  title: 夏钒曾的个人主页  # 修改此处
   params:
-    description:  Fanzeng Xia 个人主页
+    description: 夏钒曾的个人主页
   menu:
     main:
       - name: 首页
@@ -25,19 +25,16 @@ zh:
         url: '#news'
         weight: 20
 
-      - name: 经验
+      - name: 工作经历  # 修改：原为“经验”
         url: '#experience'
         weight: 30
 
-      - name: 项目
-        url: '#project'
-        weight: 40
+      # 删除：项目 (Project) 这一栏
 
-      - name: 论文
+      - name: 论文项目  # 修改：原为“论文”
         url: '#publications'
         weight: 50
 
-
-      - name: 服务
+      - name: 其他任职  # 修改：原为“服务”
         url: '#service'
         weight: 60

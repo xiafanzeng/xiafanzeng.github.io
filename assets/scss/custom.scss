@@ -96,3 +96,74 @@
   display: block;
   border-radius: 4px;
 }
+
+/* ==================================
+   Navbar Styles (导航栏调整)
+   ================================== */
+.navbar-nav .nav-link {
+    font-size: 1.1rem;  /* 字体加大，原默认约为 0.9-1rem */
+    font-weight: 500;   /*稍微加粗一点，更清晰 */
+}
+
+/* ==================================
+   WeChat Tooltip Styles (微信悬浮二维码)
+   ================================== */
+
+.wechat-item {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  /* 删除 color: black 的设置，让它继承主题色（红色/Primary） */
+}
+
+/* 仅在鼠标悬浮时改变颜色 (可选，如果您希望悬浮变绿) */
+.wechat-item:hover i {
+  color: #1bb723; 
+}
+
+/* 弹出气泡容器 */
+.wechat-popup {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid #f0f0f0;
+  
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* 悬浮时显示 */
+.wechat-item:hover .wechat-popup {
+  opacity: 1;
+  visibility: visible;
+  bottom: 130%;
+  pointer-events: auto;
+}
+
+/* 气泡下方的小三角 */
+.wechat-popup::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+.wechat-popup img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
