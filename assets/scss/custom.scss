@@ -1,23 +1,91 @@
-// Override this file to add your own SCSS styling.
+// ============================================================
+// Personal Homepage — Custom Styles (综合美化)
+// ============================================================
 
+// ----- Section 区块与标题 -----
+.home-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.section-heading h1 {
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: inherit;
+}
+.section-heading .mb-0 + .mt-1 {
+  margin-top: 0.35rem !important;
+  opacity: 0.85;
+  font-size: 0.95rem;
+}
+.section-heading a[href] {
+  font-weight: 500;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+.section-heading a[href]:hover {
+  opacity: 1;
+}
+
+// ----- Experience 经历卡片 -----
 .experience-icon-image {
   width: 80px;
   max-height: 80px;
   max-width: unset;
 }
+.experience .card {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.experience .card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+.experience .card-body {
+  padding: 1.25rem 1.25rem;
+}
+.exp-title { font-weight: 600; }
+.exp-company { font-weight: 500; }
+.exp-meta { font-size: 0.9rem; opacity: 0.88; }
 
+// ----- Publications 论文列表 -----
 .home-prj-img-icon-wrap .home-project-icon-image {
   margin-top: 0.5rem;
 }
-
-
-
 .home-pubs-section {
   .pub-title {
-    font-weight: bold;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .pub-author {
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 0.92rem;
+    opacity: 0.9;
+  }
+  .pub-journal {
+    display: block;
+    font-size: 0.88rem;
+    opacity: 0.8;
+    margin-top: 0.15rem;
   }
   .media.stream-item {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  .media.stream-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .btn-outline-primary {
+    border-radius: 6px;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.6rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 }
 
@@ -88,8 +156,81 @@
   border-radius: 4px;
 }
 
+// ----- News 新闻列表 -----
+#news .card-text,
+#news .article-style {
+  line-height: 1.65;
+}
+#news ul {
+  padding-left: 1.25rem;
+}
+#news li {
+  margin-bottom: 0.6rem;
+}
+
+// ----- About 关于 / 头像区 -----
+#profile .avatar {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+.portrait-title h2 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+// ----- Service 服务/任职卡片（与 experience 一致） -----
+.experience .card,
+#service .card {
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+#service .card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+// ----- 全局链接与按钮 -----
+.page-body a:not(.btn):not(.nav-link):not(.dropdown-item) {
+  text-decoration-skip-ink: auto;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+// ----- 响应式：小屏区块间距 -----
+@media (max-width: 991.98px) {
+  .home-section {
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
+  }
+  .section-heading h1 {
+    font-size: 1.45rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .home-section {
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+}
+
+// ----- 暗色主题适配 -----
+.dark .experience .card,
+.dark .home-pubs-section .media.stream-item {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+.dark .experience .card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.dark .experience .card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+.dark .wechat-popup {
+  background-color: #2d2d2d;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.dark .wechat-popup::after {
+  border-color: #2d2d2d transparent transparent transparent;
+}
+
 /* ==================================
-   Navbar Styles (导航栏调整)
+   Navbar 导航栏
    ================================== */
 .navbar-nav .nav-link {
   font-size: 1.15rem;
