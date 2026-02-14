@@ -36,7 +36,7 @@ experience:
     date_end: '2022-06-01'
     description: |2-
   
-  - title: 课程导师
+  - title: 课程负责人
     company: 纽约大学 (柯朗研究所), CSCI-GA.1180 Mathematical Techniques for CS Applications
     company_url: ''
     company_logo: media/icons/experience/courant.png

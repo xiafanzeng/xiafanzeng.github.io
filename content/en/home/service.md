@@ -26,7 +26,7 @@ experience:
     date_end: ''
     description: |2-
 
-  - title: Workshop Leader
+  - title: Workshop Lead
     company: A.I. For Anyone
     company_url: ''
     company_logo: media/icons/service/aiforanyone.png

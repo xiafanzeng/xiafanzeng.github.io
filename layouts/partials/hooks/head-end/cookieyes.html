@@ -1,4 +1,13 @@
- <!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/d4e5db835b8e281b893ccb61/script.js"></script> <!-- End cookieyes banner -->
-<!-- Busuanzi visitor counter -->
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- CN access optimization: remove cookie consent CDN dependency -->
+<!-- Busuanzi visitor counter (HTTPS) -->
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script>
+  // Fallback: if busuanzi is unavailable, stop spinner.
+  setTimeout(function () {
+    var pv = document.getElementById('busuanzi_value_site_pv');
+    var uv = document.getElementById('busuanzi_value_site_uv');
+    if (pv && !pv.textContent.trim()) pv.textContent = '--';
+    if (uv && !uv.textContent.trim()) uv.textContent = '--';
+  }, 5000);
+</script>
 

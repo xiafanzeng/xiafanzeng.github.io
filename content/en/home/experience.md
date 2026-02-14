@@ -35,7 +35,7 @@ experience:
     date_end: '2022-06-01'
     description: |2-
 
-  - title: Course Instructor
+  - title: Course Lead
     company: New York University (Courant Institute), CSCI-GA.1180 Mathematical Techniques for CS Applications
     company_url: ''
     company_logo: media/icons/experience/courant.png

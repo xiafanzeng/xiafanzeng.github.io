@@ -26,7 +26,7 @@ experience:
     date_end: ''
     description: |2-
 
-  - title: 研讨会导师
+  - title: 研讨会负责人
     company: A.I. For Anyone
     company_url: ''
     company_logo: media/icons/service/aiforanyone.png
