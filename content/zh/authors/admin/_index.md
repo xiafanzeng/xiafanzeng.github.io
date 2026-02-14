@@ -53,7 +53,7 @@ role: 博士生 (Ph.D. Student)
 social:
 - icon: envelope
   icon_pack: fas
-  link: 'mailto: fanzengxia@link.cuhk.edu.cn'
+  link: 'mailto:fanzengxia@link.cuhk.edu.cn'
   
 - icon: graduation-cap 
   icon_pack: fas
@@ -61,7 +61,7 @@ social:
   
 - icon: comment
   icon_pack: fas
-  link: "../media/wechat_qr.png"   
+  link: "/media/wechat_qr.png"
   title: "扫码加微信"
   new_tab: false  
 

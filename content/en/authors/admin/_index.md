@@ -54,7 +54,7 @@ role: Ph.D. Student
 social:
 - icon: envelope
   icon_pack: fas
-  link: 'mailto: fanzengxia@link.cuhk.edu.cn'
+  link: 'mailto:fanzengxia@link.cuhk.edu.cn'
   
 #- icon: twitter
 #  icon_pack: fab

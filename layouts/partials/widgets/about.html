@@ -72,29 +72,38 @@
       </div>
 
       <ul class="network-icon" aria-hidden="true">
-        {{ range $person.social }}
-        {{ $pack := or .icon_pack "fas" }}
-        {{ $pack_prefix := $pack }}
-        {{ if in (slice "fab" "fas" "far" "fal") $pack }}
-          {{ $pack_prefix = "fa" }}
-        {{ end }}
-        {{ $link := .link }}
-        {{ $scheme := (urls.Parse $link).Scheme }}
-        {{ $target := "" }}
-        {{ if not $scheme }}
-          {{ $link = .link | relLangURL }}
-        {{ else if in (slice "http" "https") $scheme }}
-          {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
-        {{ end }}
-        <li>
-          <a href="{{ $link | safeURL }}"
-             title="{{.title}}"
-             {{ $target | safeHTMLAttr }} aria-label="{{ .icon }}">
-            <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }} big-icon"></i>
-          </a>
-        </li>
-        {{ end }}
-      </ul>
+  {{ range $person.social }}
+    {{ $pack := or .icon_pack "fas" }}
+    {{ $pack_prefix := $pack }}
+    {{ if in (slice "fab" "fas" "far" "fal") $pack }}
+      {{ $pack_prefix = "fa" }}
+    {{ end }}
+    {{ $link := .link | safeURL }}
+    {{ $scheme := (urls.Parse $link).Scheme }}
+    {{ $target := "" }}
+    {{ if not $scheme }}
+      {{ $link = .link | relLangURL }}
+    {{ else if in (slice "http" "https") $scheme }}
+      {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+    {{ end }}
+
+    {{ if and (eq .icon "comment") (or (in .link ".png") (in .link ".jpg")) }}
+      <li class="wechat-item">
+        <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }} big-icon"></i>
+        
+        <div class="wechat-popup">
+            <img src="{{ .link }}" alt="WeChat QR Code">
+        </div>
+      </li>
+    {{ else }}
+    <li>
+        <a href="{{ $link }}" {{ $target | safeHTMLAttr }} aria-label="{{ .icon }}">
+          <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }} big-icon"></i>
+        </a>
+      </li>
+    {{ end }}
+  {{ end }}
+</ul>
 
     </div>
   </div>

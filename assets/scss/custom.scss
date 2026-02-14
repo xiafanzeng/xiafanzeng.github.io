@@ -30,3 +30,69 @@
 @media (max-width: 640px) {
 
 }
+
+/* ==================================
+   WeChat Tooltip Styles (微信悬浮二维码)
+   ================================== */
+
+.wechat-item {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* 微信图标的默认颜色与悬浮颜色 */
+.wechat-item i {
+  transition: color 0.3s ease;
+}
+.wechat-item:hover i {
+  color: #1bb723; /* 微信绿，或者使用主题色 var(--primary) */
+}
+
+/* 弹出气泡容器 */
+.wechat-popup {
+  position: absolute;
+  bottom: 120%;       /* 显示在图标上方 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;       /* 二维码宽度，可根据需要调整 */
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* 柔和阴影 */
+  border: 1px solid #f0f0f0;
+  
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
+  pointer-events: none; /* 隐藏时不阻挡鼠标 */
+}
+
+/* 悬浮时显示 */
+.wechat-item:hover .wechat-popup {
+  opacity: 1;
+  visibility: visible;
+  bottom: 130%; /* 悬浮时稍微上移一点的动画效果 */
+  pointer-events: auto;
+}
+
+/* 气泡下方的小三角 */
+.wechat-popup::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+/* 二维码图片样式 */
+.wechat-popup img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
