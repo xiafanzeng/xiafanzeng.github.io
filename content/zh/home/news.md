@@ -9,7 +9,7 @@ headless: true
 # Order that this section appears on the page.
 weight: 15
 
-title: 新闻
+title: 近期新闻
 subtitle:
 ex_link: '/news'  
 ex_link_title: '全部新闻»'  
@@ -27,4 +27,4 @@ design:
 
 * **\[2021年9月]** 加入[清华大学自然语言处理实验室](https://nlp.csai.tsinghua.edu.cn/)担任自然语言处理工程师。
 
-* **\[2021年6月]** 于[纽约大学（库朗研究所）](https://cs.nyu.edu/home/index.html)获得计算机科学硕士学位。
+* **\[2021年6月]** 于[纽约大学（柯朗研究所）](https://cs.nyu.edu/home/index.html)获得计算机科学硕士学位。

@@ -18,17 +18,17 @@ date_format: Jan 2006
 
 # Experiences.
 experience:
-  - title: 研究助理 (Research Assistant)
+  - title: 研究助理
     company: 麦吉尔大学, 智能自动化实验室
     company_url: ''
     company_logo: media/icons/experience/mcgill.png
     location: 加拿大
     date_start: '2022-07-01'
-    date_end: '2023-04-01'  # 修正：填入结束日期，消除红点
+    date_end: '2023-04-01'
     description: |2-
 
   - title: NLP算法工程师
-    company: 清华大学, 自然语言处理与社会人文计算实验室 (THUNLP)
+    company: 清华大学, 自然语言处理与社会人文计算实验室
     company_url: ''
     company_logo: media/icons/experience/qhnlp.png
     location: 中国
@@ -36,7 +36,7 @@ experience:
     date_end: '2022-06-01'
     description: |2-
   
-  - title: 课程辅导 (Course Tutor)
+  - title: 课程导师
     company: 纽约大学 (柯朗研究所), CSCI-GA.1180 Mathematical Techniques for CS Applications
     company_url: ''
     company_logo: media/icons/experience/courant.png

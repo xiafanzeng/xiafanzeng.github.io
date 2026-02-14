@@ -16,29 +16,24 @@ subtitle:
 #   Refer to https://wowchemy.com/docs/customization/#date-format
 date_format: Jan 2006
 
-# Experiences.
-#   Add/remove as many `experience` items below as you like.
-#   Required fields are `title`, `company`, and `date_start`.
-#   Leave `date_end` empty if it's your current employer.
-#   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
-  - title: Workshop Support (Data Analytics)
-    company: STEM Streams | Society for Canadian Women in Science and Technology
+  - title: Co-Founder & CEO
+    company: 路链科技有限公司 (LinkRoad)
     company_url: ''
-    company_logo: media/icons/service/SCWIST.png
-    location: Toronto, Canada
-    date_start: '2022-03-01'
-    date_end: '2023-03-28'
-    description: |
-      
-  - title: Peer Mentor
-    company: Hart House Mentorship Program
+    company_logo: media/icons/service/linkroad.png
+    location: 中国
+    date_start: '2026-01-01'
+    date_end: ''
+    description: |2-
+
+  - title: Workshop Leader
+    company: A.I. For Anyone
     company_url: ''
     company_logo: media/icons/service/aiforanyone.png
-    location: Toronto, Canada
-    date_start: '2022-10-05'
-    date_end: '2023-03-20'
-    description: |
+    location: USA
+    date_start: '2019-09-01'
+    date_end: '2021-06-01'
+    description: |2-
 
 design:
   columns: '2'

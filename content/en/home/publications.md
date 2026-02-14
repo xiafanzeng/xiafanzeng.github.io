@@ -29,7 +29,9 @@ pubs_list:
   - title: "Open In-Context Energy Management Platform"
     authors: "Yuxin Lu, Tinko Sebastian Bartels, Rui Wu, **Fanzeng Xia**, Xinyu Wang, Yujie Wu, Haoxiang Yang, Tongxin Li"
     journal: "Proceedings of the 16th ACM International Conference on Future Energy Markets, 2025"
-    links: ""
+    links:
+      - name: Link
+        url: https://dl.acm.org/doi/full/10.1145/3679240.3734678
 
   - title: "DCT-MARL: A Dynamic Communication Topology-Based MARL Algorithm for Connected Vehicle Platoon Control"
     authors: "Yaqi Xu, Yuxuan Shi, Jiaming Tian, **Fanzeng Xia**, Tongxin Li, Shuo Chen, Yan Ge"
