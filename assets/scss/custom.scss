@@ -322,9 +322,11 @@ button:focus-visible,
   transform: translateY(-1px);
 }
 #service .experience-icon-image {
-  width: 50px;
-  max-height: 50px;
+  width: auto;
+  max-width: 150px;
+  max-height: 64px;
   object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 // ==========================================
