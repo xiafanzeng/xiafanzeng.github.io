@@ -102,17 +102,20 @@
   margin-top: 0.15rem;
 }
 
-// ----- News 新闻列表 -----
+// ----- News 新闻列表（首页 + 全部新闻页） -----
 #news .card-text,
-#news .article-style {
-  line-height: 1.7;
+#news .article-style,
+.article-style {
+  line-height: 1.75;
 }
-#news ul {
+#news ul,
+.article-style ul {
   padding-left: 1.25rem;
   list-style: none;
 }
-#news li {
-  margin-bottom: 0.65rem;
+#news li,
+.article-style li {
+  margin-bottom: 0.85rem;
   position: relative;
   padding-left: 0.25rem;
 }

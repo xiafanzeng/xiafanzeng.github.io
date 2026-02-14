@@ -30,7 +30,7 @@ experience:
     company: A.I. For Anyone
     company_url: ''
     company_logo: media/icons/service/aiforanyone.png
-    location: USA
+    location: 美国
     date_start: '2019-09-01'
     date_end: '2021-06-01'
     description: |2-
