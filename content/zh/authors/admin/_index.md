@@ -4,12 +4,12 @@ bio:
 education:
   courses:
   - course: 数据科学博士
-    institution:  "[香港中文大学，深圳](https://sds.cuhk.edu.cn/en)"
+    institution:  "[香港中文大学（深圳），中国](https://sds.cuhk.edu.cn/en)"
     year: 2023 - 至今
     img: /img/cuhksz.png
 
   - course: 电子与计算机工程博士 (因学签问题退出)
-    institution:  "[麦吉尔大学, 智能自动化实验室, 加拿大](http://mcgillialab.com/)"
+    institution:  "[麦吉尔大学, 加拿大](http://mcgillialab.com/)"
     year: 2022 - 2023
     img: /img/mcgill.png
     

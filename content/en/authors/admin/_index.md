@@ -4,12 +4,12 @@ bio:
 education:
   courses:
   - course: Ph.D. in Data Science
-    institution:  "[The Chinese University of Hong Kong, Shenzhen](https://sds.cuhk.edu.cn/en)"
+    institution:  "[The Chinese University of Hong Kong, Shenzhen (CUHKSZ), China](https://sds.cuhk.edu.cn/en)"
     year: 2023 - Present
     img: /img/cuhksz.png
 
   - course: Ph.D. of Electrical and Computer Engineering (Withdrew due to study permit complications)
-    institution:  "[McGill University, Intelligent Automation Lab, Canada](http://mcgillialab.com/)"
+    institution:  "[McGill University, Canada](http://mcgillialab.com/)"
     year: 2022 - 2023
     img: /img/mcgill.png
     

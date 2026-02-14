@@ -12,7 +12,7 @@ en:
 zh:
   languageCode: zh-Hans
   contentDir: content/zh
-  title: 夏钒曾的个人主页  # 修改此处
+  title: 夏钒曾的个人主页
   params:
     description: 夏钒曾的个人主页
   menu:
@@ -25,16 +25,14 @@ zh:
         url: '#news'
         weight: 20
 
-      - name: 工作经历  # 修改：原为“经验”
+      - name: 工作经历
         url: '#experience'
         weight: 30
 
-      # 删除：项目 (Project) 这一栏
-
-      - name: 论文项目  # 修改：原为“论文”
+      - name: 学术成果
         url: '#publications'
         weight: 50
 
-      - name: 其他任职  # 修改：原为“服务”
+      - name: 其他任职
         url: '#service'
         weight: 60

@@ -2,10 +2,26 @@
 // Personal Homepage — Custom Styles
 // ============================================================
 
+// ----- 全局 -----
+html {
+  scroll-behavior: smooth;
+}
+
 // ----- Section 区块与标题 -----
 .home-section {
   padding-top: 3rem;
   padding-bottom: 3rem;
+  position: relative;
+}
+// 每个 section 之间的微妙分隔线（排除第一个 about）
+.home-section + .home-section::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent);
+  margin: 0 auto 2rem;
+  border-radius: 1px;
 }
 .section-heading h1 {
   font-size: 1.65rem;
@@ -26,15 +42,28 @@
 .section-heading a[href]:hover {
   opacity: 1;
 }
+// "全部新闻»" / "All news»" 链接美化
+.section-heading .mt-1 a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, letter-spacing 0.2s ease;
+  &:hover {
+    opacity: 1;
+    letter-spacing: 0.03em;
+  }
+}
 
 // ----- About 关于 / 头像区 -----
 #profile .avatar {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border: 3px solid rgba(255, 255, 255, 0.9);
 }
 #profile .avatar:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: scale(1.04);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 .portrait-title h2 {
   font-weight: 700;
@@ -47,6 +76,28 @@
 .network-icon {
   margin-top: 0.75rem;
 }
+.network-icon li a,
+.network-icon li.wechat-item {
+  transition: transform 0.2s ease;
+}
+.network-icon li a:hover,
+.network-icon li.wechat-item:hover {
+  transform: scale(1.15);
+}
+// Bio 正文优化
+.col-12.col-lg-8 > .article-style {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: inherit;
+  a {
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    text-decoration: none;
+    transition: border-color 0.2s ease;
+    &:hover {
+      border-bottom-color: var(--primary, #1565c0);
+    }
+  }
+}
 
 // Education 学校图标（从 about.html 内联 style 迁移过来）
 .edu-img {
@@ -57,15 +108,28 @@
   top: 0.4em;
   text-align: center;
   object-fit: contain;
+  transition: transform 0.2s ease;
 }
 .ul-edu li:first-child .edu-img {
   transform: scale(1.15);
 }
+.ul-edu li:hover .edu-img {
+  transform: scale(1.18);
+}
 .ul-edu li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.65rem;
+  padding: 0.3rem 0;
+  transition: background-color 0.15s ease;
+  border-radius: 4px;
 }
 .ul-edu .course {
   font-weight: 600;
+  font-size: 0.93rem;
+}
+.ul-edu .institution {
+  font-size: 0.88rem;
+  opacity: 0.82;
+  margin-top: 0.05rem;
 }
 
 // 研究方向 + 教育经历区域与上方简介拉开距离
@@ -129,7 +193,7 @@
 #news .card-text,
 #news .article-style,
 .article-style {
-  line-height: 1.75;
+  line-height: 1.8;
 }
 #news ul,
 .article-style ul {
@@ -140,7 +204,11 @@
 .article-style li {
   margin-bottom: 0.85rem;
   position: relative;
-  padding-left: 0.25rem;
+  padding-left: 0.35rem;
+  transition: transform 0.15s ease;
+  &:hover {
+    transform: translateX(2px);
+  }
 }
 #news li::before {
   content: "";
@@ -148,39 +216,61 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--primary, #ff3860);
+  background: var(--primary, #1565c0);
   position: absolute;
   left: -1rem;
   top: 0.55em;
 }
 
-// ----- Publications 论文列表 -----
+// ----- Publications / Research 学术成果列表 -----
 .home-prj-img-icon-wrap .home-project-icon-image {
   margin-top: 0.5rem;
 }
 .home-pubs-section {
+  counter-reset: pub-counter;
   .pub-title {
     font-weight: 600;
     line-height: 1.45;
+    font-size: 0.97rem;
   }
   .pub-author {
     display: block;
     margin-bottom: 0.15rem;
-    font-size: 0.92rem;
-    opacity: 0.88;
+    font-size: 0.9rem;
+    opacity: 0.85;
     line-height: 1.5;
   }
   .pub-journal {
     display: block;
-    font-size: 0.87rem;
+    font-size: 0.85rem;
     font-style: italic;
-    opacity: 0.75;
+    opacity: 0.7;
     margin-top: 0.15rem;
   }
   .media.stream-item {
     margin-bottom: 1.25rem;
     padding-bottom: 1.25rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding-left: 2rem;
+    position: relative;
+    counter-increment: pub-counter;
+    transition: background-color 0.15s ease;
+    border-radius: 6px;
+    &::before {
+      content: counter(pub-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary, #1565c0);
+      opacity: 0.55;
+      width: 1.5rem;
+      text-align: center;
+    }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.015);
+    }
   }
   .media.stream-item:last-child {
     border-bottom: none;
@@ -192,12 +282,13 @@
   }
   .btn-outline-primary {
     border-radius: 6px;
-    font-size: 0.82rem;
-    padding: 0.2rem 0.55rem;
-    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
-  }
-  .btn-outline-primary:hover {
-    transform: translateY(-1px);
+    font-size: 0.8rem;
+    padding: 0.18rem 0.55rem;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
   }
 }
 
@@ -276,12 +367,30 @@
 // Navbar 导航栏
 // ==========================================
 .navbar-nav .nav-link {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, transform 0.15s ease;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary, #1565c0);
+    transition: width 0.25s ease, left 0.25s ease;
+    border-radius: 1px;
+  }
+  &:hover::after,
+  &.active::after {
+    width: 70%;
+    left: 15%;
+  }
 }
 .navbar {
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 // ==========================================
@@ -298,6 +407,9 @@
 .page-footer {
   font-size: 0.85rem;
   opacity: 0.75;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 1.5rem;
 }
 
 // ==========================================
@@ -311,6 +423,9 @@
   .section-heading h1 {
     font-size: 1.45rem;
   }
+  .home-pubs-section .media.stream-item {
+    padding-left: 1.5rem;
+  }
 }
 @media (max-width: 767.98px) {
   .home-section {
@@ -319,12 +434,20 @@
   }
   .navbar-nav .nav-link {
     font-size: 1.05rem;
+    &::after { display: none; } // 移动端隐藏下划线动画
+  }
+  .home-pubs-section .media.stream-item {
+    padding-left: 0;
+    &::before { display: none; } // 移动端隐藏论文序号
   }
 }
 
 // ==========================================
 // 暗色主题适配
 // ==========================================
+.dark .home-section + .home-section::before {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+}
 .dark .experience .card,
 .dark #service .card {
   border-color: rgba(255, 255, 255, 0.08);
@@ -336,6 +459,9 @@
 }
 .dark .home-pubs-section .media.stream-item {
   border-color: rgba(255, 255, 255, 0.08);
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+  }
 }
 .dark #news li::before {
   background: rgba(255, 255, 255, 0.5);
@@ -349,6 +475,19 @@
 }
 .dark #profile .avatar {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+.dark .col-12.col-lg-8 > .article-style a {
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+  &:hover {
+    border-bottom-color: var(--primary, #90caf9);
+  }
+}
+.dark .page-footer {
+  border-top-color: rgba(255, 255, 255, 0.06);
+}
+.dark .navbar-nav .nav-link::after {
+  background: var(--primary, #90caf9);
 }
 
 // ==========================================
