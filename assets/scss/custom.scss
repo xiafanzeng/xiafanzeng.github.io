@@ -41,12 +41,13 @@
   cursor: pointer;
 }
 
-/* 微信图标的默认颜色与悬浮颜色 */
+/* 微信图标的默认颜色保持红色，悬浮时为绿色 */
 .wechat-item i {
   transition: color 0.3s ease;
+  color: #e74c3c !important; /* 默认红色，不随主题变为黑色 */
 }
 .wechat-item:hover i {
-  color: #1bb723; /* 微信绿，或者使用主题色 var(--primary) */
+  color: #1bb723 !important; /* 微信绿 */
 }
 
 /* 弹出气泡容器 */
@@ -101,8 +102,8 @@
    Navbar Styles (导航栏调整)
    ================================== */
 .navbar-nav .nav-link {
-    font-size: 1.1rem;  /* 字体加大，原默认约为 0.9-1rem */
-    font-weight: 500;   /*稍微加粗一点，更清晰 */
+    font-size: 1.15rem;  /* 导航栏字体略大 */
+    font-weight: 500;
 }
 
 /* ==================================
@@ -113,12 +114,14 @@
   position: relative;
   display: inline-block;
   cursor: pointer;
-  /* 删除 color: black 的设置，让它继承主题色（红色/Primary） */
 }
 
-/* 仅在鼠标悬浮时改变颜色 (可选，如果您希望悬浮变绿) */
+/* 微信图标默认红色，悬浮变绿 */
+.wechat-item i {
+  color: #e74c3c !important;
+}
 .wechat-item:hover i {
-  color: #1bb723; 
+  color: #1bb723 !important;
 }
 
 /* 弹出气泡容器 */

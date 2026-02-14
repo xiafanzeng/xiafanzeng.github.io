@@ -12,7 +12,7 @@ weight: 15
 title: 新闻
 subtitle:
 ex_link: '/news'  
-ex_link_title: 'All news»'  
+ex_link_title: '全部新闻»'  
 
 
 design:
@@ -21,10 +21,10 @@ design:
   columns: '2'
 ---
 
-**[Nov 2024]** 🎉 Proudly graduated from the University of Toronto with a Master of Engineering in Machine Learning and Data Analytics, achieving top grades
+* **\[2023年9月]** 开始在[香港中文大学（深圳）数据科学学院](https://sds.cuhk.edu.cn/en)攻读数据科学博士学位。
 
-**[Sep 2024]** 🙌 Excited to join MVAIT Lab as Research Assistant
+* **\[2022年7月]** 获[麦吉尔大学智能自动化实验室](http://mcgillialab.com/)博士项目录取（因学签问题放弃入学）。
 
-**[Jul 2024]** 🔎 Actively Seeking PhD opportunities starting in 2025 Fall
+* **\[2021年9月]** 加入[清华大学自然语言处理实验室](https://nlp.csai.tsinghua.edu.cn/)担任自然语言处理工程师。
 
-**[Sep 2023]** 🏫 Started Master studies at UofT
+* **\[2021年6月]** 于[纽约大学（库朗研究所）](https://cs.nyu.edu/home/index.html)获得计算机科学硕士学位。
