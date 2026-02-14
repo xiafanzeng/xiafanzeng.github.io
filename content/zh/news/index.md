@@ -11,7 +11,7 @@ share: false
 
 * **\[2021年9月]** 担任[清华大学自然语言处理实验室](https://nlp.csai.tsinghua.edu.cn/)自然语言处理工程师
 
-* **\[2021年6月]** 获得美国[纽约大学（柯朗研究所）](https://cs.nyu.edu/home/index.html)计算机科学硕士学位
+* **\[2021年6月]** 获美国[纽约大学（柯朗研究所）](https://cs.nyu.edu/home/index.html)计算机科学硕士学位
 
 * **\[2020年6月]** 于[亚马逊云服务 (AWS) 身份与访问管理](https://aws.amazon.com/iam/)实习担任软件工程师
 
