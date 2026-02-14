@@ -44,7 +44,7 @@ experience:
     date_end: '2021-06-01'
     description: |2-
 
-  - title: Full-Stack Software Engineer Intern
+  - title: Full-Stack Software Engineer
     company: Amazon Web Services (AWS), Identity and Access Management
     company_url: ''
     company_logo: media/icons/experience/aws.png
@@ -53,7 +53,7 @@ experience:
     date_end: '2020-09-01'
     description: |2-
 
-  - title: Research Program in Big Data & Cybersecurity
+  - title: Visiting Scholar (Big Data & Cybersecurity)
     company: Ben-Gurion University of the Negev
     company_url: ''
     company_logo: media/icons/experience/ben-gurion.png

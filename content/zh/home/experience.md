@@ -14,7 +14,7 @@ subtitle:
 
 # Date format for experience
 #   Refer to https://wowchemy.com/docs/customization/#date-format
-date_format: Jan 2006
+date_format: 2006年 1月
 
 # Experiences.
 experience:
@@ -45,7 +45,7 @@ experience:
     date_end: '2021-06-01'
     description: |2-
 
-  - title: 全栈软件工程师实习生
+  - title: 全栈软件工程师
     company: 亚马逊云服务 (AWS), Identity and Access Management
     company_url: ''
     company_logo: media/icons/experience/aws.png
@@ -54,7 +54,7 @@ experience:
     date_end: '2020-09-01'
     description: |2-
 
-  - title: 大数据与网络安全暑期科研
+  - title: 公派访问学者 (大数据与网络安全)
     company: 本-古里安大学
     company_url: ''
     company_logo: media/icons/experience/ben-gurion.png

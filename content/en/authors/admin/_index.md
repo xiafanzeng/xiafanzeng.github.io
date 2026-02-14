@@ -71,6 +71,6 @@ title:
 
 ---
 
-Hello! I am a third-year Ph.D. student in the School of Data Science at [The Chinese University of Hong Kong, Shenzhen (CUHKSZ)](https://sds.cuhk.edu.cn/en), supervised by Professor [Tongxin Li](https://tongxin.me/). My research interests focus on **Generative Engine Optimization (GEO) & Marketing AI Agents**, **in-context decision making**, and **robust LLM applications**.
+Hello! I am a Ph.D. student in the School of Data Science at [The Chinese University of Hong Kong, Shenzhen (CUHKSZ)](https://sds.cuhk.edu.cn/en), supervised by Professor [Tongxin Li](https://tongxin.me/). My research interests focus on **Generative Engine Optimization (GEO) & Marketing AI Agents**, **in-context decision making**, and **robust LLM applications**.
 
 Prior to that, I completed a Master's degree at [New York University (Courant Institute)](https://cs.nyu.edu/home/index.html) in the USA and a 2+2 double Bachelor's program at [Queen's University](https://smithengineering.queensu.ca/ece/index) in Canada and [Jilin University](https://csw.jlu.edu.cn/) in China.
