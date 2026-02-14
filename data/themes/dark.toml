@@ -1,19 +1,19 @@
-# Custom dark theme — deep blue accent
+# Custom dark theme — deep purple accent
 name = "dark"
 
 [dark]
-  # Primary — 浅蓝 (与日间 #1565C0 配对)
-  primary = "#64B5F6"
+  # Primary — 浅紫 (与日间 #6A1B9A 配对)
+  primary = "#CE93D8"
 
   # Menu
-  menu_primary = "#16213e"
+  menu_primary = "#1a1a2e"
   menu_text = "#ddd"
-  menu_text_active = "#64B5F6"
+  menu_text_active = "#CE93D8"
   menu_title = "#fff"
 
   # Home sections
   home_section_odd = "#1a1a2e"
-  home_section_even = "#16213e"
+  home_section_even = "#1e1230"
 
-  link = "#64B5F6"
-  link_hover = "#90CAF9"
+  link = "#CE93D8"
+  link_hover = "#E1BEE7"

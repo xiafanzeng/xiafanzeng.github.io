@@ -8,7 +8,7 @@ education:
     year: 2023 - 至今
     img: /img/cuhksz.png
 
-  - course: 电子与计算机工程博士 (因学签问题退出)
+  - course: 电子与计算机工程博士 (因学签放弃)
     institution:  "[麦吉尔大学, 加拿大](http://mcgillialab.com/)"
     year: 2022 - 2023
     img: /img/mcgill.png
