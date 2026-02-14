@@ -2,15 +2,15 @@
 name = "strawberry2"
 
 [light]
-  # Primary — 学术紫 (NYU/Tsinghua/CUHKSZ inspired)
-  primary = "#935DB0"
+  # Primary — 深蓝
+  primary = "#1565C0"
 
   # Menu
   menu_primary = "#fff"
   menu_text = "#34495e"
-  menu_text_active = "#935DB0"
+  menu_text_active = "#1565C0"
   menu_title = "#2b2b2b"
 
   # Home sections
   home_section_odd = "#fff"
-  home_section_even = "#f8f7fa"
+  home_section_even = "#f5f7fa"
