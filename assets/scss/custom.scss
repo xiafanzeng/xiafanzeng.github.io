@@ -1,5 +1,5 @@
 // ============================================================
-// Personal Homepage — Custom Styles (综合美化)
+// Personal Homepage — Custom Styles
 // ============================================================
 
 // ----- Section 区块与标题 -----
@@ -27,6 +27,47 @@
   opacity: 1;
 }
 
+// ----- About 关于 / 头像区 -----
+#profile .avatar {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#profile .avatar:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+.portrait-title h2 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.portrait-title h3 {
+  font-size: 1rem;
+  opacity: 0.88;
+}
+.network-icon {
+  margin-top: 0.75rem;
+}
+
+// Education 学校图标（从 about.html 内联 style 迁移过来）
+.edu-img {
+  position: absolute;
+  left: -2.5rem;
+  width: 2rem;
+  height: 2rem;
+  top: 0.4em;
+  text-align: center;
+  object-fit: contain;
+}
+.ul-edu li:first-child .edu-img {
+  transform: scale(1.15);
+}
+.ul-edu li {
+  margin-bottom: 0.5rem;
+}
+.ul-edu .course {
+  font-weight: 600;
+}
+
 // ----- Experience 经历卡片 -----
 .experience-icon-image {
   width: 80px;
@@ -37,18 +78,55 @@
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
 .experience .card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
   border-color: rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
 }
 .experience .card-body {
-  padding: 1.25rem 1.25rem;
+  padding: 1.25rem;
 }
-.exp-title { font-weight: 600; }
-.exp-company { font-weight: 500; }
-.exp-meta { font-size: 0.9rem; opacity: 0.88; }
+.exp-title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.exp-company {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.exp-meta {
+  font-size: 0.88rem;
+  opacity: 0.85;
+  margin-top: 0.15rem;
+}
+
+// ----- News 新闻列表 -----
+#news .card-text,
+#news .article-style {
+  line-height: 1.7;
+}
+#news ul {
+  padding-left: 1.25rem;
+  list-style: none;
+}
+#news li {
+  margin-bottom: 0.65rem;
+  position: relative;
+  padding-left: 0.25rem;
+}
+#news li::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary, #ff3860);
+  position: absolute;
+  left: -1rem;
+  top: 0.55em;
+}
 
 // ----- Publications 论文列表 -----
 .home-prj-img-icon-wrap .home-project-icon-image {
@@ -57,18 +135,20 @@
 .home-pubs-section {
   .pub-title {
     font-weight: 600;
-    line-height: 1.4;
+    line-height: 1.45;
   }
   .pub-author {
     display: block;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.15rem;
     font-size: 0.92rem;
-    opacity: 0.9;
+    opacity: 0.88;
+    line-height: 1.5;
   }
   .pub-journal {
     display: block;
-    font-size: 0.88rem;
-    opacity: 0.8;
+    font-size: 0.87rem;
+    font-style: italic;
+    opacity: 0.75;
     margin-top: 0.15rem;
   }
   .media.stream-item {
@@ -81,62 +161,70 @@
     margin-bottom: 0;
     padding-bottom: 0;
   }
+  .btn-links {
+    margin-top: 0.4rem;
+  }
   .btn-outline-primary {
     border-radius: 6px;
-    font-size: 0.85rem;
-    padding: 0.25rem 0.6rem;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    font-size: 0.82rem;
+    padding: 0.2rem 0.55rem;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  }
+  .btn-outline-primary:hover {
+    transform: translateY(-1px);
   }
 }
 
-/* ==================================
-   WeChat Tooltip Styles (微信悬浮二维码)
-   ================================== */
+// ----- Service / Positions 任职卡片 -----
+#service .card {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+#service .card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
+  transform: translateY(-1px);
+}
 
+// ==========================================
+// WeChat Tooltip (微信悬浮二维码)
+// ==========================================
 .wechat-item {
   position: relative;
   display: inline-block;
   cursor: pointer;
 }
-
-/* 微信图标的默认颜色保持红色，悬浮时为绿色 */
 .wechat-item i {
   transition: color 0.3s ease;
-  color: #e74c3c !important; /* 默认红色，不随主题变为黑色 */
+  color: #e74c3c !important;
 }
 .wechat-item:hover i {
-  color: #1bb723 !important; /* 微信绿 */
+  color: #1bb723 !important;
 }
-
-/* 弹出气泡容器 */
 .wechat-popup {
   position: absolute;
-  bottom: 120%;       /* 显示在图标上方 */
+  bottom: 120%;
   left: 50%;
   transform: translateX(-50%);
-  width: 180px;       /* 二维码宽度，可根据需要调整 */
+  width: 180px;
   background-color: white;
   padding: 10px;
   border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* 柔和阴影 */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   border: 1px solid #f0f0f0;
-  
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 100;
-  pointer-events: none; /* 隐藏时不阻挡鼠标 */
+  pointer-events: none;
 }
-
-/* 悬浮时显示 */
 .wechat-item:hover .wechat-popup {
   opacity: 1;
   visibility: visible;
-  bottom: 130%; /* 悬浮时稍微上移一点的动画效果 */
+  bottom: 130%;
   pointer-events: auto;
 }
-
-/* 气泡下方的小三角 */
 .wechat-popup::after {
   content: "";
   position: absolute;
@@ -147,8 +235,6 @@
   border-style: solid;
   border-color: white transparent transparent transparent;
 }
-
-/* 二维码图片样式 */
 .wechat-popup img {
   width: 100%;
   height: auto;
@@ -156,44 +242,37 @@
   border-radius: 4px;
 }
 
-// ----- News 新闻列表 -----
-#news .card-text,
-#news .article-style {
-  line-height: 1.65;
+// ==========================================
+// Navbar 导航栏
+// ==========================================
+.navbar-nav .nav-link {
+  font-size: 1.15rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
 }
-#news ul {
-  padding-left: 1.25rem;
-}
-#news li {
-  margin-bottom: 0.6rem;
-}
-
-// ----- About 关于 / 头像区 -----
-#profile .avatar {
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-}
-.portrait-title h2 {
-  font-weight: 700;
-  letter-spacing: -0.02em;
+.navbar {
+  transition: box-shadow 0.3s ease;
 }
 
-// ----- Service 服务/任职卡片（与 experience 一致） -----
-.experience .card,
-#service .card {
-  border-radius: 10px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-#service .card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-// ----- 全局链接与按钮 -----
+// ==========================================
+// 全局链接与按钮
+// ==========================================
 .page-body a:not(.btn):not(.nav-link):not(.dropdown-item) {
   text-decoration-skip-ink: auto;
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
-// ----- 响应式：小屏区块间距 -----
+// ==========================================
+// Footer 页脚
+// ==========================================
+.page-footer {
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+// ==========================================
+// 响应式
+// ==========================================
 @media (max-width: 991.98px) {
   .home-section {
     padding-top: 2.25rem;
@@ -208,18 +287,28 @@
     padding-top: 1.75rem;
     padding-bottom: 1.75rem;
   }
+  .navbar-nav .nav-link {
+    font-size: 1.05rem;
+  }
 }
 
-// ----- 暗色主题适配 -----
+// ==========================================
+// 暗色主题适配
+// ==========================================
 .dark .experience .card,
+.dark #service .card {
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.dark .experience .card:hover,
+.dark #service .card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
 .dark .home-pubs-section .media.stream-item {
   border-color: rgba(255, 255, 255, 0.08);
 }
-.dark .experience .card {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-.dark .experience .card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+.dark #news li::before {
+  background: rgba(255, 255, 255, 0.5);
 }
 .dark .wechat-popup {
   background-color: #2d2d2d;
@@ -228,11 +317,6 @@
 .dark .wechat-popup::after {
   border-color: #2d2d2d transparent transparent transparent;
 }
-
-/* ==================================
-   Navbar 导航栏
-   ================================== */
-.navbar-nav .nav-link {
-  font-size: 1.15rem;
-  font-weight: 500;
+.dark #profile .avatar {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }

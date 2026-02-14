@@ -11,7 +11,7 @@ headless: true
 # Order that this section appears on the page.
 weight: 40
 
-title: 论文
+title: 论文项目
 subtitle: ""
 
 design:

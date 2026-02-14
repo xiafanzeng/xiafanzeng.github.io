@@ -9,7 +9,7 @@ headless: true
 # Order that this section appears on the page.
 weight: 80
 
-title: 服务
+title: 其他任职
 subtitle:
 
 # Date format for experience
