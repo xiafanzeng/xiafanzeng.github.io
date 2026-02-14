@@ -9,7 +9,7 @@ headless: true
 # Order that this section appears on the page.
 weight: 20
 
-title: 经验
+title: 经历
 subtitle:
 
 # Date format for experience
@@ -17,59 +17,54 @@ subtitle:
 date_format: Jan 2006
 
 # Experiences.
-#   Add/remove as many `experience` items below as you like.
-#   Required fields are `title`, `company`, and `date_start`.
-#   Leave `date_end` empty if it's your current employer.
-#   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
-
 experience:
-  - title: Research Assistant
-    company: McGill University, Intelligent Automation Lab
+  - title: 研究助理 (Research Assistant)
+    company: 麦吉尔大学, 智能自动化实验室
     company_url: ''
     company_logo: media/icons/experience/mcgill.png
-    location: Canada
-    date_start: '2022-05-18'
-    date_end: ''
+    location: 加拿大
+    date_start: '2022-07-01'
+    date_end: '2023-04-01'
     description: |2-
-        
 
-  - title: NLP Algorithm Engineer
-    company: Tsinghua University, THUNLP Lab 
+
+  - title: NLP算法工程师
+    company: 清华大学, 自然语言处理与社会人文计算实验室 (THUNLP)
     company_url: ''
     company_logo: media/icons/experience/qhnlp.png
-    location: China
-    date_start: '2021-05-18'
-    date_end: '2022-05-16'
+    location: 中国
+    date_start: '2021-09-01'
+    date_end: '2022-06-01'
     description: |2-
   
 
-  - title: CSCI-GA.1180 Course Tutor
-    company: New York University (Courant Institute)
+  - title: 课程辅导 (Course Tutor)
+    company: 纽约大学 (柯朗研究所), CSCI-GA.1180 Mathematical Techniques for CS Applications
     company_url: ''
     company_logo: media/icons/experience/courant.png
-    location: USA
-    date_start: '2020-08-02'
-    date_end: '2021-09-30'
+    location: 美国
+    date_start: '2021-01-01'
+    date_end: '2021-06-01'
     description: |2-
 
 
-  - title: Full-Stack Software Engineer Intern
-    company: Amazon Web Services (AWS), Identity and Access Management
+  - title: 全栈软件工程师实习生
+    company: 亚马逊云服务 (AWS), Identity and Access Management
     company_url: ''
     company_logo: media/icons/experience/aws.png
-    location: USA
-    date_start: '2020-04-10'
-    date_end: '2020-08-09'
+    location: 美国
+    date_start: '2020-06-01'
+    date_end: '2020-09-01'
     description: |2-
 
 
-  - title: Research Program in Big Data & Cybersecurity
-    company: Ben-Gurion University of the Negev, 
+  - title: 大数据与网络安全暑期科研
+    company: 本-古里安大学
     company_url: ''
     company_logo: media/icons/experience/ben-gurion.png
-    location: Israel
-    date_start: '2018-02-10'
-    date_end: '2018-05-09'
+    location: 以色列
+    date_start: '2018-07-01'
+    date_end: '2018-08-01'
     description: |2-
 
  

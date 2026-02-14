@@ -3,74 +3,61 @@ bio:
 
 education:
   courses:
-  - course: Research Assistant 
-    institution:  "[McGill University, Intelligent Automation Lab, Canada](http://mcgillialab.com/)"
+  - course: 数据科学博士 (Ph.D. in Data Science)
+    institution:  "[香港中文大学（深圳）](https://sds.cuhk.edu.cn/en)"
+    year: 2023 - 至今
+    img: /img/cuhksz.png
+
+  - course: 电子与计算机工程博士 (因学签问题肄业)
+    institution:  "[麦吉尔大学, 智能自动化实验室, 加拿大](http://mcgillialab.com/)"
     year: 2022 - 2023
-    img: /img/ut2.png
+    img: /img/mcgill.png
     
-  - course: Master of Science in Computer Science
-    institution: "[New York University (Courant Institute), USA](https://cs.nyu.edu/home/index.html)"
+  - course: 计算机科学硕士 (Master of Science in Computer Science)
+    institution: "[纽约大学 (柯朗研究所), 美国](https://cs.nyu.edu/home/index.html)"
     year: 2019 - 2021
-    img: /img/ut2.png
+    img: /img/nyu.png
     
-  - course: Bachelor of Applied Science in Computer Engineering
-    institution: "[Queen’s University, Canada](https://smithengineering.queensu.ca/ece/index)"
+  - course: 计算机工程应用科学学士 (Bachelor of Applied Science)
+    institution: "[女王大学, 加拿大](https://smithengineering.queensu.ca/ece/index)"
     year: 2017 - 2019
-    img: /img/ut2.png
+    img: /img/queens.png
     
-  - course: Bachelor of Engineering in Software Engineering
-    institution: "[Jilin University, China](https://csw.jlu.edu.cn/)"
+  - course: 软件工程工学学士
+    institution: "[吉林大学, 中国](https://csw.jlu.edu.cn/)"
     year: 2015 - 2019
-    img: /img/ut2.png
+    img: /img/jlu.png
     
 email: "fanzengxia@link.cuhk.edu.cn"
 
 highlight_name: true
 
-
 interests:
-  - In-Context Decision Making
-  - Robust LLM Applications
+  - 上下文决策 (In-Context Decision Making)
+  - 鲁棒大语言模型应用 (Robust LLM Applications)
 
 # interpret as a text block
 interests2: | 
-  - In-Context Decision Making
-    - in-context reasoning
-    - in-context RL
-    - in-context control
+  - 上下文决策 (In-Context Decision Making)
+    - 上下文推理 (in-context reasoning)
+    - 上下文强化学习 (in-context RL)
+    - 上下文控制 (in-context control)
 
-  - Robust LLM Applications
+  - 鲁棒大语言模型应用 (Robust LLM Applications)
 
 organizations:
-- name: School of Data Science, CUHKSZ
-#  url: https://www.gwu.edu/
+- name: 香港中文大学（深圳）数据科学学院
   
-role: Ph.D. Student 
+role: 博士生 (Ph.D. Student)
 
 social:
 - icon: envelope
   icon_pack: fas
   link: 'mailto: fanzengxia@link.cuhk.edu.cn'
   
-#- icon: twitter
-#  icon_pack: fab
-#  link: https://x.com/tipengchen
-
-- icon: graduation-cap  # Alternatively, use `google-scholar` icon from `ai` icon pack
+- icon: graduation-cap 
   icon_pack: fas
   link: https://scholar.google.com/citations?user=Qsg_UVAAAAAJ&hl=en
-  
-#- icon: github
-#  icon_pack: fab
-#  link: https://github.com/eteitelbaum
-  
-#- icon: instagram
-#  icon_pack: fab
-#  link:  https://www.instagram.com/chentipeng/
-  
-#- icon: linkedin
-#  icon_pack: fab
-#  link: https://www.linkedin.com/in/tipeng-chen-73b589107/
   
 - icon: comment
   icon_pack: fas
@@ -78,15 +65,12 @@ social:
   title: "扫码加微信"
   new_tab: false  
 
-
 superuser: true
 
 title: 
 
 ---
 
-Hello! I am a second-year Ph.D. student in the School of Data Science at [The Chinese University of Hong Kong, Shenzhen (CUHKSZ)](https://sds.cuhk.edu.cn/en), supervised by Professor [Tongxin Li](https://tongxin.me/). My research interests focus on In-Context Reinforcement Learning and Robust LLM Applications.
+你好！我是[香港中文大学（深圳）数据科学学院](https://sds.cuhk.edu.cn/en)的二年级博士生，师从[李彤欣](https://tongxin.me/)教授。我的研究兴趣主要集中在**上下文决策（In-Context Decision Making）**和**鲁棒大语言模型应用（Robust LLM Applications）**。
 
-Prior to that, I completed a Master’s at [New York University (Courant Institute)](https://cs.nyu.edu/home/index.html) in the USA and a 2+2 double Bachelor’s program at [Queen’s University](https://smithengineering.queensu.ca/ece/index) in Canada and [Jilin University](https://csw.jlu.edu.cn/) in China.
-
- 
+在此之前，我在美国[纽约大学（柯朗研究所）](https://cs.nyu.edu/home/index.html)获得了硕士学位，并在加拿大[女王大学](https://smithengineering.queensu.ca/ece/index)和中国[吉林大学](https://csw.jlu.edu.cn/)完成了2+2双学士学位项目。
