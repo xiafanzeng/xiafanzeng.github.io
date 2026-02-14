@@ -115,8 +115,8 @@
 
       {{ with $person.interests2 }}
       <div class="col-md-5">
-        <div class="section-subheading">{{ i18n "interests" | markdownify }}</div>
-        <div>{{ . | markdownify }}</div>
+        <h3>{{ i18n "interests" | markdownify }}</h3>
+        <div class="interests-list">{{ . | markdownify }}</div>
       </div>
       {{ end }}
 

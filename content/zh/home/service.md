@@ -17,7 +17,7 @@ subtitle:
 date_format: Jan 2006
 
 experience:
-  - title: Co-Founder & CEO
+  - title: 联合创始人 & CEO
     company: 路链科技有限公司 (LinkRoad)
     company_url: ''
     company_logo: media/icons/service/linkroad.png
@@ -26,7 +26,7 @@ experience:
     date_end: ''
     description: |2-
 
-  - title: Workshop Leader
+  - title: 研讨会导师
     company: A.I. For Anyone
     company_url: ''
     company_logo: media/icons/service/aiforanyone.png

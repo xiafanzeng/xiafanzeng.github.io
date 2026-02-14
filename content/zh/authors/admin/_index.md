@@ -3,22 +3,22 @@ bio:
 
 education:
   courses:
-  - course: 数据科学博士 (Ph.D. in Data Science)
+  - course: 数据科学博士
     institution:  "[香港中文大学，深圳](https://sds.cuhk.edu.cn/en)"
     year: 2023 - 至今
     img: /img/cuhksz.png
 
-  - course: 电子与计算机工程博士 (因学签问题肄业)
+  - course: 电子与计算机工程博士 (因学签问题退出)
     institution:  "[麦吉尔大学, 智能自动化实验室, 加拿大](http://mcgillialab.com/)"
     year: 2022 - 2023
     img: /img/mcgill.png
     
-  - course: 计算机科学硕士 (Master of Science in Computer Science)
+  - course: 计算机科学硕士
     institution: "[纽约大学 (柯朗研究所), 美国](https://cs.nyu.edu/home/index.html)"
     year: 2019 - 2021
     img: /img/nyu.png
     
-  - course: 计算机工程应用科学学士 (Bachelor of Applied Science)
+  - course: 计算机工程应用科学学士
     institution: "[女王大学, 加拿大](https://smithengineering.queensu.ca/ece/index)"
     year: 2017 - 2019
     img: /img/queens.png
