@@ -68,6 +68,15 @@
   font-weight: 600;
 }
 
+// 研究方向列表项间距
+.col-md-5 > div > ul {
+  padding-left: 1.2rem;
+}
+.col-md-5 > div > ul > li {
+  margin-bottom: 0.65rem;
+  line-height: 1.55;
+}
+
 // ----- Experience 经历卡片 -----
 .experience-icon-image {
   width: 80px;
