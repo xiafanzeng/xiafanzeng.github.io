@@ -62,6 +62,20 @@
     {{ if not (in (slice "book" "docs" "updates") .Type) }}
     <div class="container">
       {{ partial "site_footer" . }}
+      <!-- Visitor statistics -->
+      <div class="visitor-stats text-center mt-2 mb-3">
+        <span class="visitor-stats-item">
+          <i class="fas fa-calendar-alt"></i> Last updated: {{ now.Format "2006/1/2" }}
+        </span>
+        <span class="visitor-stats-sep">&nbsp;&middot;&nbsp;</span>
+        <span class="visitor-stats-item">
+          <i class="fas fa-eye"></i> Views: <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin"></i></span>
+        </span>
+        <span class="visitor-stats-sep">&nbsp;&middot;&nbsp;</span>
+        <span class="visitor-stats-item">
+          <i class="fas fa-users"></i> Visitors: <span id="busuanzi_value_site_uv"><i class="fas fa-spinner fa-spin"></i></span>
+        </span>
+      </div>
     </div>
     {{ end }}
   </div>

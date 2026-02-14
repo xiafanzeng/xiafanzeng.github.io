@@ -68,6 +68,11 @@
   font-weight: 600;
 }
 
+// 研究方向 + 教育经历区域与上方简介拉开距离
+.article-style + .row {
+  margin-top: 1.5rem;
+}
+
 // 研究方向列表项间距 + 字体缩小
 .interests-list ul {
   padding-left: 1.2rem;
@@ -207,6 +212,10 @@
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
   transform: translateY(-1px);
 }
+#service .experience-icon-image {
+  width: 50px;
+  max-height: 50px;
+}
 
 // ==========================================
 // WeChat Tooltip (微信悬浮二维码)
@@ -340,4 +349,25 @@
 }
 .dark #profile .avatar {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+// ==========================================
+// Visitor Statistics Footer
+// ==========================================
+.visitor-stats {
+  font-size: 0.82rem;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 0 0.25rem;
+  i {
+    margin-right: 0.2rem;
+  }
+}
+.visitor-stats-sep {
+  color: rgba(0, 0, 0, 0.3);
+}
+.dark .visitor-stats {
+  color: rgba(255, 255, 255, 0.45);
+}
+.dark .visitor-stats-sep {
+  color: rgba(255, 255, 255, 0.25);
 }
