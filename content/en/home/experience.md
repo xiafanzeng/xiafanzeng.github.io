@@ -16,12 +16,6 @@ subtitle:
 #   Refer to https://wowchemy.com/docs/customization/#date-format
 date_format: Jan 2006
 
-# Experiences.
-#   Add/remove as many `experience` items below as you like.
-#   Required fields are `title`, `company`, and `date_start`.
-#   Leave `date_end` empty if it's your current employer.
-#   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
-
 experience:
   - title: Research Assistant
     company: McGill University, Intelligent Automation Lab
@@ -32,26 +26,23 @@ experience:
     date_end: '2023-04-01'
     description: |2-
 
-
   - title: NLP Algorithm Engineer
-    company: Tsinghua University, THUNLP Lab 
+    company: Tsinghua University, NLP Lab
     company_url: ''
     company_logo: media/icons/experience/qhnlp.png
     location: China
     date_start: '2021-09-01'
     date_end: '2022-06-01'
     description: |2-
-  
 
-  - title: Course Tutor
-    company: New York University (Courant Institute), CSCI-GA.1180 Mathematical Techniques for Cs Applications
+  - title: Course Instructor
+    company: New York University (Courant Institute), CSCI-GA.1180 Mathematical Techniques for CS Applications
     company_url: ''
     company_logo: media/icons/experience/courant.png
     location: USA
     date_start: '2021-01-01'
     date_end: '2021-06-01'
     description: |2-
-
 
   - title: Full-Stack Software Engineer Intern
     company: Amazon Web Services (AWS), Identity and Access Management
@@ -62,7 +53,6 @@ experience:
     date_end: '2020-09-01'
     description: |2-
 
-
   - title: Research Program in Big Data & Cybersecurity
     company: Ben-Gurion University of the Negev
     company_url: ''
@@ -72,7 +62,6 @@ experience:
     date_end: '2018-08-01'
     description: |2-
 
- 
 design:
   columns: '2'
 ---
