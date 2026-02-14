@@ -73,4 +73,4 @@ title:
 
 你好！我是[香港中文大学（深圳）数据科学学院](https://sds.cuhk.edu.cn/en)的博士生，师从[李彤欣](https://tongxin.me/)教授。我的研究兴趣主要集中在**生成式引擎优化（GEO）与营销AI智能体**、**上下文决策（In-Context Decision Making）**和**鲁棒大语言模型应用（Robust LLM Applications）**。
 
-此前，我获美国纽约大学（柯朗研究所）硕士学位，并在加拿大女王大学和中国吉林大学完成了2+2双学士学位项目。
+此前，我获美国[纽约大学（柯朗研究所）](https://cs.nyu.edu/home/index.html)硕士学位，并在加拿大[女王大学](https://smithengineering.queensu.ca/ece/index)和中国[吉林大学](https://csw.jlu.edu.cn/)完成了2+2双学士学位项目。

@@ -1,0 +1,19 @@
+# Custom dark theme — purple accent
+name = "dark"
+
+[dark]
+  # Primary — 浅紫 (与日间 #6C3483 配对)
+  primary = "#bb86fc"
+
+  # Menu
+  menu_primary = "#1a1a2e"
+  menu_text = "#ddd"
+  menu_text_active = "#bb86fc"
+  menu_title = "#fff"
+
+  # Home sections
+  home_section_odd = "#1a1a2e"
+  home_section_even = "#16213e"
+
+  link = "#bb86fc"
+  link_hover = "#ce9ffc"

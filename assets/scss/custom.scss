@@ -15,7 +15,7 @@ html {
 a:focus-visible,
 button:focus-visible,
 .btn:focus-visible {
-  outline: 2px solid var(--primary, #1565c0);
+  outline: 2px solid var(--primary, #6C3483);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -111,7 +111,7 @@ button:focus-visible,
     text-decoration: none;
     transition: border-color 0.2s ease;
     &:hover {
-      border-bottom-color: var(--primary, #1565c0);
+      border-bottom-color: var(--primary, #6C3483);
     }
   }
 }
@@ -234,7 +234,7 @@ button:focus-visible,
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--primary, #1565c0);
+  background: var(--primary, #6C3483);
   position: absolute;
   left: -1rem;
   top: 0.55em;
@@ -281,7 +281,7 @@ button:focus-visible,
       top: 0;
       font-size: 0.78rem;
       font-weight: 700;
-      color: var(--primary, #1565c0);
+      color: var(--primary, #6C3483);
       opacity: 0.55;
       width: 1.5rem;
       text-align: center;
@@ -339,7 +339,7 @@ button:focus-visible,
 }
 .wechat-item i {
   transition: color 0.3s ease;
-  color: #e74c3c !important;
+  color: #6C3483 !important;
 }
 .wechat-item:hover i {
   color: #1bb723 !important;
@@ -399,7 +399,7 @@ button:focus-visible,
     left: 50%;
     width: 0;
     height: 2px;
-    background: var(--primary, #1565c0);
+    background: var(--primary, #6C3483);
     transition: width 0.25s ease, left 0.25s ease;
     border-radius: 1px;
   }
@@ -516,14 +516,14 @@ button:focus-visible,
 .dark .col-12.col-lg-8 > .article-style a {
   border-bottom-color: rgba(255, 255, 255, 0.2);
   &:hover {
-    border-bottom-color: var(--primary, #90caf9);
+    border-bottom-color: var(--primary, #bb86fc);
   }
 }
 .dark .page-footer {
   border-top-color: rgba(255, 255, 255, 0.06);
 }
 .dark .navbar-nav .nav-link::after {
-  background: var(--primary, #90caf9);
+  background: var(--primary, #bb86fc);
 }
 
 // ==========================================
