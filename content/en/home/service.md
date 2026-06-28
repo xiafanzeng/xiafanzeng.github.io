@@ -18,9 +18,9 @@ date_format: Jan 2006
 
 experience:
   - title: Co-Founder & CEO
-    company: LinkRoad
+    company: FrontMind
     company_url: ''
-    company_logo: media/icons/service/linkroad.png
+    company_logo: media/icons/service/frontmind-white-bg.png
     location: China
     date_start: '2026-01-01'
     date_end: ''

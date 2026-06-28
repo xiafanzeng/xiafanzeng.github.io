@@ -18,9 +18,9 @@ date_format: 2006年 1月
 
 experience:
   - title: 联合创始人 & CEO
-    company: 路链科技有限公司 (LinkRoad)
+    company: 超前无限科技有限公司（FrontMind）
     company_url: ''
-    company_logo: media/icons/service/linkroad.png
+    company_logo: media/icons/service/frontmind-white-bg.png
     location: 中国
     date_start: '2026-01-01'
     date_end: ''
