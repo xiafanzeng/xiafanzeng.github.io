@@ -24,14 +24,14 @@
   image_position: center 65%
   zh:
     title: AI跃迁时代的个人成长
-    description: 受邀在第三届《中国梦·教育梦》2026新时代家庭教育发展大会分享，探讨AI跃迁时代的个人成长与未来稀缺的竞争力。
+    description: 受邀在第三届《中国梦·教育梦》2026新时代家庭教育发展大会分享，探讨AI跃迁时代的个人成长与未来稀缺的竞争力。特聘为【华德育才·梦想学院】智库专家。
     category: 受邀演讲
     location: 中国 · 长沙
     image_alt: 家庭教育发展大会演讲现场，舞台屏幕展示个人核心竞争力主题
   en:
     title: Personal Growth in the AI Era
     description: Invited to speak at the third China Dream · Education Dream conference on family education, exploring personal
-      growth and the capabilities that may become scarce as AI advances.
+      growth and the capabilities that may become scarce as AI advances. Also appointed as a think tank expert at Huade Yucai · Dream Academy.
     category: Invited Talk
     location: Changsha, China
     image_alt: A talk at the family education conference, with a presentation on core personal capabilities
@@ -82,13 +82,13 @@
   image: media/events/wandong-ai-web3-trade-2026.jpg
   image_position: center 42%
   zh:
-    title: AI与Web3.0赋能跨境贸易
+    title: AI赋能跨境贸易
     description: 在湾东国际人才之家“AI赋能创意，鸿蒙链接未来”活动中，分享AI与Web3.0在跨境贸易中的应用，探讨创意产品出海的新思路。
     category: 主题分享
     location: 中国 · 深圳龙岗
     image_alt: 湾东国际人才之家活动中展示路链科技资料的分享现场
   en:
-    title: AI and Web3.0 for Cross-Border Trade
+    title: AI-Powered Cross-Border Trade
     description: Discussed AI and Web3.0 applications in cross-border trade and new ways for local creative products to reach
       overseas markets at Wandong International Talent House.
     category: Talk
@@ -97,19 +97,19 @@
   url: https://mp.weixin.qq.com/s?__biz=MzI2ODE5MzgzMQ==&mid=2650621549&idx=3&sn=815acc58d4e4195bb6ea51c70afd77c6&chksm=f3dc197543a86ba2890e1fdb5823e79b40233f79570443b7102efa91e2d22ca74934e005fef8&mpshare=1&scene=24&srcid=0116mlsThwGpffYCKolGHYbH&sharer_shareinfo=c3c1da182c680b2d111105d0c9517b16&sharer_shareinfo_first=99c3b0620bc8a3c305f35b30f3e76c50#rd
 - id: innovate-x-linkroad-financing-2025
   date: '2025-12-03'
-  image: media/events/innovate-x-linkroad-financing-2025.jpg
+  image: media/events/innovate-x-linkroad-financing-2025.png
   image_position: center 40%
   zh:
-    title: 独角兽私董会：AI与Web3.0创业融资
+    title: 香港中文大学（深圳）独角兽私董会
     description: Innovate X第三期独角兽私董会以路链科技为案例，讨论AI与Web3.0跨境贸易的首轮融资路径和发展模式。
     category: 创业交流
-    image_alt: 以路链科技为案例的独角兽私董会现场发言照片
+    image_alt: 香港中文大学（深圳）独角兽私董会参与者现场合影
   en:
-    title: 'Innovate X: Financing an AI and Web3.0 Venture'
+    title: CUHK-Shenzhen Unicorn Advisory Board
     description: The third Innovate X Unicorn Advisory Board session used Link Road as a case study to discuss initial financing
       and business models for AI and Web3.0 in cross-border trade.
     category: Entrepreneurship
-    image_alt: A speaker at the Unicorn Advisory Board session featuring Link Road
+    image_alt: Group photo of participants at the CUHK-Shenzhen Unicorn Advisory Board session
   url: https://mp.weixin.qq.com/s?__biz=Mzg5MjYzNjM4OA==&mid=2247513048&idx=1&sn=98fdf9e287e2dd5ad15d5a05927b0ddb&chksm=c16f0bc268ba16ff476f9391477f425d18ed244aa8385b38e15b4f9c02ee85a922634614ba68&mpshare=1&scene=24&srcid=1215JTsnY53X6tkFh8qoUe6r&sharer_shareinfo=61dc05a9796ace56ebc24e31816f6a80&sharer_shareinfo_first=61dc05a9796ace56ebc24e31816f6a80#rd
 - id: cide-tenth-anniversary-panel-2025
   date: '2025-11-20'
