@@ -55,6 +55,7 @@ Sources 1, 3, 5, 6, 7, 8, 9 and the newly supplied CCTA workshop article were re
 - Event: **July 8**, explicitly stated in the opening paragraph. The year 2026 is independently confirmed by the event announcement poster described below.
 - Exact event wording: “7月8日，由阿里悟空、深圳市人工智能产业协会、香港中文大学（深圳）联合主办的「走进香港中文大学（深圳）——共探AI增长与AI产业化机遇」专题交流活动顺利举行。”
 - Connection: the body states that 南讯智能 and the university's FrontMind 智能决策实验室 team established strategic collaboration. This report does not name Fanzeng Xia individually; the companion announcement identifies his invited talk.
+- On **2026-11-17**, the user explicitly confirmed representing **香港中文大学（深圳）智能决策实验室** in the research–industry strategic collaboration with **南讯智能** during the July 8 event. The card's individual representative role is based on this user confirmation; it is not attributed to the original report's institutional wording.
 - Location: CUHK-Shenzhen, Shenzhen, China.
 - Image: `assets/media/events/ai-industry-exchange-cuhksz-2026.jpg`, the report's first photograph showing the event group and banner. [Original full-size photograph](https://mmecoa.qpic.cn/mmecoa_jpg/urllVamWoTC58yibSw05jGwkxSFTicMIKcEUAkvFn7Kudbm5KCYGkdbm5UrBFiaFKh1oV3OribcKQQQFra6eicSZrSBW9EnBJtD2vE1ggqhyRWBE/0?wx_fmt=jpeg). No AI imagery is used.
 - Companion source 5: [【活动预告】走进香港中文大学（深圳）携手阿里悟空和深圳市人工智能产业协会共探AI增长与AI产业化机遇](https://mp.weixin.qq.com/s?__biz=MzkzNzE3NzIyNA==&mid=2247713289&idx=2&sn=6a1e3e27517d381d6414c971c86efc40), published **2026-06-30**. This URL is preserved as the card's `related_links` announcement.
@@ -85,6 +86,7 @@ Sources 1, 3, 5, 6, 7, 8, 9 and the newly supplied CCTA workshop article were re
 - **2025-11-20 is the publication date.** The verified body does not supply an exact event date. The candidate main image is a group photograph, and date text on its small floor screens is not reliably legible even in the larger original. Consequently, this record has `date_kind: report`; no event date has been inferred.
 - Location: 香港中文大学（深圳）会议楼II101宴会厅.
 - The article identifies 夏钒曾, a 2023-entry doctoral student and founder of 路链科技, as a guest in the panel “双创共话：打通从校园到市场的最后一公里”. The card frames this as an anniversary report.
+- On **2026-11-17**, the user explicitly confirmed the title **“香港中文大学（深圳）创新创意创业中心十周年代表：从校园到市场”**, including its **代表** wording. This title wording is user-supplied; the report remains the source for participation in the panel as Link Road's founder, and its publication date remains distinct from an unconfirmed event date.
 - Image: `assets/media/events/cide-tenth-anniversary-panel-2025.jpg`. [Original panel image 7](https://mmbiz.qpic.cn/mmbiz_jpg/Hd9Iaxs5WSjd6lMv4Hmk01ZRba3oH4YFyLAk1xavKwfvXicmpCF37vq4eLrGa4jxEZrV709PZSSTxIEzJUkOOgQ/640?wx_fmt=jpeg). Its backdrop explicitly carries this panel title and the name 夏钒曾. Image 8 shows a different panel, “双城对话：中大创业人的深港故事”, and was not selected.
 
 ## C Star African entrepreneurs' visit — 2025-09-19
