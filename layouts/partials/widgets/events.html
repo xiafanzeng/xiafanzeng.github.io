@@ -1,0 +1,70 @@
+{{ $st := .page }}
+{{ $lang := site.Language.Lang }}
+{{ $events := sort site.Data.events "date" "desc" }}
+
+<div class="col-12 col-lg-8">
+<div class="events-grid" aria-labelledby="events-heading">
+  {{ range $events }}
+    {{ $event := . }}
+    {{ $copy := index . $lang }}
+    {{ $date := time .date }}
+    {{ $dateEnd := time (.date_end | default .date) }}
+    {{ $dateRange := ne ($date.Format "2006-01-02") ($dateEnd.Format "2006-01-02") }}
+    {{ $sameMonth := eq ($date.Format "2006-01") ($dateEnd.Format "2006-01") }}
+    {{ $dateText := $date.Format "January 2, 2006" }}
+    {{ $dateLabel := $dateText }}
+    {{ if eq $lang "zh" }}
+      {{ $dateText = $date.Format "2006年1月2日" }}
+      {{ $dateLabel = $dateText }}
+      {{ if $dateRange }}
+        {{ $dateLabel = printf "%s至%s" ($date.Format "2006年1月2日") ($dateEnd.Format "2006年1月2日") }}
+        {{ $dateText = printf "%s–%s" ($date.Format "2006年1月2日") ($dateEnd.Format "2006年1月2日") }}
+        {{ if $sameMonth }}
+          {{ $dateText = printf "%s–%s日" ($date.Format "2006年1月2") ($dateEnd.Format "2") }}
+        {{ end }}
+      {{ end }}
+    {{ else if $dateRange }}
+      {{ $dateLabel = printf "%s to %s" ($date.Format "January 2, 2006") ($dateEnd.Format "January 2, 2006") }}
+      {{ $dateText = printf "%s – %s" ($date.Format "January 2, 2006") ($dateEnd.Format "January 2, 2006") }}
+      {{ if $sameMonth }}
+        {{ $dateText = printf "%s–%s, %s" ($date.Format "January 2") ($dateEnd.Format "2") ($date.Format "2006") }}
+      {{ end }}
+    {{ end }}
+    {{ $image := resources.Get .image }}
+    {{ if not $image }}
+      {{ errorf "Missing event photo: %s" .image }}
+    {{ end }}
+    <article class="event-card">
+      <a class="event-card-link" href="{{ .url }}" target="_blank" rel="noopener noreferrer" aria-labelledby="event-{{ .id }}-title" aria-describedby="event-{{ .id }}-new-tab">
+        <div class="event-photo{{ if eq .image_fit "contain" }} event-photo--contain{{ end }}">
+          {{ with $image }}
+            {{ $small := .Resize "640x webp q82" }}
+            {{ $large := .Resize "1100x webp q85" }}
+            <img src="{{ $small.RelPermalink }}" srcset="{{ $small.RelPermalink }} 640w, {{ $large.RelPermalink }} 1100w" sizes="(min-width: 1200px) 390px, (min-width: 992px) 300px, (min-width: 768px) 330px, calc(100vw - 30px)" width="{{ $large.Width }}" height="{{ $large.Height }}" alt="{{ $copy.image_alt }}" loading="lazy" decoding="async"{{ with $event.image_position }} style="object-position: {{ . | safeCSS }}"{{ end }}>
+          {{ end }}
+          {{ with $copy.location }}<span class="event-location">{{ . }}</span>{{ end }}
+        </div>
+        <div class="event-details">
+          <div class="event-copy">
+            <div class="event-meta">
+              <time class="event-date" datetime="{{ .date }}" aria-label="{{ $dateLabel }}">{{ $dateText }}</time>
+              <span class="event-category">{{ $copy.category }}</span>
+            </div>
+            <h2 id="event-{{ .id }}-title">{{ $copy.title }}</h2>
+            <p class="event-description">{{ $copy.description }}</p>
+            <span class="event-cta">{{ $st.Params.read_more }}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></span>
+            <span class="sr-only" id="event-{{ .id }}-new-tab">{{ $st.Params.new_tab }}</span>
+          </div>
+        </div>
+      </a>
+      {{ with .related_links }}
+        <div class="event-related">
+          {{ range . }}
+            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" aria-describedby="event-{{ $event.id }}-new-tab">{{ index . $lang }}<span aria-hidden="true"> ↗</span></a>
+          {{ end }}
+        </div>
+      {{ end }}
+    </article>
+  {{ end }}
+</div>
+</div>

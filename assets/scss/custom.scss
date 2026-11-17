@@ -215,6 +215,195 @@ button:focus-visible,
   margin-top: 0.15rem;
 }
 
+// ----- Events 活动与分享 -----
+// Reuse the homepage section heading/content columns; show two cards per row.
+.wg-events {
+  --event-accent: #6a1b9a;
+  --event-surface: #fff;
+  --event-ink: #27212d;
+  --event-muted: #66606c;
+  --event-border: #e9e2ed;
+  --event-photo-bg: #e9e2ed;
+}
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+.event-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--event-surface);
+  border: 1px solid var(--event-border);
+  border-radius: var(--site-radius);
+  box-shadow: 0 2px 6px rgba(42, 18, 56, 0.025);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.event-card:hover {
+  border-color: var(--event-accent);
+  box-shadow: 0 8px 24px rgba(42, 18, 56, 0.07);
+}
+.event-card .event-card-link {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  color: var(--event-ink);
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: inherit;
+}
+.event-card .event-card-link:hover {
+  color: var(--event-ink);
+  text-decoration: none;
+}
+.event-card .event-card-link:focus-visible {
+  outline: 3px solid var(--event-accent);
+  outline-offset: -3px;
+}
+.event-card .event-card-link:active .event-cta {
+  opacity: 0.65;
+}
+.event-photo {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--event-photo-bg);
+}
+.event-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+.wg-events .event-photo--contain img {
+  object-fit: contain;
+}
+.event-card-link:hover .event-photo:not(.event-photo--contain) img {
+  transform: scale(1.025);
+}
+.event-location {
+  position: absolute;
+  left: 0.85rem;
+  bottom: 0.75rem;
+  max-width: calc(100% - 1.7rem);
+  padding: 0.24rem 0.5rem;
+  border-radius: 3px;
+  background: rgba(25, 18, 30, 0.78);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.event-details {
+  display: flex;
+  flex: 1;
+  padding: 1.2rem;
+}
+.event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.3rem 1rem;
+  margin-bottom: 0.65rem;
+}
+.event-date {
+  color: var(--event-muted);
+  font-family: inherit;
+  font-size: 0.76rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.6;
+}
+.event-related {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 0.65rem 1.15rem;
+  border-top: 1px solid var(--event-border);
+  font-size: 0.65rem;
+}
+.event-related a {
+  color: var(--event-accent);
+}
+.event-related a:focus-visible {
+  outline: 2px solid var(--event-accent);
+  outline-offset: 4px;
+}
+.event-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+.event-category {
+  color: var(--event-muted);
+  font-size: 0.64rem;
+  letter-spacing: 0.035em;
+  line-height: 1.5;
+}
+.event-copy h2 {
+  margin: 0 0 0.55rem;
+  color: var(--event-ink);
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.event-description {
+  margin: 0 0 1rem;
+  color: var(--event-muted);
+  font-size: 0.78rem;
+  line-height: 1.8;
+}
+.event-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: auto;
+  color: var(--event-accent);
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.event-cta svg {
+  flex: 0 0 1rem;
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.25s ease;
+}
+.event-card-link:hover .event-cta svg {
+  transform: translate(2px, -2px);
+}
+.dark .wg-events {
+  --event-accent: #d7a9ee;
+  --event-surface: #29232f;
+  --event-ink: #f4eff7;
+  --event-muted: #c2b9c9;
+  --event-border: #46394f;
+  --event-photo-bg: #322a39;
+}
+@media (max-width: 991.98px) {
+  .events-grid { gap: 1rem; }
+  .event-details { padding: 1rem; }
+  .event-date { font-size: 14px; }
+  .event-copy h2 { font-size: 17px; }
+  .event-description { font-size: 14px; }
+  .event-category { font-size: 12px; }
+  .event-location { font-size: 11px; }
+  .event-cta, .event-related { font-size: 13px; }
+}
+@media (max-width: 767.98px) {
+  .events-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+  }
+}
+
 // ----- News 新闻列表（首页 + 全部新闻页） -----
 #news .card-text,
 #news .article-style,

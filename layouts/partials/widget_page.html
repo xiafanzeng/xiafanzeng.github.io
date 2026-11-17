@@ -122,7 +122,7 @@
   {{end}}
 
   {{ $columns := $st.Params.design.columns | default "2" }}
-  {{ $use_cols := in (slice "service" "project" "pages" "featured" "experience" "accomplishments" "contact" "blank" "tag_cloud" "portfolio" "teaching"  "publications") $widget }}
+  {{ $use_cols := in (slice "service" "project" "pages" "featured" "experience" "events" "accomplishments" "contact" "blank" "tag_cloud" "portfolio" "teaching"  "publications") $widget }}
 
   {{/* Dedicated child div for bg prevents parallax 100% height issue within new CSS grid page wrapper. */}}
   <section id="{{$hash_id}}" class="home-section {{$widget_class}} {{if $bg.text_color_light}}dark{{else if (eq $bg.text_color_light false)}}light{{end}} {{with $css_classes}}{{.}}{{end}}" {{with $style}}style="{{. | safeCSS}}"{{end}} {{print $extra_attributes | safeHTMLAttr}}>
@@ -136,12 +136,12 @@
       {{ if $st.Title }}
         {{ if eq $columns "1" }}
           <div class="section-heading col-12 mb-3 text-center">
-            {{ with $st.Title }}<h1 class="mb-0">{{ . | markdownify | emojify }}</h1>{{ end }}
+            {{ with $st.Title }}<h1 id="{{$hash_id}}-heading" class="mb-0">{{ . | markdownify | emojify }}</h1>{{ end }}
             {{ with $st.Params.subtitle }}<p class="mt-1">{{ . | markdownify | emojify }}</p>{{ end }}
           </div>
         {{else}}
           <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
-            {{ with $st.Title }}<h1 class="mb-0">{{ . | markdownify | emojify }}</h1>{{ end }}
+            {{ with $st.Title }}<h1 id="{{$hash_id}}-heading" class="mb-0">{{ . | markdownify | emojify }}</h1>{{ end }}
             {{ with $st.Params.subtitle }}<p class="mt-1">{{ . | markdownify | emojify }}</p>{{ end }}
             {{ with $st.Params.ex_link }}<p class="mt-1"><a href="{{ $st.Params.ex_link | relLangURL }}">{{ $st.Params.ex_link_title | markdownify | emojify }}</a></p>{{ end }}
           </div>

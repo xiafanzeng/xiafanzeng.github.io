@@ -8,6 +8,10 @@ main:
     url: '#about'
     weight: 10
 
+  - name: Events
+    url: '#events'
+    weight: 15
+
   - name: News
     url: '#news'
     weight: 20

@@ -21,6 +21,10 @@ zh:
         url: '#about'
         weight: 10
 
+      - name: 活动
+        url: '#events'
+        weight: 15
+
       - name: 新闻
         url: '#news'
         weight: 20
