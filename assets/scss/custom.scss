@@ -281,21 +281,11 @@ button:focus-visible,
 .wg-events .event-photo--contain img {
   object-fit: contain;
 }
-.event-card-link:hover .event-photo:not(.event-photo--contain) img {
-  transform: scale(1.025);
+.event-photo--document-title {
+  background: #fff;
 }
-.event-location {
-  position: absolute;
-  left: 0.85rem;
-  bottom: 0.75rem;
-  max-width: calc(100% - 1.7rem);
-  padding: 0.24rem 0.5rem;
-  border-radius: 3px;
-  background: rgba(25, 18, 30, 0.78);
-  color: #fff;
-  font-size: 0.65rem;
-  font-weight: 500;
-  line-height: 1.5;
+.event-card-link:hover .event-photo:not(.event-photo--contain):not(.event-photo--document-title) img {
+  transform: scale(1.025);
 }
 .event-details {
   display: flex;
@@ -394,7 +384,6 @@ button:focus-visible,
   .event-copy h2 { font-size: 17px; }
   .event-description { font-size: 14px; }
   .event-category { font-size: 12px; }
-  .event-location { font-size: 11px; }
   .event-cta, .event-related { font-size: 13px; }
 }
 @media (max-width: 767.98px) {

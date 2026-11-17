@@ -19,30 +19,28 @@
     location: Changsha, China
     image_alt: Presentation and audience at the Changsha Cross-Border Trade Association’s GEO and AI workshop
 - id: family-education-ai-growth-2026
-  date: '2026-11-07'
-  date_end: '2026-11-09'
+  date: '2026-11-08'
   image: media/events/family-education-ai-growth-2026.jpg
-  image_fit: contain
-  image_position: center
+  image_position: center 65%
   zh:
     title: AI跃迁时代的个人成长
     description: 受邀在第三届《中国梦·教育梦》2026新时代家庭教育发展大会分享，探讨AI跃迁时代的个人成长与未来稀缺的竞争力。
     category: 受邀演讲
     location: 中国 · 长沙
-    image_alt: 原文中夏钒曾的嘉宾介绍及演讲主题海报
+    image_alt: 夏钒曾在家庭教育发展大会演讲现场，舞台屏幕展示个人核心竞争力主题
   en:
     title: Personal Growth in the AI Era
     description: Invited to speak at the third China Dream · Education Dream conference on family education, exploring personal
       growth and the capabilities that may become scarce as AI advances.
     category: Invited Talk
     location: Changsha, China
-    image_alt: Original speaker poster introducing Fanzeng Xia and his invited talk
+    image_alt: Fanzeng Xia speaking at the family education conference, with a presentation on core personal capabilities
   url: https://mp.weixin.qq.com/s?__biz=MjM5NzcwMTYyOA==&mid=2650608123&idx=2&sn=379e671b975f6bcdca828b6675fc171d&chksm=bf44e7895571629a4ed6c01e9554542646c2f3a9090e02a92aac5d09096365681fef129ab120&mpshare=1&scene=1&srcid=1023fcCWjQLFufGFCDN2Xih4&sharer_shareinfo=88d9a08ddd7a41bdd08c6d6c5b5f614a&sharer_shareinfo_first=38942a55fef2c58e38c8aa2acac35091#rd
 - id: geo-trustworthy-standard-2026
   date: '2026-08-11'
   url: https://my-h5news.app.xinhuanet.com/h5/article.html?articleId=202608123323a47bda40437f8a42ee135670ab2f
   image: media/events/geo-trustworthy-standard-2026.jpg
-  image_position: center
+  image_position: center 43%
   zh:
     title: GEO可信传播团体标准发布
     description: 香港中文大学（深圳）智能决策实验室参与编制《生成式引擎优化（GEO）可信信息传播与信息生态治理规范》，标准于8月11日正式发布。
@@ -56,7 +54,7 @@
     category: Industry Standard
     location: China
     image_alt: Official cover of the standard for trustworthy information dissemination and ecosystem governance in GEO
-  image_fit: contain
+  image_fit: document-title
 - id: ai-industry-exchange-cuhksz-2026
   date: '2026-07-08'
   url: https://mp.weixin.qq.com/s/PKQJZ8bz9W9JQdWqMaYmOg

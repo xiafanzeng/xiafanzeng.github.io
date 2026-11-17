@@ -16,14 +16,14 @@ Sources 1, 3, 5, 6, 7, 8, 9 and the newly supplied CCTA workshop article were re
 - The card summarizes the verified subject matter only; it does not repeat statistics or quantitative claims that have not been independently checked.
 - Image: `assets/media/events/ccta-geo-ai-workshop-2026.jpg`. [Original image 4](https://mmbiz.qpic.cn/mmbiz_jpg/515HhSHo6BaUjW11gxLZpr9fpM3y6qZDjQ26f3OjSVz6rxOpiauc4Y0hUVbBIFbgoicMia47TxWPbFIZn8puIWUiav7NJHoxwYnxibxiagYlFrEfo/640?wx_fmt=jpeg) was located in the 夏钒曾 presentation section through the article DOM. Visual inspection confirms a genuine presentation scene, with a speaker, audience and projected GEO material. The original is 1080 × 656; centered 16:9 framing retains the speaker's head and the presentation.
 
-## Invited talk at the family education conference — 2026-11-07 to 2026-11-09
+## Invited talk at the family education conference — 2026-11-08
 
 - Data ID: `family-education-ai-growth-2026`; supplied source 1.
 - [Original invitation](https://mp.weixin.qq.com/s?__biz=MjM5NzcwMTYyOA==&mid=2650608123&idx=2&sn=379e671b975f6bcdca828b6675fc171d): 第三届《中国梦·教育梦》2026新时代家庭教育发展大会, Changsha.
-- The browser-verified conference dates are **November 7–9, 2026**. These are the conference's dates; no separate date or time for Fanzeng Xia's session was supplied in the verification note.
-- The source is an invitation. Accordingly, the card says **受邀 / invited**, rather than claiming that the planned talk was delivered.
-- Topic: 《AI跃迁时代的个人成长：探寻未来稀缺的竞争力》. The selected poster explicitly prints 夏钒曾 and this topic.
-- Image: `assets/media/events/family-education-ai-growth-2026.jpg`. [Original speaker poster](https://mmbiz.qpic.cn/sz_mmbiz_jpg/oKXFlV8XIV2AoC3JOMLBHqLWSO03Bx2JnW0C7akZzuVJ4nQIYGjhobfYsRltYwic2cTSwBELnRSphcqexTxteCIdtKAn8RIax5oibkXzqcNibg/640?wx_fmt=jpeg). This is a speaker poster, not a photograph taken at the conference; `image_fit: contain` preserves its full contents.
+- The browser-verified conference dates are **November 7–9, 2026**. On **2026-11-17**, the user explicitly confirmed **November 8, 2026** as Fanzeng Xia's personal speaking date and supplied a photograph taken during the talk. The card now uses that single confirmed date, with no `date_end`.
+- The linked source remains the original invitation, and the card retains its **受邀 / invited** wording. The user's confirmation and supplied on-site photograph establish the delivered talk and its date.
+- Topic: 《AI跃迁时代的个人成长：探寻未来稀缺的竞争力》, as printed with 夏钒曾's name in the original invitation.
+- Image: `assets/media/events/family-education-ai-growth-2026.jpg`, the **1440 × 1080 on-site photograph supplied by the user on 2026-11-17**. It shows the speaker on stage, an enlarged live view of the speaker, the presentation on personal core capabilities, and the audience. This photograph replaces the previously selected invitation poster. The original image is preserved; the card uses `image_position: center 65%` for its 16:9 framing and no longer uses `image_fit: contain`.
 - The browser displayed publication on **2026-10-21** and modification on **2026-10-23**. Neither date is used as the event date.
 
 ## School of Data Science feature — reported 2026-08-28 — no longer displayed
@@ -44,7 +44,7 @@ Sources 1, 3, 5, 6, 7, 8, 9 and the newly supplied CCTA workshop article were re
 - The [official standard PDF](https://xhsc.app.xinhuanet.com/cms/article/image/effde681006146f3aa151b6c3d90d10c.pdf) confirms `2026 - 08 - 11 发布` and `2026 - 08 - 12 实施` on its cover.
 - Connection: the article identifies “香港中文大学（深圳）智能决策实验室” among more than 30 participating institutions. The PDF also lists the laboratory among drafting institutions. It does **not** list 夏钒曾 among principal drafters, so the card makes no individual authorship claim.
 - Location: China. The article names Beijing as the **review** location; it does not specify a physical venue for the August 11 release.
-- Image: `assets/media/events/geo-trustworthy-standard-2026.jpg`, rendered from page 1 of the official PDF above. The article has no photographs. This is an authentic document cover, not a photograph of the event; the alt text identifies it accordingly. Use `image_fit: contain` to retain the full cover.
+- Image: `assets/media/events/geo-trustworthy-standard-2026.jpg`, rendered from page 1 of the official PDF above. The article has no photographs. This is an authentic document cover, not a photograph of the event; the alt text identifies it accordingly. At the user's request on 2026-11-17, the card displays the cover on a white background with enlarged framing focused on its central title.
 
 ## AI growth and commercialization exchange — 2026-07-08
 
@@ -98,6 +98,6 @@ Sources 1, 3, 5, 6, 7, 8, 9 and the newly supplied CCTA workshop article were re
 
 - The precise event date of source 8 is unconfirmed; the card explicitly represents a report dated November 20.
 - Source 3 is an institutional feature, not an in-person event, and is no longer displayed at the user's request.
-- Source 1 establishes an invitation and the conference date range, not proof of delivery or an exact individual session time.
+- Source 1 records the invitation and conference date range; the user's confirmation and on-site photograph supplied on 2026-11-17 establish November 8 as the individual speaking date.
 - Source 2 names the laboratory among drafting institutions; neither the article nor the standard's named principal-drafter list names 夏钒曾 individually.
 - Sources 4 and 5 cover the same July 8 event and remain accessible through two separate links on one card.

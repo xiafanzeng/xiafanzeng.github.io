@@ -36,13 +36,12 @@
     {{ end }}
     <article class="event-card">
       <a class="event-card-link" href="{{ .url }}" target="_blank" rel="noopener noreferrer" aria-labelledby="event-{{ .id }}-title" aria-describedby="event-{{ .id }}-new-tab">
-        <div class="event-photo{{ if eq .image_fit "contain" }} event-photo--contain{{ end }}">
+        <div class="event-photo{{ if eq .image_fit "contain" }} event-photo--contain{{ else if eq .image_fit "document-title" }} event-photo--document-title{{ end }}">
           {{ with $image }}
             {{ $small := .Resize "640x webp q82" }}
             {{ $large := .Resize "1100x webp q85" }}
             <img src="{{ $small.RelPermalink }}" srcset="{{ $small.RelPermalink }} 640w, {{ $large.RelPermalink }} 1100w" sizes="(min-width: 1200px) 390px, (min-width: 992px) 300px, (min-width: 768px) 330px, calc(100vw - 30px)" width="{{ $large.Width }}" height="{{ $large.Height }}" alt="{{ $copy.image_alt }}" loading="lazy" decoding="async"{{ with $event.image_position }} style="object-position: {{ . | safeCSS }}"{{ end }}>
           {{ end }}
-          {{ with $copy.location }}<span class="event-location">{{ . }}</span>{{ end }}
         </div>
         <div class="event-details">
           <div class="event-copy">
