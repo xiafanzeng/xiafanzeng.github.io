@@ -719,19 +719,40 @@ button:focus-visible,
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.25rem;
+  align-items: baseline;
+  gap: 0.3rem 1rem;
   i {
     margin-right: 0.2rem;
   }
 }
-.visitor-stats-sep {
-  color: #000;
+.visitor-stats-values {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem 1rem;
+}
+.visitor-stats-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.15rem;
+}
+.visitor-stats-note,
+.visitor-stats-history {
+  flex-basis: 100%;
+  font-size: 0.92em;
+  line-height: 1.6;
+  color: #5f5f5f;
+  overflow-wrap: anywhere;
+}
+.visitor-stats [hidden] {
+  display: none !important;
 }
 .dark .visitor-stats {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.8);
 }
-.dark .visitor-stats-sep {
-  color: rgba(255, 255, 255, 0.25);
+.dark .visitor-stats-note,
+.dark .visitor-stats-history {
+  color: rgba(255, 255, 255, 0.65);
 }
 /* 尊重系统“减少动态效果”偏好 */
 @media (prefers-reduced-motion: reduce) {
@@ -748,7 +769,7 @@ button:focus-visible,
     font-size: 0.78rem;
     line-height: 1.7;
   }
-  .visitor-stats-sep {
-    display: none;
+  .visitor-stats-values {
+    flex-basis: 100%;
   }
 }

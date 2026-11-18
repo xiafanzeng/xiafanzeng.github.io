@@ -1,13 +1,11 @@
 <!-- CN access optimization: remove cookie consent CDN dependency -->
-<!-- Busuanzi visitor counter (HTTPS) -->
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script>
-  // Fallback: if busuanzi is unavailable, stop spinner.
-  setTimeout(function () {
-    var pv = document.getElementById('busuanzi_value_site_pv');
-    var uv = document.getElementById('busuanzi_value_site_uv');
-    if (pv && !pv.textContent.trim()) pv.textContent = '--';
-    if (uv && !uv.textContent.trim()) uv.textContent = '--';
-  }, 5000);
-</script>
-
+{{- with site.Params.visitor_stats -}}
+  {{- $script := resources.Get "js/visitor-stats.js" | minify | fingerprint "sha256" -}}
+  <script defer src="{{ $script.RelPermalink }}"
+          integrity="{{ $script.Data.Integrity }}"
+          data-domain="{{ .domain }}"
+          data-website-id="{{ .website_id }}"
+          data-script-url="{{ .script_url }}"
+          data-host-url="{{ .host_url }}"
+          data-totals-url="{{ .totals_url }}"></script>
+{{- end -}}

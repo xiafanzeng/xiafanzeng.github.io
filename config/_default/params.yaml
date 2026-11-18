@@ -42,6 +42,13 @@ header:
 
 # Site footer
 
+visitor_stats:
+  domain: 'xiafanzeng.github.io'
+  website_id: '967fef07-a29f-41d0-985f-94d6b2fdd356'
+  script_url: 'https://stats.cuhkgeo.com/script.js'
+  host_url: 'https://stats.cuhkgeo.com'
+  totals_url: 'https://stats.cuhkgeo.com/totals.json'
+
 footer:
   copyright:
 #    notice: '© {year} Me. This work is licensed under {license}'
