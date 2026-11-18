@@ -42,6 +42,7 @@ function createPage(options = {}) {
     'data-domain': 'xiafanzeng.github.io', 'data-website-id': options.websiteId ?? websiteId,
     'data-script-url': 'https://stats.cuhkgeo.com/script.js',
     'data-host-url': 'https://stats.cuhkgeo.com', 'data-totals-url': endpoint,
+    'data-pageviews-baseline': options.pageviewsBaseline, 'data-visitors-baseline': options.visitorsBaseline,
   });
   const head = new Element('head');
   const stored = new Map();
@@ -91,7 +92,11 @@ function createPage(options = {}) {
 }
 
 function assertCompact(page, language = 'zh', counts = sample) {
-  assert.equal(page.values.children.length, 2);
+  assert.deepEqual(Array.from(page.values.children, item => item.className), [
+    'visitor-stats-sep', 'visitor-stats-item', 'visitor-stats-sep', 'visitor-stats-item',
+  ]);
+  assert.equal(page.values.children[1].children[0].className, 'fas fa-eye');
+  assert.equal(page.values.children[3].children[0].className, 'fas fa-users');
   assert.match(page.values.textContent, new RegExp(`${language === 'zh' ? '访问量：' : 'Views: '}${counts.pageviews}`));
   assert.match(page.values.textContent, new RegExp(`${language === 'zh' ? '访客数：' : 'Visitors: '}${counts.visitors}`));
   assert.equal(page.note.hidden, true);
@@ -160,6 +165,24 @@ test('tracker load errors, missing API, and collection rejection still allow tot
     const page = createPage({ track });
     await page.loadTracker();
     assertCompact(page);
+  }
+});
+
+test('both footers add the fixed baselines once across cached reads and refreshes', async () => {
+  for (const language of ['zh', 'en']) {
+    let cache = { pageviews: 5, visitors: 1 };
+    for (const views of [6, 7]) {
+      const data = { pageviews: views, visitors: 1 };
+      const page = createPage({ language, cache, data, pageviewsBaseline: '2500', visitorsBaseline: '1700' });
+      const viewsLabel = language === 'zh' ? '访问量：' : 'Views: ';
+      const visitorsLabel = language === 'zh' ? '访客数：' : 'Visitors: ';
+      assert.ok(page.values.textContent.includes(viewsLabel + (2500 + cache.pageviews).toLocaleString('en-US')));
+      await page.loadTracker();
+      assert.ok(page.values.textContent.includes(viewsLabel + (2500 + views).toLocaleString('en-US')));
+      assert.ok(page.values.textContent.includes(visitorsLabel + '1,701'));
+      cache = JSON.parse(page.stored.get(cacheKey));
+      assert.deepEqual(cache, data);
+    }
   }
 });
 
@@ -246,7 +269,7 @@ test('a failed read uses local counts in both languages without any tooltip or h
   }
 });
 
-test('only measured PV and UV are validated, displayed and saved; metadata is ignored', async () => {
+test('only measured PV and UV are validated and saved; legacy metadata is ignored', async () => {
   for (const language of ['zh', 'en']) {
     const data = { ...sample, since: 'not needed', updatedAt: 'not needed', legacy: { pageviews: 2100, visitors: 1600 }, legacyEstimate: { pageviews: 2000, visitors: 1500 } };
     const page = createPage({ language, data });

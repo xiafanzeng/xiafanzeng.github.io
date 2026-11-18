@@ -7,5 +7,7 @@
           data-website-id="{{ .website_id }}"
           data-script-url="{{ .script_url }}"
           data-host-url="{{ .host_url }}"
+          data-pageviews-baseline="{{ .pageviews_baseline | default 0 }}"
+          data-visitors-baseline="{{ .visitors_baseline | default 0 }}"
           data-totals-url="{{ .totals_url }}"></script>
 {{- end -}}

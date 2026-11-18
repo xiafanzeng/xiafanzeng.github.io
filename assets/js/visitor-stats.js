@@ -11,6 +11,8 @@
   const domain = config.getAttribute('data-domain');
   const websiteId = config.getAttribute('data-website-id') || '';
   const endpoint = config.getAttribute('data-totals-url');
+  const pageviewsBaseline = Number(config.getAttribute('data-pageviews-baseline'));
+  const visitorsBaseline = Number(config.getAttribute('data-visitors-baseline'));
   const cacheKey = `visitor-stats:v1:${endpoint}`;
   const locale = isZh ? 'zh-CN' : 'en-US';
 
@@ -71,17 +73,30 @@
     return { pageviews: data.pageviews, visitors: data.visitors };
   }
 
-  function metric(label, count) {
+  function metric(iconClass, label, count) {
     const item = document.createElement('span');
     item.className = 'visitor-stats-item';
-    item.textContent = `${label}${new Intl.NumberFormat(locale).format(count)}`;
+    const icon = document.createElement('i');
+    icon.className = `fas ${iconClass}`;
+    icon.setAttribute('aria-hidden', 'true');
+    const text = document.createElement('span');
+    text.textContent = `${label}${new Intl.NumberFormat(locale).format(count)}`;
+    item.replaceChildren(icon, text);
     return item;
+  }
+
+  function separator() {
+    const dot = document.createElement('span');
+    dot.className = 'visitor-stats-sep';
+    dot.setAttribute('aria-hidden', 'true');
+    dot.textContent = '\u00a0·\u00a0';
+    return dot;
   }
 
   function showStats(data) {
     values.replaceChildren(
-      metric(isZh ? '访问量：' : 'Views: ', data.pageviews),
-      metric(isZh ? '访客数：' : 'Visitors: ', data.visitors),
+      separator(), metric('fa-eye', isZh ? '访问量：' : 'Views: ', pageviewsBaseline + data.pageviews),
+      separator(), metric('fa-users', isZh ? '访客数：' : 'Visitors: ', visitorsBaseline + data.visitors),
     );
     values.hidden = false;
     note.textContent = '';

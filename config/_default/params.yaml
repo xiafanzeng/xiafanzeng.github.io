@@ -48,6 +48,8 @@ visitor_stats:
   script_url: 'https://stats.cuhkgeo.com/script.js'
   host_url: 'https://stats.cuhkgeo.com'
   totals_url: 'https://stats.cuhkgeo.com/totals.json'
+  pageviews_baseline: 2500
+  visitors_baseline: 1700
 
 footer:
   copyright:

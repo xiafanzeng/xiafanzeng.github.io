@@ -2,6 +2,7 @@
 <div id="visitor-stats" class="visitor-stats text-center mt-2 mb-3"
      data-language="{{ site.Language.Lang }}" role="status" aria-live="polite" aria-atomic="true">
   <span class="visitor-stats-item">
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
     <span>{{ if $isZh }}最近更新：{{ else }}Last updated: {{ end }}<time datetime="{{ now.Format "2006-01-02" }}">{{ now.Format "2006/1/2" }}</time></span>
   </span>
   <span class="visitor-stats-values" data-visitor-values hidden></span>
