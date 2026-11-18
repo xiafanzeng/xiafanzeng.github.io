@@ -6,11 +6,16 @@ const vm = require('node:vm');
 
 const source = fs.readFileSync(path.join(__dirname, '../assets/js/visitor-stats.js'), 'utf8');
 const endpoint = 'https://stats.cuhkgeo.com/totals.json';
+const cacheKey = `visitor-stats:v1:${endpoint}`;
 const websiteId = 'e4afae29-66d9-4732-9b81-451434cc1154';
-const sample = {
-  since: '2026-11-18', updatedAt: '2026-11-18T02:30:00Z',
-  pageviews: 120, visitors: 45, legacy: null,
-};
+const sample = { pageviews: 120, visitors: 45 };
+const flush = () => new Promise(resolve => setImmediate(resolve));
+const response = data => ({ ok: true, json: async () => data });
+function deferred() {
+  let resolve, reject;
+  const promise = new Promise((yes, no) => { resolve = yes; reject = no; });
+  return { promise, resolve, reject };
+}
 
 class Element {
   constructor(tagName = 'span', attributes = {}) {
@@ -28,185 +33,263 @@ class Element {
   get textContent() { return this._text + this.children.map(child => child.textContent).join(' '); }
 }
 
-async function render(options = {}) {
+function createPage(options = {}) {
   const values = new Element();
   const note = new Element();
-  const history = new Element();
   const root = new Element('div', { 'data-language': options.language || 'zh' });
-  root.querySelector = selector => ({ '[data-visitor-values]': values, '[data-visitor-note]': note, '[data-visitor-history]': history })[selector];
+  root.querySelector = selector => ({ '[data-visitor-values]': values, '[data-visitor-note]': note })[selector];
   const script = new Element('script', {
-    'data-domain': 'xiafanzeng.github.io',
-    'data-website-id': options.websiteId ?? websiteId,
+    'data-domain': 'xiafanzeng.github.io', 'data-website-id': options.websiteId ?? websiteId,
     'data-script-url': 'https://stats.cuhkgeo.com/script.js',
-    'data-host-url': 'https://stats.cuhkgeo.com',
-    'data-totals-url': endpoint,
+    'data-host-url': 'https://stats.cuhkgeo.com', 'data-totals-url': endpoint,
   });
   const head = new Element('head');
   const stored = new Map();
-  if (options.cache !== undefined) stored.set(`visitor-stats:v1:${endpoint}`, JSON.stringify(options.cache));
-  let calls = 0;
+  if (options.cache !== undefined) stored.set(cacheKey, JSON.stringify(options.cache));
+  const requests = [];
+  const timers = new Map();
+  let nextTimer = 0;
+  let trackCalls = 0;
   const context = {
     document: { currentScript: script, head, createElement: tag => new Element(tag), getElementById: () => root },
     location: { hostname: options.hostname || 'xiafanzeng.github.io', protocol: options.protocol || 'https:', port: options.port || '' },
+    window: { umami: options.noUmami ? undefined : { track: () => { trackCalls++; return options.track ? options.track() : Promise.resolve(); } } },
     localStorage: {
       getItem: key => { if (options.storageError) throw Error('Storage unavailable'); return stored.get(key) ?? null; },
       setItem: (key, value) => { if (options.storageError) throw Error('Storage unavailable'); stored.set(key, value); },
     },
-    fetch: async (url, init) => {
-      calls++;
+    fetch: (url, init) => {
+      requests.push({ url, init });
       assert.equal(url, endpoint);
       assert.equal(init.credentials, 'omit');
-      if (options.networkError) throw Error('Network unavailable');
-      if (options.timeout) return new Promise((_, reject) => init.signal.addEventListener('abort', () => reject(Error('Timed out'))));
-      return { ok: options.ok !== false, json: async () => options.data ?? sample };
+      assert.equal(init.cache, 'no-store');
+      return options.fetch ? options.fetch(requests.length, init) : Promise.resolve(response(options.data ?? sample));
     },
-    AbortController, Intl, Date, console,
-    setTimeout: options.timeout ? callback => setTimeout(callback, 0) : setTimeout,
-    clearTimeout,
+    setTimeout: (callback, delay) => { const id = ++nextTimer; timers.set(id, { callback, delay }); return id; },
+    clearTimeout: id => timers.delete(id),
+    AbortController, Intl, console,
   };
-  await vm.runInNewContext(source, context);
-  return { values, note, history, head, calls, stored };
+  vm.runInNewContext(source, context);
+  return {
+    values, note, head, stored, requests,
+    get trackCalls() { return trackCalls; },
+    async loadTracker() {
+      const tracker = head.children[0];
+      // Simulate Umami's automatic pageview so the test detects double counting.
+      if (options.emulateAutoPageview && tracker.getAttribute('data-auto-pageview') !== 'false') context.window.umami.track();
+      tracker.onload();
+      await flush();
+    },
+    async failTracker() { head.children[0].onerror(); await flush(); },
+    async advance(delay) {
+      for (const [id, timer] of [...timers]) {
+        if (timer.delay === delay) { timers.delete(id); timer.callback(); }
+      }
+      await flush();
+    },
+  };
 }
 
-test('local, alternate-domain, and insecure previews make no external requests', async () => {
+function assertCompact(page, language = 'zh', counts = sample) {
+  assert.equal(page.values.children.length, 2);
+  assert.match(page.values.textContent, new RegExp(`${language === 'zh' ? '访问量：' : 'Views: '}${counts.pageviews}`));
+  assert.match(page.values.textContent, new RegExp(`${language === 'zh' ? '访客数：' : 'Visitors: '}${counts.visitors}`));
+  assert.equal(page.note.hidden, true);
+  assert.equal(page.note.textContent, '');
+  for (const item of page.values.children) assert.equal(item.getAttribute('title'), null);
+}
+
+test('local and alternate origins neither load the tracker nor read totals', async () => {
   for (const options of [{ hostname: 'localhost' }, { hostname: '127.0.0.1' }, { hostname: 'preview.example.com' }, { protocol: 'http:' }, { port: '1313' }]) {
-    const result = await render(options);
-    assert.equal(result.calls, 0);
-    assert.equal(result.head.children.length, 0);
-    assert.match(result.note.textContent, /本地预览不记录访问/);
+    const page = createPage(options);
+    await flush();
+    assert.equal(page.requests.length, 0);
+    assert.equal(page.head.children.length, 0);
   }
 });
 
-test('production loads only the configured Umami tracker and labels new counts with a start date', async () => {
-  const result = await render();
-  assert.equal(result.calls, 1);
-  assert.equal(result.head.children.length, 1);
-  const tracker = result.head.children[0];
+test('native tracker disables only automatic pageviews and totals wait for the single manual track promise', async () => {
+  const collection = deferred();
+  const page = createPage({ track: () => collection.promise });
+  const tracker = page.head.children[0];
   assert.equal(tracker.src, 'https://stats.cuhkgeo.com/script.js');
   assert.equal(tracker.getAttribute('data-website-id'), websiteId);
   assert.equal(tracker.getAttribute('data-domains'), 'xiafanzeng.github.io');
   assert.equal(tracker.getAttribute('data-host-url'), 'https://stats.cuhkgeo.com');
-  assert.match(result.values.textContent, /访问量：120/);
-  assert.match(result.values.textContent, /访客数：45/);
-  assert.match(result.note.textContent, /自 2026年11月18日 起/);
+  assert.equal(tracker.getAttribute('data-auto-pageview'), 'false');
+  assert.equal(tracker.getAttribute('data-auto-track'), null);
+  assert.equal(page.requests.length, 0);
+  await page.loadTracker();
+  assert.equal(page.trackCalls, 1);
+  assert.equal(page.requests.length, 0);
+  tracker.onload();
+  await flush();
+  assert.equal(page.trackCalls, 1);
+  collection.resolve();
+  await flush();
+  assert.equal(page.requests.length, 1);
+  assertCompact(page);
 });
 
-test('missing website ID does not load a tracker but still allows the public totals', async () => {
-  const result = await render({ websiteId: '' });
-  assert.equal(result.head.children.length, 0);
-  assert.equal(result.calls, 1);
-});
-
-test('verified nonoverlapping legacy PV is added; legacy visitors remain separate', async () => {
-  const result = await render({ data: { ...sample, legacy: { pageviews: 1000, visitors: 300, asOf: '2026-11-17' } } });
-  assert.match(result.values.textContent, /累计访问量：1,120/);
-  assert.match(result.values.textContent, /访客数：45（自 2026年11月18日 起）/);
-  assert.match(result.values.textContent, /历史访客数：300（截至 2026年11月17日）/);
-  assert.doesNotMatch(result.values.textContent, /345/);
-});
-
-test('overlapping or approximate legacy counts are not included', async () => {
-  for (const legacy of [{ pageviews: 1000, visitors: 300, asOf: '2026-11-18' }, { pageviews: '1000+', visitors: 300, asOf: '2026-11-17' }]) {
-    const result = await render({ data: { ...sample, legacy } });
-    assert.match(result.values.textContent, /访问量：120/);
-    assert.doesNotMatch(result.values.textContent, /历史|累计/);
-    assert.match(result.note.textContent, /自 2026年11月18日 起/);
+test('each refresh records one PV and displays the server-deduplicated UV without adding one', async () => {
+  const server = { pageviews: 7, visitors: 3 };
+  for (const expected of [8, 9]) {
+    const page = createPage({
+      emulateAutoPageview: true,
+      track: async () => { server.pageviews++; },
+      fetch: async () => response({ ...server }),
+    });
+    await page.loadTracker();
+    assert.equal(page.trackCalls, 1);
+    assert.equal(server.pageviews, expected);
+    assert.equal(server.visitors, 3);
+    assertCompact(page, 'zh', { pageviews: expected, visitors: 3 });
   }
 });
 
-test('failed refresh shows valid local cache with its date', async () => {
-  const result = await render({ networkError: true, cache: sample, language: 'en' });
-  assert.match(result.values.textContent, /Views: 120/);
-  assert.match(result.note.textContent, /Since November 18, 2026/);
-  assert.match(result.note.textContent, /Cached/);
-  assert.match(result.note.textContent, /November 18, 2026/);
-});
-
-test('no data yields one friendly message without fabricated zeroes or dash counters', async () => {
-  const result = await render({ networkError: true });
-  assert.equal(result.values.hidden, true);
-  assert.match(result.note.textContent, /访问统计暂时无法读取/);
-  assert.doesNotMatch(result.note.textContent, /--|：0/);
-});
-
-test('invalid numeric data and invalid calendar dates cannot become counters', async () => {
-  for (const data of [{ ...sample, pageviews: -1 }, { ...sample, visitors: '45' }, { ...sample, since: '2026-02-30' }, { ...sample, updatedAt: 'unknown' }]) {
-    const result = await render({ data });
-    assert.equal(result.values.hidden, true);
-    assert.match(result.note.textContent, /访问统计暂时无法读取/);
+test('tracker load errors, missing API, and collection rejection still allow totals to display', async () => {
+  const failed = createPage();
+  await failed.failTracker();
+  assert.equal(failed.trackCalls, 0);
+  assertCompact(failed);
+  const missing = createPage({ noUmami: true });
+  await missing.loadTracker();
+  assert.equal(missing.trackCalls, 0);
+  assertCompact(missing);
+  for (const track of [() => Promise.reject(Error('Blocked')), () => { throw Error('Blocked'); }]) {
+    const page = createPage({ track });
+    await page.loadTracker();
+    assertCompact(page);
   }
 });
 
-test('storage restrictions do not prevent valid English counts including zero', async () => {
-  const result = await render({ storageError: true, language: 'en', data: { ...sample, pageviews: 0, visitors: 0 } });
-  assert.match(result.values.textContent, /Views: 0/);
-  assert.match(result.values.textContent, /Visitors: 0/);
-  assert.match(result.note.textContent, /Since November 18, 2026/);
+test('a silently blocked tracker triggers a read after two seconds without a fabricated pageview', async () => {
+  const page = createPage();
+  assert.equal(page.requests.length, 0);
+  await page.advance(2000);
+  assert.equal(page.requests.length, 1);
+  assert.equal(page.trackCalls, 0);
+  assertCompact(page);
 });
 
-test('an HTTP error with invalid cached data shows the unavailable message', async () => {
-  const result = await render({ ok: false, cache: { ...sample, pageviews: 'about 100' } });
-  assert.equal(result.values.hidden, true);
-  assert.match(result.note.textContent, /访问统计暂时无法读取/);
+test('an unconfigured website still reads public totals immediately', async () => {
+  const page = createPage({ websiteId: '' });
+  await flush();
+  assert.equal(page.head.children.length, 0);
+  assert.equal(page.requests.length, 1);
+  assertCompact(page);
 });
 
-test('a stalled request is aborted and valid cached data remains visible', async () => {
-  const result = await render({ timeout: true, cache: sample });
-  assert.match(result.values.textContent, /访问量：120/);
-  assert.match(result.note.textContent, /缓存数据/);
+test('slow collection reads a fallback, then the acknowledged new totals; a late older response cannot overwrite them', async () => {
+  const collection = deferred();
+  const older = deferred();
+  const newer = deferred();
+  const page = createPage({ track: () => collection.promise, fetch: n => n === 1 ? older.promise : newer.promise });
+  await page.loadTracker();
+  await page.advance(2000);
+  assert.equal(page.requests.length, 1);
+  collection.resolve();
+  await flush();
+  assert.equal(page.requests.length, 2);
+  newer.resolve(response({ pageviews: 121, visitors: 45 }));
+  await flush();
+  assertCompact(page, 'zh', { pageviews: 121, visitors: 45 });
+  older.resolve(response(sample));
+  await flush();
+  assertCompact(page, 'zh', { pageviews: 121, visitors: 45 });
+  assert.deepEqual(JSON.parse(page.stored.get(cacheKey)), { pageviews: 121, visitors: 45 });
 });
 
-test('a successful refresh replaces older local totals', async () => {
-  const result = await render({ cache: { ...sample, pageviews: 50, visitors: 20 } });
-  assert.match(result.values.textContent, /访问量：120/);
-  assert.doesNotMatch(result.note.textContent, /缓存/);
-  assert.equal(JSON.parse(result.stored.get(`visitor-stats:v1:${endpoint}`)).pageviews, 120);
+test('a failed post-collection refresh keeps the successful fallback visible', async () => {
+  const collection = deferred();
+  const page = createPage({ track: () => collection.promise, fetch: n => n === 1 ? Promise.resolve(response(sample)) : Promise.reject(Error('Offline')) });
+  await page.loadTracker();
+  await page.advance(2000);
+  assertCompact(page);
+  collection.resolve();
+  await flush();
+  assert.equal(page.requests.length, 2);
+  assertCompact(page);
 });
 
-test('old cached values visibly keep their original as-of date rather than appearing current', async () => {
-  const cache = { ...sample, since: '2026-01-01', updatedAt: '2026-02-02T04:05:00Z' };
+test('late collection failure does not reread or clear a successful fallback', async () => {
+  const collection = deferred();
+  const page = createPage({ track: () => collection.promise });
+  await page.loadTracker();
+  await page.advance(2000);
+  assertCompact(page);
+  collection.reject(Error('Blocked'));
+  await flush();
+  assert.equal(page.requests.length, 1);
+  assertCompact(page);
+});
+
+test('late valid fallback data can still display when the newer request failed', async () => {
+  const collection = deferred();
+  const fallback = deferred();
+  const page = createPage({ track: () => collection.promise, fetch: n => n === 1 ? fallback.promise : Promise.reject(Error('Offline')) });
+  await page.loadTracker();
+  await page.advance(2000);
+  collection.resolve();
+  await flush();
+  fallback.resolve(response(sample));
+  await flush();
+  assertCompact(page);
+});
+
+test('a failed read uses local counts in both languages without any tooltip or history text', async () => {
   for (const language of ['zh', 'en']) {
-    const result = await render({ cache, networkError: true, language });
-    assert.match(result.note.textContent, language === 'zh' ? /缓存数据，更新于 2026年2月2日/ : /Cached data · updated February 2, 2026/);
-    assert.equal(result.note.hidden, false);
+    const page = createPage({ language, cache: { ...sample, since: '2026-01-01', updatedAt: '2026-02-02T04:05:00Z', legacyEstimate: { pageviews: 2000, visitors: 1500 } }, fetch: () => Promise.reject(Error('Offline')) });
+    await page.loadTracker();
+    assertCompact(page, language);
+    assert.doesNotMatch(page.values.textContent, /日期|起|缓存|迁移|2000|1500|since|cached|migration/i);
   }
 });
 
-test('migration estimates are separate from measured counts in both languages', async () => {
+test('only measured PV and UV are validated, displayed and saved; metadata is ignored', async () => {
   for (const language of ['zh', 'en']) {
-    const result = await render({ language, data: { ...sample, legacyEstimate: { pageviews: 2000, visitors: 1500 } } });
-    assert.match(result.values.textContent, /120/);
-    assert.match(result.values.textContent, /45/);
-    assert.doesNotMatch(result.values.textContent, /2,120|1,545|2,000|1,500/);
-    assert.equal(result.history.textContent, language === 'zh'
-      ? '迁移前（估计）：2,000+ 次访问 · 1,500+ 位访客'
-      : 'Before migration (estimated): 2,000+ views · 1,500+ visitors');
-    assert.equal(result.history.hidden, false);
+    const data = { ...sample, since: 'not needed', updatedAt: 'not needed', legacy: { pageviews: 2100, visitors: 1600 }, legacyEstimate: { pageviews: 2000, visitors: 1500 } };
+    const page = createPage({ language, data });
+    await page.loadTracker();
+    assertCompact(page, language);
+    assert.deepEqual(JSON.parse(page.stored.get(cacheKey)), sample);
   }
 });
 
-test('precise historical counts take precedence over migration estimates', async () => {
-  const result = await render({ data: {
-    ...sample, legacy: { pageviews: 2100, visitors: 1600, asOf: '2026-11-17' },
-    legacyEstimate: { pageviews: 2000, visitors: 1500 },
+test('invalid counts and missing data never become fabricated zeroes', async () => {
+  for (const data of [null, { pageviews: -1, visitors: 45 }, { pageviews: 120, visitors: '45' }, { pageviews: 1.5, visitors: 2 }]) {
+    const page = createPage({ fetch: async () => response(data) });
+    await page.loadTracker();
+    assert.equal(page.values.hidden, true);
+    assert.match(page.note.textContent, /访问统计暂时无法读取/);
+    assert.doesNotMatch(page.note.textContent, /--|：0/);
+  }
+});
+
+test('HTTP failure and invalid cache produce one friendly message', async () => {
+  const page = createPage({ language: 'en', cache: { pageviews: 'about 100', visitors: 40 }, fetch: async () => ({ ok: false }) });
+  await page.loadTracker();
+  assert.equal(page.values.hidden, true);
+  assert.match(page.note.textContent, /temporarily unavailable/);
+});
+
+test('a stalled totals request is aborted after eight seconds while cached counts remain visible', async () => {
+  let signal;
+  const page = createPage({ cache: sample, fetch: (_, init) => {
+    signal = init.signal;
+    return new Promise((_, reject) => signal.addEventListener('abort', () => reject(Error('Timeout'))));
   } });
-  assert.match(result.values.textContent, /累计访问量：2,220/);
-  assert.match(result.values.textContent, /历史访客数：1,600/);
-  assert.equal(result.history.hidden, true);
-  assert.equal(result.history.textContent, '');
+  await page.loadTracker();
+  await page.advance(8000);
+  assert.equal(signal.aborted, true);
+  assertCompact(page);
 });
 
-test('invalid estimates are ignored without hiding valid measured totals', async () => {
-  for (const legacyEstimate of [{ pageviews: '2000+', visitors: 1500 }, { pageviews: 2000, visitors: -1 }, { pageviews: 2000 }]) {
-    const result = await render({ data: { ...sample, legacyEstimate } });
-    assert.match(result.values.textContent, /访问量：120/);
-    assert.equal(result.history.hidden, true);
+test('storage restrictions do not prevent genuine zero counts in either language', async () => {
+  for (const language of ['zh', 'en']) {
+    const counts = { pageviews: 0, visitors: 0 };
+    const page = createPage({ language, storageError: true, data: counts });
+    await page.loadTracker();
+    assertCompact(page, language, counts);
   }
-});
-
-test('cached estimates retain their label and source timestamp during an outage', async () => {
-  const cache = { ...sample, legacyEstimate: { pageviews: 2000, visitors: 1500 } };
-  const result = await render({ cache, networkError: true });
-  assert.match(result.history.textContent, /迁移前（估计）/);
-  assert.match(result.note.textContent, /缓存数据，更新于 2026年11月18日/);
 });

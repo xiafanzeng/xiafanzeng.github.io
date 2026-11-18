@@ -2,11 +2,9 @@
 <div id="visitor-stats" class="visitor-stats text-center mt-2 mb-3"
      data-language="{{ site.Language.Lang }}" role="status" aria-live="polite" aria-atomic="true">
   <span class="visitor-stats-item">
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    {{ if $isZh }}最近更新：{{ else }}Last updated: {{ end }}<time datetime="{{ now.Format "2006-01-02" }}">{{ now.Format "2006/1/2" }}</time>
+    <span>{{ if $isZh }}最近更新：{{ else }}Last updated: {{ end }}<time datetime="{{ now.Format "2006-01-02" }}">{{ now.Format "2006/1/2" }}</time></span>
   </span>
   <span class="visitor-stats-values" data-visitor-values hidden></span>
   <span class="visitor-stats-note" data-visitor-note hidden></span>
-  <span class="visitor-stats-history" data-visitor-history hidden></span>
   <noscript class="visitor-stats-note">{{ if $isZh }}启用 JavaScript 后可查看访问统计。{{ else }}Enable JavaScript to view visitor statistics.{{ end }}</noscript>
 </div>

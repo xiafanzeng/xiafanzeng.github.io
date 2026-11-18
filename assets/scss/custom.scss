@@ -713,32 +713,33 @@ button:focus-visible,
 // Visitor Statistics Footer
 // ==========================================
 .visitor-stats {
-  font-size: 0.82rem;
-  color: #000;
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+  color: #625f66;
   padding: 0.5rem 0 0.25rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: baseline;
-  gap: 0.3rem 1rem;
-  i {
-    margin-right: 0.2rem;
-  }
+  gap: 0.3em 0.8em;
 }
 .visitor-stats-values {
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.3rem 1rem;
+  display: contents;
 }
 .visitor-stats-item {
   display: inline-flex;
-  align-items: baseline;
-  gap: 0.15rem;
+  align-items: center;
+  white-space: nowrap;
 }
-.visitor-stats-note,
-.visitor-stats-history {
-  flex-basis: 100%;
+.visitor-stats-values .visitor-stats-item::before {
+  content: "";
+  width: 1px;
+  height: 0.8em;
+  margin-inline-end: 0.8em;
+  background: currentColor;
+  opacity: 0.3;
+}
+.visitor-stats-note {
   font-size: 0.92em;
   line-height: 1.6;
   color: #5f5f5f;
@@ -750,8 +751,7 @@ button:focus-visible,
 .dark .visitor-stats {
   color: rgba(255, 255, 255, 0.8);
 }
-.dark .visitor-stats-note,
-.dark .visitor-stats-history {
+.dark .visitor-stats-note {
   color: rgba(255, 255, 255, 0.65);
 }
 /* 尊重系统“减少动态效果”偏好 */
@@ -766,10 +766,10 @@ button:focus-visible,
 }
 @media (max-width: 575.98px) {
   .visitor-stats {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     line-height: 1.7;
   }
-  .visitor-stats-values {
-    flex-basis: 100%;
+  .visitor-stats-values .visitor-stats-item::before {
+    display: none;
   }
 }
