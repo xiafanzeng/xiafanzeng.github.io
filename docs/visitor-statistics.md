@@ -2,7 +2,7 @@
 
 The footer reads public aggregate statistics from the URL in `visitor_stats.totals_url`. The Umami website UUID, script URL, and collection host are configured alongside it in `config/_default/params.yaml`. The UUID is public configuration, not an API credential. API credentials must remain on the statistics server.
 
-Both the Umami script and totals request run only on HTTPS at the configured exact hostname without a custom port. Local and alternate-domain previews do not contact the statistics service. The old Busuanzi script is no longer loaded.
+Both the Umami script and totals request run only on HTTPS at an exact hostname in `visitor_stats.domains`, without a custom port. The production allowlist contains `xiafanzeng.me` and the legacy `xiafanzeng.github.io` hostname. Local and alternate-domain previews do not contact the statistics service. The old Busuanzi script is no longer loaded.
 
 The loader creates a native classic `<script src="https://stats.cuhkgeo.com/script.js">` and sets `data-website-id`, `data-domains`, and `data-host-url` before appending it to the document. It does not fetch/evaluate the tracker as text or load it as a JavaScript module, so Umami can read its own `document.currentScript`. The explicit `data-host-url="https://stats.cuhkgeo.com"` directs collection to that host's `/api/send` endpoint. See the [official tracker configuration](https://umami.is/docs/tracker-configuration).
 
@@ -10,7 +10,9 @@ For Umami v3.5.0, `data-auto-pageview="false"` disables automatic pageviews whil
 
 ## Public totals contract
 
-`totals.json` must return JSON with CORS access allowed for `https://xiafanzeng.github.io`. The browser sends no credentials.
+`totals.json` must return JSON with CORS access allowed for both `https://xiafanzeng.me` and `https://xiafanzeng.github.io`. The browser sends no credentials.
+
+The domain migration retains the same Umami website UUID, collection host, totals URL, and fixed baselines. The service must aggregate that website's data across both hostnames so its existing history remains visible. Update the website's primary domain in Umami without recreating the website or filtering old hostname rows out of the totals. Browser fallback caches are local to each origin; the new domain fills its cache from the shared totals service on its first successful request.
 
 ```json
 {

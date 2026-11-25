@@ -3,7 +3,7 @@
   {{- $script := resources.Get "js/visitor-stats.js" | minify | fingerprint "sha256" -}}
   <script defer src="{{ $script.RelPermalink }}"
           integrity="{{ $script.Data.Integrity }}"
-          data-domain="{{ .domain }}"
+          data-domains="{{ delimit .domains "," }}"
           data-website-id="{{ .website_id }}"
           data-script-url="{{ .script_url }}"
           data-host-url="{{ .host_url }}"

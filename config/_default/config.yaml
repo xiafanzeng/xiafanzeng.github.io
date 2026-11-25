@@ -4,7 +4,7 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: Fanzeng Xia # Website name
-baseURL: 'https://xiafanzeng.github.io/' # Website URL
+baseURL: 'https://xiafanzeng.me/' # Website URL
 
 ############################
 ## LANGUAGE

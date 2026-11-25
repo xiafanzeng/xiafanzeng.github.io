@@ -8,6 +8,7 @@ const source = fs.readFileSync(path.join(__dirname, '../assets/js/visitor-stats.
 const endpoint = 'https://stats.cuhkgeo.com/totals.json';
 const cacheKey = `visitor-stats:v1:${endpoint}`;
 const websiteId = 'e4afae29-66d9-4732-9b81-451434cc1154';
+const domains = 'xiafanzeng.me,xiafanzeng.github.io';
 const sample = { pageviews: 120, visitors: 45 };
 const flush = () => new Promise(resolve => setImmediate(resolve));
 const response = data => ({ ok: true, json: async () => data });
@@ -39,7 +40,7 @@ function createPage(options = {}) {
   const root = new Element('div', { 'data-language': options.language || 'zh' });
   root.querySelector = selector => ({ '[data-visitor-values]': values, '[data-visitor-note]': note })[selector];
   const script = new Element('script', {
-    'data-domain': 'xiafanzeng.github.io', 'data-website-id': options.websiteId ?? websiteId,
+    'data-domains': options.domains ?? domains, 'data-website-id': options.websiteId ?? websiteId,
     'data-script-url': 'https://stats.cuhkgeo.com/script.js',
     'data-host-url': 'https://stats.cuhkgeo.com', 'data-totals-url': endpoint,
     'data-pageviews-baseline': options.pageviewsBaseline, 'data-visitors-baseline': options.visitorsBaseline,
@@ -53,7 +54,7 @@ function createPage(options = {}) {
   let trackCalls = 0;
   const context = {
     document: { currentScript: script, head, createElement: tag => new Element(tag), getElementById: () => root },
-    location: { hostname: options.hostname || 'xiafanzeng.github.io', protocol: options.protocol || 'https:', port: options.port || '' },
+    location: { hostname: options.hostname || 'xiafanzeng.me', protocol: options.protocol || 'https:', port: options.port || '' },
     window: { umami: options.noUmami ? undefined : { track: () => { trackCalls++; return options.track ? options.track() : Promise.resolve(); } } },
     localStorage: {
       getItem: key => { if (options.storageError) throw Error('Storage unavailable'); return stored.get(key) ?? null; },
@@ -105,11 +106,30 @@ function assertCompact(page, language = 'zh', counts = sample) {
 }
 
 test('local and alternate origins neither load the tracker nor read totals', async () => {
-  for (const options of [{ hostname: 'localhost' }, { hostname: '127.0.0.1' }, { hostname: 'preview.example.com' }, { protocol: 'http:' }, { port: '1313' }]) {
+  for (const options of [
+    { hostname: 'localhost' }, { hostname: '127.0.0.1' }, { hostname: 'preview.example.com' },
+    { hostname: 'www.xiafanzeng.me' }, { hostname: 'xiafanzeng.me.example.com' },
+    { hostname: 'xiafanzeng.github.io.example.com' }, { domains: '' },
+    { protocol: 'http:' }, { port: '1313' },
+    { hostname: 'xiafanzeng.github.io', protocol: 'http:' },
+    { hostname: 'xiafanzeng.github.io', port: '1313' },
+  ]) {
     const page = createPage(options);
     await flush();
     assert.equal(page.requests.length, 0);
     assert.equal(page.head.children.length, 0);
+  }
+});
+
+test('new and legacy production domains each record one pageview and read the shared totals', async () => {
+  for (const hostname of ['xiafanzeng.me', 'xiafanzeng.github.io']) {
+    const page = createPage({ hostname, emulateAutoPageview: true });
+    assert.equal(page.head.children.length, 1);
+    assert.equal(page.head.children[0].getAttribute('data-domains'), domains);
+    await page.loadTracker();
+    assert.equal(page.trackCalls, 1);
+    assert.equal(page.requests.length, 1);
+    assertCompact(page);
   }
 });
 
@@ -119,7 +139,7 @@ test('native tracker disables only automatic pageviews and totals wait for the s
   const tracker = page.head.children[0];
   assert.equal(tracker.src, 'https://stats.cuhkgeo.com/script.js');
   assert.equal(tracker.getAttribute('data-website-id'), websiteId);
-  assert.equal(tracker.getAttribute('data-domains'), 'xiafanzeng.github.io');
+  assert.equal(tracker.getAttribute('data-domains'), domains);
   assert.equal(tracker.getAttribute('data-host-url'), 'https://stats.cuhkgeo.com');
   assert.equal(tracker.getAttribute('data-auto-pageview'), 'false');
   assert.equal(tracker.getAttribute('data-auto-track'), null);

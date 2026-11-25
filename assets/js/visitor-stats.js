@@ -8,7 +8,7 @@
   const isZh = root && root.getAttribute('data-language') === 'zh';
   const values = root && root.querySelector('[data-visitor-values]');
   const note = root && root.querySelector('[data-visitor-note]');
-  const domain = config.getAttribute('data-domain');
+  const domains = (config.getAttribute('data-domains') || '').split(',').map(domain => domain.trim()).filter(Boolean);
   const websiteId = config.getAttribute('data-website-id') || '';
   const endpoint = config.getAttribute('data-totals-url');
   const pageviewsBaseline = Number(config.getAttribute('data-pageviews-baseline'));
@@ -25,7 +25,7 @@
   }
 
   // Production builds can also be opened locally; check the runtime origin.
-  if (location.hostname !== domain || location.protocol !== 'https:' || location.port) {
+  if (!domains.includes(location.hostname) || location.protocol !== 'https:' || location.port) {
     showMessage(isZh ? '本地预览不记录访问。' : 'Visits are not recorded in this preview.');
     return;
   }
@@ -39,7 +39,7 @@
       tracker.async = true;
       tracker.src = config.getAttribute('data-script-url');
       tracker.setAttribute('data-website-id', websiteId);
-      tracker.setAttribute('data-domains', domain);
+      tracker.setAttribute('data-domains', domains.join(','));
       tracker.setAttribute('data-host-url', config.getAttribute('data-host-url'));
       // Umami v3.5.0 initializes normally, but this pageview is sent once below.
       tracker.setAttribute('data-auto-pageview', 'false');
