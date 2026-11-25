@@ -10,7 +10,7 @@ Sources 1, 3, 5, 6, 7, 8, 9 and the newly supplied CCTA workshop article were re
 
 - Data ID `beichen-dialogues-incubator-2026`. The [Xinhuanet report and program](https://my-h5news.app.xinhuanet.com/h5/article.html?articleId=202611236c2ed9e12de5404b882be974977a9b26) were published on November 23. The report gives no filming date.
 - In the segment “协同之光”, the report names 夏钒曾 as the incubated project's lead and describes his tour of the incubator with Guo Zhe and his work helping enterprises build semantic asset engines.
-- The 1280 × 720 card image comes from 34:02 of the [original program](https://vodpub6.v.news.cn/yqfbzx-original/20261123/202611236c2ed9e12de5404b882be974977a9b26_64d9f0285a6b415aabb3a49a081e0024.mp4). The on-screen introduction appears at 33:50.
+- The selected cover (candidate 04, 1280 × 720) comes from 34:01.2 of the [original program](https://vodpub6.v.news.cn/yqfbzx-original/20261123/202611236c2ed9e12de5404b882be974977a9b26_64d9f0285a6b415aabb3a49a081e0024.mp4). The on-screen introduction appears at 33:50.
 
 ## CCTA GEO × AI cross-border trade workshop — 2026-11-09
 

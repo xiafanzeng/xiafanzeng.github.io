@@ -55,7 +55,6 @@ button:focus-visible,
 .section-heading a[href]:hover {
   opacity: 1;
 }
-// "全部新闻»" / "All news»" 链接美化
 .section-heading .mt-1 a {
   font-size: 0.9rem;
   font-weight: 500;
@@ -393,18 +392,14 @@ button:focus-visible,
   }
 }
 
-// ----- News 新闻列表（首页 + 全部新闻页） -----
-#news .card-text,
-#news .article-style,
+// ----- Article typography -----
 .article-style {
   line-height: 1.8;
 }
-#news ul,
 .article-style ul {
   padding-left: 1.25rem;
   list-style: none;
 }
-#news li,
 .article-style li {
   margin-bottom: 0.85rem;
   position: relative;
@@ -413,17 +408,6 @@ button:focus-visible,
   &:hover {
     transform: translateX(2px);
   }
-}
-#news li::before {
-  content: "";
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--primary, #6A1B9A);
-  position: absolute;
-  left: -1rem;
-  top: 0.55em;
 }
 
 // ----- Publications / Research 学术成果列表 -----
@@ -681,9 +665,6 @@ button:focus-visible,
   &:hover {
     background-color: rgba(255, 255, 255, 0.02);
   }
-}
-.dark #news li::before {
-  background: rgba(255, 255, 255, 0.5);
 }
 .dark .wechat-popup {
   background-color: #2d2d2d;
