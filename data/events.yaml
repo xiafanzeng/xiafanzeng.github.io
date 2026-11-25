@@ -1,5 +1,20 @@
 # Event dates are used unless date_kind is report.
 # Source provenance is recorded in docs/events-sources.md.
+- id: beichen-dialogues-incubator-2026
+  date: '2026-11-23'
+  date_kind: report
+  url: https://my-h5news.app.xinhuanet.com/h5/article.html?articleId=202611236c2ed9e12de5404b882be974977a9b26
+  image: media/events/beichen-dialogues-incubator-2026.jpg
+  zh:
+    title: 新华网《北辰对话》特别节目《雨林的“创”生》
+    description: 作为在孵项目负责人，带领中国科技馆馆长郭哲参观港中大（深圳）创新创业孵化中心。节目也介绍了团队帮助企业搭建语义资产引擎的工作。
+    category: 节目报道
+    image_alt: 《北辰对话》节目画面中，郭哲在孵化中心听取项目负责人介绍。
+  en:
+    title: Xinhuanet’s Beichen Dialogues Visits CUHK-Shenzhen’s Startup Incubator
+    description: Guided Guo Zhe, director of the China Science and Technology Museum, through CUHK-Shenzhen’s startup incubator. The program also featured our team’s work helping businesses build semantic asset engines.
+    category: Media Feature
+    image_alt: Guo Zhe listens as a project leader shows him around the incubator in Beichen Dialogues.
 - id: ccta-geo-ai-workshop-2026
   date: '2026-11-09'
   url: https://mp.weixin.qq.com/s/LykFnMvkk9sNV3HAePLAeA

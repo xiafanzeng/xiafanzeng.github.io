@@ -1,10 +1,16 @@
 # Events source notes
 
-The homepage currently contains eight cards covering nine displayed source links. The School of Data Science feature (supplied source 3) was removed from the homepage at the user's explicit request; its research notes and image are retained below for provenance. It uses event dates where verified; entries with `date_kind: report` use the publication date and are described as reports. English copy is an editorial translation of the verified Chinese sources and the user-supplied updates explicitly noted below. Original photos, portraits and posters are used without AI generation.
+The homepage currently contains nine cards covering ten displayed source links. The School of Data Science feature (supplied source 3) was removed from the homepage at the user's explicit request; its research notes and image are retained below for provenance. It uses event dates where verified; entries with `date_kind: report` use the publication date and are described as reports. English copy is an editorial translation of the verified Chinese sources and the user-supplied updates explicitly noted below. Original photos, portraits and posters are used without AI generation.
 
 At the user's request, dates are displayed in a single readable line above the card title, alongside the category. The page no longer shows the small “报道日期 / Published” date-provenance label. `date_kind` remains in the data solely as a source-provenance record; this presentation change does not alter any date or the distinction between event dates and publication dates documented here.
 
 Sources 1, 3, 5, 6, 7, 8, 9 and the newly supplied CCTA workshop article were read in the user's authorized browser. Source 2 was retrieved from Xinhua's public article endpoint and its official PDF attachment. Source 4 was read from the original article HTML. Image contents were checked visually before selection. Photographic identity associations come from the source's captions or adjacent article text, not from face matching.
+
+## Beichen Dialogues at the CUHK-Shenzhen startup incubator — reported 2026-11-23
+
+- Data ID `beichen-dialogues-incubator-2026`. The [Xinhuanet report and program](https://my-h5news.app.xinhuanet.com/h5/article.html?articleId=202611236c2ed9e12de5404b882be974977a9b26) were published on November 23. The report gives no filming date.
+- In the segment “协同之光”, the report names 夏钒曾 as the incubated project's lead and describes his tour of the incubator with Guo Zhe and his work helping enterprises build semantic asset engines.
+- The 1280 × 720 card image comes from 34:02 of the [original program](https://vodpub6.v.news.cn/yqfbzx-original/20261123/202611236c2ed9e12de5404b882be974977a9b26_64d9f0285a6b415aabb3a49a081e0024.mp4). The on-screen introduction appears at 33:50.
 
 ## CCTA GEO × AI cross-border trade workshop — 2026-11-09
 
